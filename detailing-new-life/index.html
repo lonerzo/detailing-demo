@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
 <meta name="color-scheme" content="light dark" />
 <meta name="description" content="New Life Auto Detailing — mobile car detailing in Wilmington, DE. We come to you. Pick your car, pick a package, pick a time. Booked in a minute." />
-<meta name="theme-color" content="#8C5A12" />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%238C5A12'/%3E%3Cpath d='M16 6c4 5 7 8.5 7 12a7 7 0 1 1-14 0c0-3.5 3-7 7-12z' fill='%23fff'/%3E%3C/svg%3E" />
+<meta name="theme-color" content="#1D1F24" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231D1F24'/%3E%3Cpath d='M16 6c4 5 7 8.5 7 12a7 7 0 1 1-14 0c0-3.5 3-7 7-12z' fill='%23fff'/%3E%3C/svg%3E" />
 <title>New Life Auto Detailing — Mobile Car Detailing in Wilmington, DE</title>
 <style>
 :root{
-  --accent:#8C5A12; --accent-ink:#FFFFFF; --accent-soft:#F3E7CE; --link:var(--accent);
-  --bg:#F6F2EA; --surface:#FFFFFF; --surface2:#EDE7D8; --ink:#1D1F24; --muted:#5F6257;
-  --line:#DFD7C4; --danger:#A93226; --danger-bg:#F9E8E2; --warn:#7C5310; --warn-bg:#F6ECD2;
+  --accent:#1D1F24; --accent-ink:#FFFFFF; --accent-soft:#EDEDED; --link:var(--accent);
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface2:#F1F1F1; --ink:#1D1F24; --muted:#5F6257;
+  --line:#E4E4E4; --danger:#A93226; --danger-bg:#F9E8E2; --warn:#7C5310; --warn-bg:#F6ECD2;
   --ok:#2E6B3E; --ok-bg:#E2EFE3; --shadow:0 8px 24px rgba(29,31,36,.08);
   --radius:18px;
   color-scheme:light;
@@ -27,8 +27,8 @@ html[data-theme="dark"]{ --bg:#14110D; --surface:#1E1B15; --surface2:#2A261E; --
   --line:#38332A; --accent:#D9A441; --accent-soft:#33291A; --link:#D9A441; --danger:#F09A8A; --danger-bg:#3A211B;
   --warn:#E8BC5A; --warn-bg:#3A3013; --ok:#8FD19A; --ok-bg:#1B3220;
   --shadow:0 10px 30px rgba(0,0,0,.45); color-scheme:dark; }
-html[data-theme="light"]{ --bg:#F6F2EA; --surface:#FFFFFF; --surface2:#EDE7D8; --ink:#1D1F24; --muted:#5F6257;
-  --line:#DFD7C4; --accent:#8C5A12; --accent-soft:#F3E7CE; --link:#8C5A12; --danger:#A93226; --danger-bg:#F9E8E2;
+html[data-theme="light"]{ --bg:#FFFFFF; --surface:#FFFFFF; --surface2:#F1F1F1; --ink:#1D1F24; --muted:#5F6257;
+  --line:#E4E4E4; --accent:#1D1F24; --accent-soft:#EDEDED; --link:#1D1F24; --danger:#A93226; --danger-bg:#F9E8E2;
   --warn:#7C5310; --warn-bg:#F6ECD2; --ok:#2E6B3E; --ok-bg:#E2EFE3; --shadow:0 8px 24px rgba(29,31,36,.08);
   color-scheme:light; }
 *{box-sizing:border-box}
@@ -43,7 +43,7 @@ a{color:var(--link)}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:999px;padding:12px 22px;
   font:inherit;font-weight:700;cursor:pointer;text-decoration:none;min-height:48px;transition:transform .12s ease, background .15s ease}
 .btn:active{transform:scale(.98)}
-.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-accent{background:var(--accent);color:var(--accent-ink);box-shadow:0 14px 30px rgba(29,31,36,.35);padding:16px 32px;min-height:58px;font-size:17.5px}
 .btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--line)}
 .btn-soft{background:var(--accent-soft);color:var(--ink)}
 .btn-danger{background:var(--danger-bg);color:var(--danger)}
@@ -874,7 +874,7 @@ var STATUS = {
   new:{ label:"New", cls:"st-new" }, agreed:{ label:"Confirmed", cls:"st-ok" },
   done:{ label:"Done", cls:"st-done" }, cancelled:{ label:"Cancelled", cls:"st-cancel" }
 };
-var ACCENTS = ["#8C5A12","#0C5F57","#1D5C73","#40513B","#7A4A21","#6E3B4E","#3E4A5A","#22A447","#06B6D4","#F58220"];
+var ACCENTS = ["#1D1F24","#0C5F57","#1D5C73","#40513B","#7A4A21","#6E3B4E","#3E4A5A","#22A447","#06B6D4","#F58220"];
 
 var settings = {
   prices: JSON.parse(JSON.stringify({
@@ -887,7 +887,7 @@ var settings = {
   minOrder:75, deposit:50,
   company:{ name:"New Life Auto Detailing", phone:"(302) 590-8069", city:"Wilmington, DE",
             area:"Wilmington, Newark, Bear, New Castle, Glasgow, and Elkton, MD",
-            ig:"@louis89956", accent:"#8C5A12" }
+            ig:"@louis89956", accent:"#1D1F24" }
 };
 
 /* ============ STATE ============ */
