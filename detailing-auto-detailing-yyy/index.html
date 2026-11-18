@@ -683,11 +683,11 @@ footer.site .cols{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-bet
     <div class="card">
       <p style="margin:0 0 6px;font-size:18px"><b data-company-name>Auto Detailing YyY</b> · <span data-company-city>Wilmington, DE</span></p>
       <p style="margin:0;color:var(--muted)">Serving: <span data-company-area>Wilmington, DE</span></p>
-      <p style="margin:10px 0 0">Facebook: Auto Detailing YyY — message us on Facebook to book</p>
+      <p style="margin:10px 0 0" data-company-fb-row>Facebook: <a href="#" data-company-fb-link>Facebook page</a></p>
       <p style="margin:6px 0 0;color:var(--muted)">Weekends — we come to your home</p>
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
         <a class="btn btn-accent btn-sm" href="#packages">Book a detail</a>
-        <a class="btn btn-ghost btn-sm" href="https://www.facebook.com/reel/907347122211323/">Facebook page</a>
+        <a class="btn btn-ghost btn-sm" href="#" data-company-fb-link>Facebook</a>
       </div>
     </div>
   </section>
@@ -764,6 +764,7 @@ footer.site .cols{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-bet
             <div><label class="field-label" for="cCity" style="margin-top:0">City</label><input type="text" id="cCity" /></div>
             <div><label class="field-label" for="cArea" style="margin-top:0">Service area</label><input type="text" id="cArea" /></div>
             <div><label class="field-label" for="cIg" style="margin-top:0">Instagram</label><input type="text" id="cIg" /></div>
+            <div><label class="field-label" for="cFb" style="margin-top:0">Facebook</label><input type="text" id="cFb" /></div>
           </div>
           <span class="field-label">Accent color</span>
           <div class="swatches" id="accentSwatches"></div>
@@ -875,7 +876,7 @@ var settings = {
   minOrder:75, deposit:50,
   company:{ name:"Auto Detailing YyY", phone:"", city:"Wilmington, DE",
             area:"Wilmington, DE",
-            ig:"", accent:"#1D1F24" }
+            ig:"", fb:"https://www.facebook.com/61589483033249", accent:"#1D1F24" }
 };
 
 /* ============ STATE ============ */
@@ -1421,6 +1422,7 @@ function fillCompanyFields(){
   $("cCity").value = settings.company.city;
   $("cArea").value = settings.company.area;
   $("cIg").value = settings.company.ig;
+  $("cFb").value = settings.company.fb || "";
   $("accentSwatches").innerHTML = ACCENTS.map(function(a){
     return '<button type="button" class="swatch" data-accent="'+a+'" style="background:'+a+'" aria-label="Accent '+a+'" aria-pressed="'+(settings.company.accent===a)+'"></button>';
   }).join("");
@@ -1437,6 +1439,7 @@ $("saveCompany").addEventListener("click", function(){
   settings.company.city = $("cCity").value.trim();
   settings.company.area = $("cArea").value.trim();
   settings.company.ig = $("cIg").value.trim();
+  settings.company.fb = $("cFb").value.trim();
   applyCompany();
   showToast("Company details saved", false);
 });
@@ -1449,7 +1452,10 @@ function applyCompany(){
   document.querySelectorAll("[data-company-phone]").forEach(function(el){ el.textContent = c.phone; });
   document.querySelectorAll("[data-company-phone-link]").forEach(function(el){ el.setAttribute("href", "tel:" + digits(c.phone)); });
   document.querySelectorAll("[data-company-ig]").forEach(function(el){ el.textContent = c.ig; });
-  document.querySelectorAll("[data-company-ig-link]").forEach(function(el){ el.setAttribute("href", "https://instagram.com/" + c.ig.replace(/^@/, "")); });
+  document.querySelectorAll("[data-company-ig-link]").forEach(function(el){ if(c.ig){ el.style.display = ""; el.setAttribute("href", "https://instagram.com/" + c.ig.replace(/^@/, "")); } else { el.style.display = "none"; } });
+  document.querySelectorAll("[data-company-fb-link]").forEach(function(el){ if(c.fb){ el.style.display = ""; el.setAttribute("href", c.fb); } else { el.style.display = "none"; } });
+  document.querySelectorAll("[data-company-ig-row]").forEach(function(el){ el.style.display = c.ig ? "" : "none"; });
+  document.querySelectorAll("[data-company-fb-row]").forEach(function(el){ el.style.display = c.fb ? "" : "none"; });
   $("logoName").textContent = c.name.replace(" Mobile Detailing", "");
   document.title = c.name + " — Mobile Car Detailing in " + c.city;
 }
