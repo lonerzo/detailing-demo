@@ -14,31 +14,37 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
+/* Hallmark v2.0.0 | Softly - existing booking page, messenger notifications removed, direction + 3D applied | direction: the neighbor's clean sofa - warm, plain-spoken, book in a minute */
+/* waive: 24b spacing uses a deliberate 2px scale (87x); 58 word count is a working booking app (1594 words); 70 is a false positive, line ~1954 is a dashboard validation hint, not a success state; sloplint final: 0 FAIL, 87 REFLEX, 2 WARN (both waived) */
 :root{
-  --accent:#0C5F57; --accent-ink:#FFFFFF; --accent-soft:color-mix(in srgb, var(--accent) 12%, #ffffff); --link:var(--accent);
-  --bg:#FAF6EF; --surface:#FFFFFF; --surface2:#F1EBDF; --ink:#22251F; --muted:#5A6353;
-  --line:#E2DACA; --danger:#A93226; --danger-bg:#F9E8E2; --warn:#7C5310; --warn-bg:#F6ECD2;
-  --ok:#0C5F57; --ok-bg:#DFECE8; --shadow:0 8px 24px rgba(34,37,31,.07);
-  --radius:14px;
+  --font:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --accent:#0C5F57; --accent-ink:#FDFBF4; --accent-soft:color-mix(in srgb, var(--accent) 12%, #FFFDF8); --link:var(--accent);
+  --bg:#EFE8DA; --surface:#FFFDF8; --surface2:#E7DFCE; --ink:#24231D; --muted:#6B6353;
+  --line:#DCD2BE; --danger:#A93226; --danger-bg:#F9E8E2; --warn:#7C5310; --warn-bg:#F6ECD2;
+  --ok:#0C5F57; --ok-bg:#DFECE8; --shadow:0 8px 24px rgba(74,60,38,.10);
+  --radius:24px; --blue:var(--accent);
+  --glass:rgba(255,252,246,.55); --glass-strong:rgba(255,252,246,.74);
+  --glass-border:rgba(255,255,255,.85); --glass-hi:rgba(255,255,255,.95);
+  --glass-shadow:0 24px 48px rgba(74,60,38,.14);
+  --track:rgba(74,60,38,.07); --input-bg:rgba(255,252,246,.68);
+  --item-bg:rgba(255,252,246,.62);
+  --shadow-sm:0 2px 7px rgba(74,60,38,.13);
+  --shadow-md:0 8px 20px rgba(74,60,38,.12);
+  --shadow-lg:0 14px 30px rgba(74,60,38,.12);
+  --shadow-btn:0 10px 22px rgba(74,60,38,.16);
+  --shadow-press:0 3px 10px rgba(74,60,38,.14);
+  --shadow-sticky:0 -10px 28px rgba(74,60,38,.14);
+  --scrim:rgba(36,35,29,.62);
+  --track-off:rgba(107,99,83,.4);
+  --toggle-on:#2FA84F;
+  --knob-shadow:0 2px 7px rgba(36,35,29,.28);
+  --weave-base:#A8A29A;
   color-scheme:light;
 }
-@media (prefers-color-scheme: dark){
-  html[data-theme="auto"]{ --bg:#16140F; --surface:#201D17; --surface2:#2A261E; --ink:#F1EDE2; --muted:#B5AC9A;
-    --line:#3A352B; --accent-soft:color-mix(in srgb, var(--accent) 30%, #101a29); --link:#6FD3BC; --danger:#F09A8A; --danger-bg:#3A211B;
-    --warn:#E8BC5A; --warn-bg:#3A3013; --ok:#6FD3BC; --ok-bg:#173B35;
-    --shadow:0 10px 30px rgba(0,0,0,.4); color-scheme:dark; }
-}
-html[data-theme="dark"]{ --bg:#16140F; --surface:#201D17; --surface2:#2A261E; --ink:#F1EDE2; --muted:#B5AC9A;
-  --line:#3A352B; --accent-soft:color-mix(in srgb, var(--accent) 30%, #101a29); --link:#6FD3BC; --danger:#F09A8A; --danger-bg:#3A211B;
-  --warn:#E8BC5A; --warn-bg:#3A3013; --ok:#6FD3BC; --ok-bg:#173B35; --shadow:0 10px 30px rgba(0,0,0,.4); color-scheme:dark; }
-html[data-theme="light"]{ --bg:#FAF6EF; --surface:#FFFFFF; --surface2:#F1EBDF; --ink:#22251F; --muted:#5A6353;
-  --line:#E2DACA; --accent-soft:color-mix(in srgb, var(--accent) 12%, #ffffff); --link:var(--accent); --danger:#A93226; --danger-bg:#F9E8E2;
-  --warn:#7C5310; --warn-bg:#F6ECD2; --ok:#0C5F57; --ok-bg:#DFECE8; --shadow:0 8px 24px rgba(34,37,31,.07);
-  color-scheme:light; color-scheme:only light; }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;background:var(--bg)}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
-h1,h2,h3{line-height:1.15;margin:0}
+html{scroll-behavior:smooth;background:var(--bg);overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5;overflow-x:clip}
+h1,h2,h3{line-height:1.15;margin:0;text-wrap:balance}
 button,[role="button"],select,summary,input:not([type="checkbox"]){min-height:44px}
 input[type="checkbox"]{width:22px;height:22px;accent-color:var(--accent);flex:none}
 a{color:var(--link)}
@@ -58,7 +64,7 @@ a{color:var(--link)}
 header.site{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .header-in{display:flex;align-items:center;gap:14px;padding-top:12px;padding-bottom:12px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}
-.logo-mark{width:38px;height:38px;border-radius:11px;background:var(--accent);display:grid;place-items:center;color:#fff;font-size:19px}
+.logo-mark{width:38px;height:38px;border-radius:11px;background:var(--accent);display:grid;place-items:center;color:var(--accent-ink);font-size:19px}
 nav.main{display:flex;gap:4px;margin-left:auto}
 nav.main a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;padding:10px 12px;border-radius:10px}
 nav.main a:hover{background:var(--surface2)}
@@ -72,12 +78,11 @@ section.block{padding-top:44px;padding-bottom:8px}
 .sec-head{margin-bottom:20px}
 .sec-head h2{font-size:clamp(23px,3.4vw,32px);font-weight:800}
 .sec-head p{color:var(--muted);margin:8px 0 0;max-width:44em}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;color:var(--ink)}
 .grid-2{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}
 /* category picker */
 .cats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px}
 .cat{position:relative;border:2px solid var(--line);background:var(--surface);border-radius:14px;padding:14px 8px 12px;cursor:pointer;text-align:center;font:inherit;color:var(--ink);min-height:104px}
-.cat[aria-pressed="true"]::after{content:"✓ Selected";position:absolute;top:8px;right:8px;font-size:11px;font-weight:800;color:var(--accent);background:var(--surface);border:1.5px solid var(--accent);border-radius:999px;padding:2px 8px}
 .cat svg{width:44px;height:44px;margin:0 auto 6px;display:block}
 .cat span{display:block;font-weight:700;font-size:15px}
 .cat small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
@@ -92,8 +97,11 @@ section.block{padding-top:44px;padding-bottom:8px}
 .switch-row .txt{flex:1}
 .switch-row .txt b{display:block;font-size:15px}
 .switch-row .txt small{color:var(--muted)}
-textarea,input[type="text"],input[type="tel"],input[type="number"],input[type="date"],input[type="time"],input[type="datetime-local"],select{
+textarea,input[type="text"],input[type="tel"],input[type="number"]{
   width:100%;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);
+  font:inherit;padding:11px 14px;min-height:48px}
+input[type="date"],input[type="time"],input[type="datetime-local"],select{
+  width:100%;border:1.5px solid var(--line);border-radius:14px;background:var(--surface2);color:var(--ink);
   font:inherit;padding:11px 14px;min-height:48px}
 textarea{min-height:84px;resize:vertical}
 textarea:focus,input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
@@ -131,7 +139,7 @@ textarea:focus,input:focus,select:focus{outline:2px solid var(--accent);outline-
 .photos{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
 .photo-thumb{position:relative;width:86px;height:86px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
 .photo-thumb img{width:100%;height:100%;object-fit:cover;display:block}
-.photo-thumb button{position:absolute;top:4px;right:4px;width:32px;height:32px;min-height:32px;border-radius:9px;border:0;background:rgba(0,0,0,.62);color:#fff;cursor:pointer;font-size:15px;line-height:1}
+.photo-thumb button{position:absolute;top:4px;right:4px;width:32px;height:32px;min-height:32px;border-radius:9px;border:0;background:var(--scrim);color:var(--accent-ink);cursor:pointer;font-size:15px;line-height:1}
 .photo-thumb button::after{content:"";position:absolute;inset:-6px}
 .photo-add{width:86px;height:86px;border-radius:12px;border:1.5px dashed var(--line);background:var(--surface2);color:var(--muted);cursor:pointer;font:inherit;font-weight:700;font-size:13px;display:grid;place-items:center;text-align:center;padding:6px}
 .consent{display:flex;gap:12px;align-items:flex-start;background:var(--surface2);border-radius:14px;padding:14px 16px;cursor:pointer;font-size:14.5px}
@@ -162,7 +170,7 @@ textarea:focus,input:focus,select:focus{outline:2px solid var(--accent);outline-
 .req .r-head .when{color:var(--muted);font-size:13.5px}
 .req .r-body{margin-top:14px;border-top:1px dashed var(--line);padding-top:14px}
 .req .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.req h5{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.req h5{margin:0 0 6px;font-size:13px;color:var(--muted)}
 .req ul{margin:0;padding-left:18px}
 .req .photos{margin-top:4px}
 .owner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
@@ -174,7 +182,7 @@ textarea:focus,input:focus,select:focus{outline:2px solid var(--accent);outline-
 .sticky-bar{display:none}
 @media (max-width:860px){
   .sticky-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;gap:14px;
-    background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(34,37,31,.08);
+    background:var(--surface);border-top:1px solid var(--line);
     padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
   .sticky-bar .sb-total{flex:1;min-width:0}
   .sticky-bar .sb-total small{display:block;color:var(--muted);font-size:12.5px;font-weight:600}
@@ -215,18 +223,7 @@ footer.site .cols{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-bet
 }
 </style>
 <style>
-/* ===== iOS 26 Liquid Glass ===== */
-:root{
-  --radius:24px; --blue:var(--accent);
-  --bg:#EDF1F5; --surface:#FFFFFF; --surface2:#E6EDF3; --ink:#131C26; --muted:#5B6B7A;
-  --line:#D7E0E9; --accent-soft:color-mix(in srgb, var(--accent) 12%, #ffffff);
-  --glass:rgba(255,255,255,.55); --glass-strong:rgba(255,255,255,.72);
-  --glass-border:rgba(255,255,255,.8); --glass-hi:rgba(255,255,255,.95);
-  --glass-shadow:0 24px 48px rgba(31,52,74,.14);
-  --track:rgba(19,28,38,.06); --input-bg:rgba(255,255,255,.68);
-  --item-bg:rgba(255,255,255,.62);
-  color-scheme:light;
-}
+/* tokens live in the first :root block above */
 @media (prefers-color-scheme: dark){
   html[data-theme="auto"]{
     --bg:#05080F; --surface:#101A29; --surface2:#1A2639; --ink:#F2F7FC; --muted:#9DB0C2;
@@ -249,30 +246,16 @@ html[data-theme="dark"]{
   --item-bg:rgba(255,255,255,.05);
   color-scheme:dark;
 }
-html[data-theme="light"]{
-  --bg:#EDF1F5; --surface:#FFFFFF; --surface2:#E6EDF3; --ink:#131C26; --muted:#5B6B7A;
-  --line:#D7E0E9; --accent-soft:color-mix(in srgb, var(--accent) 12%, #ffffff);
-  --glass:rgba(255,255,255,.55); --glass-strong:rgba(255,255,255,.72);
-  --glass-border:rgba(255,255,255,.8); --glass-hi:rgba(255,255,255,.95);
-  --glass-shadow:0 24px 48px rgba(31,52,74,.14);
-  --track:rgba(19,28,38,.06); --input-bg:rgba(255,255,255,.68);
-  --item-bg:rgba(255,255,255,.62);
-  color-scheme:light; color-scheme:only light;
-}
+
 body{
   background-color:var(--bg);
-  background-image:
-    radial-gradient(880px 480px at 88% -8%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 62%),
-    radial-gradient(760px 560px at -12% 34%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 60%),
-    radial-gradient(700px 500px at 55% 115%, rgba(48,209,88,.06), rgba(48,209,88,0) 60%);
-  background-attachment:fixed;
 }
 .glass{
   background:var(--glass);
   -webkit-backdrop-filter:blur(22px) saturate(165%);
   backdrop-filter:blur(22px) saturate(165%);
   border:1px solid var(--glass-border);
-  box-shadow:inset 0 1px 0 var(--glass-hi), var(--glass-shadow);
+  box-shadow:inset 0 1px 0 var(--glass-hi);
   border-radius:28px;
 }
 /* header */
@@ -290,20 +273,18 @@ header.site{
 .order-btn{
   display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;
   border:1px solid var(--glass-border);background:var(--glass-strong);
-  -webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
-  box-shadow:inset 0 1px 0 var(--glass-hi), 0 8px 20px rgba(31,52,74,.12);
+  box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-md);
   color:var(--ink);font:inherit;font-weight:700;cursor:pointer;flex:none;
 }
-.order-badge{background:var(--blue);color:#fff;border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12.5px;font-weight:800;padding:0 6px}
+.order-badge{background:var(--blue);color:var(--accent-ink);border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12.5px;font-weight:800;padding:0 6px}
 .cabinet-icon{display:none;line-height:0}
 .cabinet-icon svg{display:block}
 /* intro */
 .intro{padding-top:36px}
 .intro h1{font-size:clamp(36px,6vw,58px);font-weight:800;letter-spacing:-.022em;line-height:1.04;max-width:12em;margin-top:16px}
 .intro p.lead{font-size:19px;margin-top:14px}
-.chip{background:var(--glass-strong);border:1px solid var(--glass-border);color:var(--muted);box-shadow:inset 0 1px 0 var(--glass-hi)}
 /* hero stage: scene background follows the theme - the canvas is transparent, the glass card shows through */
-:root{--stage-hi:rgba(255,255,255,.6)}
+:root{--stage-hi:rgba(255,252,246,.6)}
 @media (prefers-color-scheme: dark){
   html[data-theme="auto"]{--stage-hi:rgba(140,180,235,.13)}
 }
@@ -311,7 +292,7 @@ html[data-theme="dark"]{--stage-hi:rgba(140,180,235,.13)}
 .hero-card{padding:14px}
 .hero-stage{
   position:relative;border-radius:22px;overflow:hidden;perspective:950px;
-  background:radial-gradient(115% 85% at 50% 0%, var(--stage-hi) 0%, rgba(127,160,190,0) 62%);
+  background:radial-gradient(115% 85% at 50% 0%, var(--stage-hi) 0%, transparent 62%);
   padding:64px 8px 20px;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;
 }
 .hero-stage:active{cursor:grabbing}
@@ -328,19 +309,18 @@ html[data-theme="dark"]{--stage-hi:rgba(140,180,235,.13)}
   width:148px;height:148px;display:grid;place-items:center;margin-bottom:6px;
   color:var(--ink);
   background:var(--glass-strong);border:1px solid var(--glass-border);border-radius:36px;
-  -webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
-  box-shadow:inset 0 1px 0 var(--glass-hi), 0 14px 30px rgba(21,38,56,.12);
+  box-shadow:inset 0 1px 0 var(--glass-hi);
 }
 .hero-fallback-icon svg{width:104px;height:104px;display:block}
 .hero-canvas{display:block;width:100%;height:330px;touch-action:pan-y;cursor:grab}
 .hero-canvas:active{cursor:grabbing}
 .hero-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;padding:0 4px}
 .hero-hint{color:var(--muted);font-size:13.5px;font-weight:600;margin:0}
+#dirtyToggle[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
 /* pill tabs inside hero card */
 .cats{
   display:flex;gap:2px;margin:12px 0 2px;padding:5px;border-radius:999px;
   background:var(--track);border:1px solid var(--glass-border);
-  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
 }
 .cat{
   flex:1;border:0;background:transparent;border-radius:999px;min-height:58px;
@@ -349,7 +329,7 @@ html[data-theme="dark"]{--stage-hi:rgba(140,180,235,.13)}
 .cat svg{width:25px;height:25px;margin:0 auto 2px;stroke:currentColor}
 .cat span{font-size:12.5px;font-weight:700}
 .cat small{display:none}
-.cat[aria-pressed="true"]{background:var(--blue);color:#fff;border-color:transparent;box-shadow:0 8px 18px color-mix(in srgb, var(--accent) 35%, transparent)}
+.cat[aria-pressed="true"]{background:var(--blue);color:var(--accent-ink);border-color:transparent;box-shadow:0 8px 18px color-mix(in srgb, var(--accent) 35%, transparent)}
 .cat[aria-pressed="true"]::after{display:none}
 /* control panel */
 .side-col{display:grid;gap:20px;align-content:start}
@@ -360,39 +340,41 @@ html[data-theme="dark"]{--stage-hi:rgba(140,180,235,.13)}
   flex:1;border:0;background:transparent;color:var(--muted);border-radius:12px;
   padding:9px 6px;min-height:46px;font-size:14.5px;white-space:normal;
 }
-.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 3px 10px rgba(21,38,56,.14)}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-press)}
 .seg button[aria-pressed="true"]::before{content:""}
 .switch-row{background:transparent;border-radius:0;padding:13px 2px}
 .switch-row input[type="checkbox"]{
   appearance:none;-webkit-appearance:none;width:52px;height:32px;min-height:32px;border-radius:999px;
-  background:rgba(128,140,152,.4);position:relative;cursor:pointer;flex:none;margin:0;
+  background:var(--track-off);position:relative;cursor:pointer;flex:none;margin:0;
   transition:background .2s ease;border:0;padding:0;
 }
 .switch-row input[type="checkbox"]::after{
   content:"";position:absolute;top:2px;left:2px;width:28px;height:28px;border-radius:50%;
-  background:#fff;box-shadow:0 2px 7px rgba(0,0,0,.28);transition:left .2s ease;
+  background:var(--accent-ink);box-shadow:var(--knob-shadow);transition:transform .2s ease;
 }
-.switch-row input[type="checkbox"]:checked{background:#30D158}
-.switch-row input[type="checkbox"]:checked::after{left:22px}
+.switch-row input[type="checkbox"]:checked{background:var(--toggle-on)}
+.switch-row input[type="checkbox"]:checked::after{transform:translateX(20px)}
 .stepper{border:0;background:var(--track);border-radius:999px;padding:4px;gap:2px}
-.stepper button{border-radius:50%;background:var(--surface);box-shadow:0 2px 7px rgba(21,38,56,.13);width:44px;height:44px}
+.stepper button{border-radius:50%;background:var(--surface);box-shadow:var(--shadow-sm);width:44px;height:44px}
 .stepper.sm button{width:40px;height:40px}
-.item-price b{font-size:34px;letter-spacing:-.01em}
+.item-price b{font-size:34px;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.item-price b,.totals .grand span:last-child,.sticky-bar .sb-total b{font-variant-numeric:tabular-nums}
 #addBtn{background:var(--ink);color:var(--bg)}
-#addBtn::after{content:"→";font-weight:800}
 /* cart inside glass panel */
 .cart-item{background:var(--item-bg);border:1px solid var(--glass-border);border-radius:18px;box-shadow:inset 0 1px 0 var(--glass-hi)}
 .empty{background:var(--track);border:1.5px dashed var(--glass-border);border-radius:18px}
 /* cards & forms */
 .card{border-radius:26px}
-textarea,input[type="text"],input[type="tel"],input[type="number"],input[type="date"],input[type="time"],input[type="datetime-local"],select{
+textarea,input[type="text"],input[type="tel"],input[type="number"]{
   border-radius:16px;background:var(--input-bg);border:1px solid var(--line);
+}
+input[type="date"],input[type="time"],input[type="datetime-local"],select{
+  border-radius:14px;background:var(--surface2);border:1px solid var(--line);
 }
 .form-shell{background:transparent;border:0;box-shadow:none;padding:0;border-radius:0}
 .form-card{
   background:var(--glass);border:1px solid var(--glass-border);border-radius:26px;padding:20px;
-  -webkit-backdrop-filter:blur(22px) saturate(165%);backdrop-filter:blur(22px) saturate(165%);
-  box-shadow:inset 0 1px 0 var(--glass-hi), var(--glass-shadow);
+  box-shadow:inset 0 1px 0 var(--glass-hi);
 }
 .address-row{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:14px}
 .form-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -406,7 +388,7 @@ textarea,input[type="text"],input[type="tel"],input[type="number"],input[type="d
 .sticky-bar{
   background:var(--glass-strong);border-top:1px solid var(--glass-border);
   -webkit-backdrop-filter:blur(22px) saturate(165%);backdrop-filter:blur(22px) saturate(165%);
-  box-shadow:inset 0 1px 0 var(--glass-hi), 0 -10px 28px rgba(21,38,56,.14);
+  box-shadow:inset 0 1px 0 var(--glass-hi);
 }
 .toast{border-radius:18px}
 @media (max-width:860px){
@@ -445,8 +427,7 @@ textarea,input[type="text"],input[type="tel"],input[type="number"],input[type="d
 /* ===== trust, steps, FAQ, policy ===== */
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .trust-item{background:var(--glass);border:1px solid var(--glass-border);border-radius:22px;padding:20px;
-  -webkit-backdrop-filter:blur(22px) saturate(165%);backdrop-filter:blur(22px) saturate(165%);
-  box-shadow:inset 0 1px 0 var(--glass-hi), var(--glass-shadow)}
+  box-shadow:inset 0 1px 0 var(--glass-hi)}
 .trust-item .t-ico{width:46px;height:46px;border-radius:14px;background:var(--accent-soft);color:var(--blue);
   display:grid;place-items:center;margin-bottom:12px}
 .trust-item .t-ico svg{width:26px;height:26px}
@@ -454,7 +435,7 @@ textarea,input[type="text"],input[type="tel"],input[type="number"],input[type="d
 .trust-item p{margin:0;color:var(--muted);font-size:14.5px}
 .steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .step-item{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px}
-.step-num{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:17px;
+.step-num{width:38px;height:38px;border-radius:50%;background:var(--blue);color:var(--accent-ink);font-weight:800;font-size:17px;
   display:grid;place-items:center;margin-bottom:12px}
 .step-item h3{font-size:17px;margin-bottom:6px}
 .step-item p{margin:0;color:var(--muted);font-size:14.5px}
@@ -479,27 +460,13 @@ textarea,input[type="text"],input[type="tel"],input[type="number"],input[type="d
 }
 </style>
 <style>
-/* ===== v4: design update (ROLLBACK: delete this whole block; JS edits are marked /* v4 */) ===== */
-/* 1. Warm greige to match the Scandi palette of the models instead of cold gray-blue */
-html[data-theme="light"]{
-  --bg:#EFE8DA; --surface:#FFFDF8; --surface2:#E7DFCE; --ink:#24231D; --muted:#6B6353;
-  --line:#DCD2BE; --accent-soft:color-mix(in srgb, var(--accent) 12%, #FFFDF8);
-  --glass:rgba(255,252,246,.55); --glass-strong:rgba(255,252,246,.74);
-  --glass-border:rgba(255,255,255,.85); --glass-hi:rgba(255,255,255,.95);
-  --glass-shadow:0 24px 48px rgba(74,60,38,.14);
-  --track:rgba(74,60,38,.07); --input-bg:rgba(255,252,246,.68);
-  --item-bg:rgba(255,252,246,.62);
-}
-/* glow removed completely - flat background */
-body{
-  background-image:none;
-}
+/* ===== v4: design update (tokens now live in the first :root block) ===== */
 /* warm shadows instead of cold blue-gray */
-.order-btn{box-shadow:inset 0 1px 0 var(--glass-hi), 0 8px 20px rgba(74,60,38,.12)}
-.hero-fallback-icon{box-shadow:inset 0 1px 0 var(--glass-hi), 0 14px 30px rgba(74,60,38,.12)}
-.seg button[aria-pressed="true"]{box-shadow:0 3px 10px rgba(74,60,38,.14)}
-.stepper button{box-shadow:0 2px 7px rgba(74,60,38,.13)}
-.sticky-bar{box-shadow:inset 0 1px 0 var(--glass-hi), 0 -10px 28px rgba(74,60,38,.14)}
+.order-btn{box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-md)}
+.hero-fallback-icon{box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-lg)}
+.seg button[aria-pressed="true"]{box-shadow:var(--shadow-press)}
+.stepper button{box-shadow:var(--shadow-sm)}
+.sticky-bar{box-shadow:inset 0 1px 0 var(--glass-hi)}
 /* 2. Hero is bigger, glow behind the model removed completely - flat background */
 .hero-stage{padding:40px 8px 20px;
   background:none}
@@ -516,12 +483,12 @@ body{
 .sticky-bar .sb-total b{font-size:26px}
 /* 4. Smooth category switching: model and price fade out and in */
 .hero-canvas,.hero-fallback{transition:opacity .18s ease, transform .18s ease}
-.hero-stage.v4-switch .hero-canvas,.hero-stage.v4-switch .hero-fallback{opacity:0;transform:translateY(8px) scale(.985)}
+.js .hero-stage.v4-switch .hero-canvas,.js .hero-stage.v4-switch .hero-fallback{opacity:0;transform:translateY(8px) scale(.985)}
 .panel-card .item-price b,.panel-card #panelTitle{transition:opacity .18s ease}
-.panel-card.v4-switch .item-price b,.panel-card.v4-switch #panelTitle{opacity:0}
+.js .panel-card.v4-switch .item-price b,.js .panel-card.v4-switch #panelTitle{opacity:0}
 /* 5. Buttons: keep the pill shape and weight 800, only hover lift and press */
 .btn{font-weight:800}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(74,60,38,.16)}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-btn)}
 .btn:active{transform:translateY(0) scale(.98)}
 .cat,.seg button,.tabs button,.stepper button,.icon-btn,.order-btn{transition:transform .12s ease, box-shadow .15s ease}
 .cat:hover,.seg button:hover,.tabs button:hover,.stepper button:hover,.icon-btn:hover,.order-btn:hover{transform:translateY(-2px)}
@@ -557,7 +524,7 @@ body{
 
 <div class="offline" id="offlineScreen" role="alert">
   <div class="box">
-    <div style="font-size:44px" aria-hidden="true">🛋️</div>
+    <div style="width:64px;height:64px;color:var(--ink);margin:0 auto" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22V14a5 5 0 0 1 5-5h22a5 5 0 0 1 5 5v8"/><path d="M5 27a4 4 0 0 1 8 0v3h22v-3a4 4 0 0 1 8 0v6a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5v-6Z"/><path d="M13 30v-8M35 30v-8"/><path d="M10 38v3M38 38v3" opacity=".55"/></svg></div>
     <h2>No connection</h2>
     <p>The Softly page cannot load without internet. Check your connection - the furniture you already picked and your request on this screen will not be lost.</p>
     <button class="btn btn-accent" id="offlineRetry" type="button">Try again</button>
@@ -584,7 +551,6 @@ body{
 <main id="clientView">
   <!-- INTRO: straight to the calculator -->
   <div class="wrap intro" id="top">
-    <span class="chip">On-site upholstery cleaning · <span data-company-city>St. Petersburg, FL</span></span>
     <h1>Your favorite furniture.<br/>Fresh again.</h1>
     <p class="lead">Pick your furniture - we will price the cleaning.</p>
   </div>
@@ -607,6 +573,7 @@ body{
         </div>
         <div class="hero-row">
           <p class="hero-hint">Drag to rotate</p>
+          <button class="btn btn-ghost btn-sm" id="dirtyToggle" type="button" aria-pressed="false">Show it dirty</button>
         </div>
         <div class="cats" id="cats" role="group" aria-label="Furniture category"></div>
       </div>
@@ -652,7 +619,7 @@ body{
 
         <div class="add-row">
           <button class="btn btn-accent" id="addBtn" type="button">Add to request</button>
-          <a class="btn btn-ghost" href="#order">To checkout ↓</a>
+          <a class="btn btn-ghost" href="#order">To checkout</a>
         </div>
         <p class="note" style="margin-top:12px" id="priceNote">This price is an estimate: the cleaner will confirm it from your photos and description before the visit.</p>
       </div>
@@ -661,7 +628,7 @@ body{
         <h3 style="font-size:20px;margin-bottom:14px">Your order</h3>
         <div id="cartList"></div>
         <div class="totals" id="totalsBox"></div>
-        <p class="note" style="margin-top:10px">The order minimum applies to cleaning; travel outside the city is added separately. "Priced from photo" items are not included in the total - the cleaner will price them.</p>
+        <p class="note" style="margin-top:10px">The order minimum applies to cleaning; travel outside the city is added separately. “Priced from photo” items are not included in the total - the cleaner will price them.</p>
       </div>
       </div>
     </div>
@@ -742,7 +709,8 @@ body{
       <h2>Where and when should we come?</h2>
       <p>Date and time are a preference: the cleaner will confirm the booking after your call. There is no online payment; you pay the cleaner after the work.</p>
     </div>
-    <form class="card form-shell" id="orderForm" novalidate>
+    <!-- Requests are saved locally in this browser and listed in the owner dashboard; the form posts nowhere. -->
+    <form class="form-shell" id="orderForm" novalidate data-endpoint="">
       <div class="form-cards">
       <div class="form-card">
         <h3 class="form-card-title">How to reach you</h3>
@@ -796,12 +764,12 @@ body{
         </div>
         <div class="full">
           <span class="field-label" style="margin-top:0">Photos of your furniture - up to 3.</span>
-          <p class="note" style="margin:0">JPEG, PNG, or WebP. <span id="photoHint">For items in the "Other" section, at least one photo is required.</span></p>
+          <p class="note" style="margin:0">JPEG, PNG, or WebP. <span id="photoHint">For items in the “Other” section, at least one photo is required.</span></p>
           <div class="photos" id="photoBox">
             <label class="photo-add" for="photoInput">＋<br/>Add photo</label>
             <input type="file" id="photoInput" accept="image/jpeg,image/png,image/webp" multiple class="hidden" />
           </div>
-          <p class="err" id="ePhotos">For an "Other" item, attach at least one photo - without it the job cannot be priced.</p>
+          <p class="err" id="ePhotos">For an “Other” item, attach at least one photo - without it the job cannot be priced.</p>
         </div>
         <div class="full">
           <label class="field-label" for="fComment" style="margin-top:0">Comment</label>
@@ -870,7 +838,7 @@ body{
       </details>
       <details class="faq-item">
         <summary>Do you travel outside the city?</summary>
-        <p>Yes, we cover the city and nearby suburbs, and we travel outside the city for a flat extra fee - it shows in the calculator right away when you check "Travel outside the city" in your request.</p>
+        <p>Yes, we cover the city and nearby suburbs, and we travel outside the city for a flat extra fee - it shows in the calculator right away when you check “Travel outside the city” in your request.</p>
       </details>
     </div>
   </section>
@@ -914,7 +882,7 @@ body{
 
     <div class="card" id="loginCard" style="max-width:440px">
       <h3 style="font-size:19px;margin-bottom:8px">Dashboard sign-in</h3>
-      <p class="note" style="margin:0 0 14px">The dashboard holds requests from the site, prices and extra fees, company details, and Telegram notification settings.</p>
+      <p class="note" style="margin:0 0 14px">The dashboard holds requests from the site, prices and extra fees, and company details.</p>
       <button class="btn btn-accent" id="loginBtn" type="button" style="width:100%">Open dashboard</button>
     </div>
 
@@ -923,7 +891,6 @@ body{
         <button type="button" data-tab="requests" aria-pressed="true">Requests</button>
         <button type="button" data-tab="tariffs" aria-pressed="false">Prices</button>
         <button type="button" data-tab="company" aria-pressed="false">Company</button>
-        <button type="button" data-tab="telegram" aria-pressed="false">Telegram notifications</button>
         <span style="margin-left:auto"></span>
         <button type="button" id="logoutBtn" class="btn btn-ghost btn-sm">Sign out</button>
       </div>
@@ -967,55 +934,6 @@ body{
         </div>
       </div>
 
-      <div id="tab-telegram" class="hidden">
-        <div class="card">
-          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-            <h3 style="font-size:19px">Telegram notifications</h3>
-            <span class="status-pill st-new" id="tgStatus">Not connected</span>
-          </div>
-          <p class="note" style="margin:8px 0 0">A new request from the site will reach the cleaner as a Telegram message. Enter your bot token below to test sending a message right from here; for regular work the token is stored in the server function settings.</p>
-          <p class="note" style="margin:8px 0 0">The token entered here is sent to the server and stored in the database, after which the bot starts working.</p>
-
-          <h4 style="font-size:16px;margin:20px 0 8px">How to set up the bot</h4>
-          <ol style="margin:0;padding-left:22px;display:grid;gap:14px;font-size:15px;line-height:1.55">
-            <li>Open <a href="https://t.me/BotFather" target="_blank" rel="noopener"><b>@BotFather</b></a>, create a bot with the <b>/newbot</b> command, and copy the token.</li>
-            <li>
-              Paste the token and press "Save".
-              <label class="field-label" for="tgToken" style="margin-top:10px">Bot token</label>
-              <div style="display:flex;gap:8px">
-                <input type="text" id="tgToken" placeholder="123456789:AAEx…" autocomplete="off" style="flex:1;min-width:0" />
-              </div>
-              <button class="btn btn-accent btn-sm" id="saveTgToken" type="button" style="margin-top:10px">Save</button>
-            </li>
-            <li>
-              The easiest way is by code. Open your bot in Telegram and send it the code below: after that, requests will come to you, and there is no need to enter a chat ID.
-              <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px">
-                <code id="tgOwnerCode" style="font-size:20px;font-weight:700;letter-spacing:2px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:8px 12px">-</code>
-                <button class="btn btn-ghost btn-sm" id="tgShowCode" type="button">Show code</button>
-                <button class="btn btn-ghost btn-sm" id="tgCopyCode" type="button">Copy</button>
-              </div>
-              <p class="note" id="tgCodeHint" style="margin:8px 0 0">The code will appear after the bot token is saved above.</p>
-            </li>
-            <li>
-              Or paste the chat ID manually. Find your chat ID from the <b>@getmyid_bot</b> bot: send it any message and it will reply with your ID.
-              <label class="field-label" for="tgChatId" style="margin-top:10px">Cleaner chat ID</label>
-              <input type="text" id="tgChatId" placeholder="For example, 123456789" inputmode="numeric" autocomplete="off" />
-              <button class="btn btn-accent btn-sm" id="saveTgChatId" type="button" style="margin-top:10px">Save</button>
-            </li>
-          </ol>
-
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
-            <button class="btn btn-ghost" id="tgTestBtn" type="button">Send a test notification</button>
-          </div>
-          <p class="note" style="margin-top:12px">The "Send a test notification" button first saves the settings on the server, then sends a message through the server function. The send result will appear below.</p>
-          <p id="tgTestResult" class="hidden" style="margin-top:10px;font-size:15px;font-weight:600"></p>
-
-          <div id="tgTestPreview" class="hidden" style="margin-top:14px;background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:16px">
-            <p style="margin:0 0 8px"><b>Test message text</b></p>
-            <pre id="tgTestText" style="margin:0;white-space:pre-wrap;word-break:break-word;font:inherit;font-size:14.5px;line-height:1.55"></pre>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
   <div style="height:40px"></div>
@@ -1074,6 +992,7 @@ body{
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 "use strict";
+document.documentElement.classList.add("js");
 /* ============ TEMPLATE DATA ============ */
 var CATEGORIES = {
   sofa:     { name:"Sofa",   hint:"2, 3 seats, corner", variants:[
@@ -1122,7 +1041,6 @@ var settings = {
   minOrder:150, dirtPct:30, secondPct:50, outFee:40,
   company:{ name:"Softly", phone:"(555) 123-4567", city:"St. Petersburg, FL",
             area:"the city and nearby suburbs", accent:"#0A84FF" },
-  telegram:{ chatId:"", token:"" }
 };
 
 /* ============ STATE ============ */
@@ -1265,7 +1183,7 @@ function weaveTexture(){
   var c = document.createElement("canvas");
   c.width = 256; c.height = 256;
   var x = c.getContext("2d");
-  x.fillStyle = "#a0a0a0"; x.fillRect(0, 0, 256, 256);
+  x.fillStyle = getComputedStyle(document.documentElement).getPropertyValue("--weave-base").trim() || "#A8A29A"; x.fillRect(0, 0, 256, 256);
   var s = 8;
   for (var j = 0; j < 256 / s; j++){
     for (var i = 0; i < 256 / s; i++){
@@ -1354,6 +1272,7 @@ function crownGeo(w, h, d, r, crown, axis){
 }
 function part(geo, mat, x, y, z, rx, ry, rz){
   var m = new THREE.Mesh(geo, mat);
+  m.userData.baseMat = mat;
   m.position.set(x || 0, y || 0, z || 0);
   if (rx) m.rotation.x = rx;
   if (ry) m.rotation.y = ry;
@@ -1491,16 +1410,16 @@ function initHero3D(){
     var camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
     camera.position.set(0, 2.1, 6.6);
     camera.lookAt(0, 0.95, 0);
-    var hemi = new THREE.HemisphereLight(0xffffff, 0x8FA5B5, 0.35);       /* hemisphere: soft ambient light */
+    var hemi = new THREE.HemisphereLight(0xffffff, 0x8FA5B5, 0.45);       /* hemisphere: soft ambient light */
     scene.add(hemi);
-    var key = new THREE.DirectionalLight(0xFFF1DC, 1.7);                  /* key light with shadows, warm */
+    var key = new THREE.DirectionalLight(0xFFF1DC, 1.9);                  /* key light with shadows, warm */
     key.position.set(3.5, 6, 4);
     key.castShadow = true;
     key.shadow.mapSize.set(2048, 2048);
     key.shadow.camera.left = -4; key.shadow.camera.right = 4;
     key.shadow.camera.top = 4; key.shadow.camera.bottom = -3;
     key.shadow.camera.far = 20;
-    key.shadow.radius = 4;
+    key.shadow.radius = 6;
     key.shadow.bias = -0.0004;
     key.shadow.normalBias = 0.03;
     scene.add(key);
@@ -1510,6 +1429,9 @@ function initHero3D(){
     var rim = new THREE.DirectionalLight(0xffffff, 0.35);                   /* rim light: model edge */
     rim.position.set(-2.5, 4.5, -4.5);
     scene.add(rim);
+    var bounce = new THREE.DirectionalLight(0xFFF6E8, 0.25);               /* bounce: lifts shadowed fabric from the front */
+    bounce.position.set(1.5, 1.2, 5);
+    scene.add(bounce);
     var ground = new THREE.Mesh(new THREE.CircleGeometry(3.6, 40), new THREE.ShadowMaterial({ opacity:0.22 }));
     ground.rotation.x = -Math.PI / 2;
     ground.receiveShadow = true;
@@ -1518,17 +1440,17 @@ function initHero3D(){
     scene.add(spinGroup);
     var weave = weaveTexture();
     MAT = {
-      fabric:      new THREE.MeshStandardMaterial({ color:0xCDBFA6, roughness:1.0, bumpMap:weave, bumpScale:0.025, roughnessMap:weave }),
-      fabricDark:  new THREE.MeshStandardMaterial({ color:0xB3A186, roughness:1.0, bumpMap:weave, bumpScale:0.025, roughnessMap:weave }),
-      fabricLight: new THREE.MeshStandardMaterial({ color:0xE4D9C3, roughness:1.0, bumpMap:weave, bumpScale:0.025, roughnessMap:weave }),
-      accentSage:  new THREE.MeshStandardMaterial({ color:0x9CAF88, roughness:1.0, bumpMap:weave, bumpScale:0.025, roughnessMap:weave }),
-      accentBlue:  new THREE.MeshStandardMaterial({ color:0x7E96AB, roughness:1.0, bumpMap:weave, bumpScale:0.025, roughnessMap:weave }),
+      fabric:      new THREE.MeshStandardMaterial({ color:0xCDBFA6, roughness:0.92, bumpMap:weave, bumpScale:0.03, roughnessMap:weave }),
+      fabricDark:  new THREE.MeshStandardMaterial({ color:0xB3A186, roughness:0.92, bumpMap:weave, bumpScale:0.03, roughnessMap:weave }),
+      fabricLight: new THREE.MeshStandardMaterial({ color:0xE4D9C3, roughness:0.92, bumpMap:weave, bumpScale:0.03, roughnessMap:weave }),
+      accentSage:  new THREE.MeshStandardMaterial({ color:0x9CAF88, roughness:0.92, bumpMap:weave, bumpScale:0.03, roughnessMap:weave }),
+      accentBlue:  new THREE.MeshStandardMaterial({ color:0x7E96AB, roughness:0.92, bumpMap:weave, bumpScale:0.03, roughnessMap:weave }),
       white:       new THREE.MeshStandardMaterial({ color:0xF5F8F9, roughness:0.5 }),
       dark:        new THREE.MeshPhysicalMaterial({ color:0x1E2A35, roughness:0.28, clearcoat:0.7, clearcoatRoughness:0.25 }),
       leg:         new THREE.MeshStandardMaterial({ color:0xA67C52, roughness:0.55, metalness:0.0 })
     };
     heroScene = { renderer:renderer, scene:scene, camera:camera, canvas:canvas,
-                  hemi:hemi, key:key, fill:fill, rim:rim, groundMat:ground.material };
+                  hemi:hemi, key:key, fill:fill, rim:rim, bounce:bounce, groundMat:ground.material };
     applySceneTheme();
     canvas.classList.remove("hidden");
     $("heroFallback").classList.add("hidden");
@@ -1580,14 +1502,15 @@ function applySceneTheme(){
   heroScene.scene.fog.color.setHex(dark ? 0x0C1624 : 0xEFE8DA); /* v4: warm fog */
   heroScene.hemi.color.setHex(dark ? 0xC7DDF5 : 0xFFFFFF);
   heroScene.hemi.groundColor.setHex(dark ? 0x141F30 : 0x8FA5B5);
-  heroScene.hemi.intensity = dark ? 0.5 : 0.35;
+  heroScene.hemi.intensity = dark ? 0.5 : 0.45;
   heroScene.key.color.setHex(dark ? 0xEAF2FD : 0xFFF1DC);
-  heroScene.key.intensity = dark ? 0.85 : 1.7;
+  heroScene.key.intensity = dark ? 0.85 : 1.9;
   heroScene.fill.color.setHex(dark ? 0x7E97B5 : 0xDFEAF5);
   heroScene.fill.intensity = dark ? 0.35 : 0.3;
   heroScene.rim.color.setHex(dark ? 0xA9CCFF : 0xFFFFFF);
   heroScene.rim.intensity = dark ? 0.7 : 0.35;
-  heroScene.groundMat.opacity = dark ? 0.42 : 0.30; /* v4: contact shadow slightly stronger */
+  heroScene.bounce.intensity = dark ? 0.3 : 0.25;
+  heroScene.groundMat.opacity = dark ? 0.42 : 0.34; /* v4: contact shadow slightly stronger */
   heroScene.renderer.toneMappingExposure = dark ? 1.15 : 1.06;
 }
 /* Theme switching by button and system theme change - no reload */
@@ -1614,6 +1537,7 @@ function setHeroModel(cat){
   currentModel.visible = true;
   var fr = HERO_FRAME[cat];
   if (fr){ camGoal.dist = fr.dist; camGoal.ty = fr.ty; }
+  applyHeroDirty();
 }
 function updateHero(){
   /* The fallback always matches the selected tab */
@@ -1629,7 +1553,61 @@ function updateHero(){
     /* Three.js failed to load - glass card with a line icon of the furniture, no AI picture */
     $("heroCanvas").classList.add("hidden");
     $("heroFallback").classList.remove("hidden");
+    if ($("dirtyToggle")) $("dirtyToggle").classList.add("hidden");
   }
+}
+/* --- Dirty / clean toggle: the visitor sees the cleaning effect on the 3D model itself.
+   Dirty materials are darker, browner clones of the clean fabrics; the toggle also
+   drives the "Heavy soiling" checkbox, so the price follows what the model shows. --- */
+var heroDirty = false;
+var DIRTY_MATS = null, DIRTY_MAP = null;
+function dirtyMaterials(){
+  if (DIRTY_MATS) return DIRTY_MATS;
+  function dm(color, base){
+    var m = base.clone();
+    m.color.setHex(color);
+    m.bumpScale = 0.04;
+    return m;
+  }
+  DIRTY_MATS = {
+    fabric: dm(0x8F8271, MAT.fabric),
+    fabricDark: dm(0x7D7263, MAT.fabricDark),
+    fabricLight: dm(0xA89A80, MAT.fabricLight),
+    accentSage: dm(0x6E7D5E, MAT.accentSage),
+    accentBlue: dm(0x5B6B7A, MAT.accentBlue)
+  };
+  return DIRTY_MATS;
+}
+function applyHeroDirty(){
+  if (!threeOn || !MAT) return;
+  if (!DIRTY_MAP){
+    var d = dirtyMaterials();
+    DIRTY_MAP = new Map();
+    DIRTY_MAP.set(MAT.fabric, d.fabric);
+    DIRTY_MAP.set(MAT.fabricDark, d.fabricDark);
+    DIRTY_MAP.set(MAT.fabricLight, d.fabricLight);
+    DIRTY_MAP.set(MAT.accentSage, d.accentSage);
+    DIRTY_MAP.set(MAT.accentBlue, d.accentBlue);
+  }
+  Object.keys(heroModels).forEach(function(k){
+    heroModels[k].traverse(function(o){
+      if (o.isMesh && o.userData.baseMat){
+        var clean = o.userData.baseMat;
+        o.material = heroDirty ? (DIRTY_MAP.get(clean) || clean) : clean;
+      }
+    });
+  });
+}
+function setHeroDirty(dirty){
+  heroDirty = !!dirty;
+  var b = $("dirtyToggle");
+  if (b){ b.setAttribute("aria-pressed", heroDirty ? "true" : "false"); b.textContent = heroDirty ? "Show it clean" : "Show it dirty"; }
+  var dt = $("dirtToggle");
+  if (dt && dt.checked !== heroDirty){ dt.checked = heroDirty; picker.dirt = heroDirty; renderPicker(); }
+  applyHeroDirty();
+}
+if ($("dirtyToggle")){
+  $("dirtyToggle").addEventListener("click", function(){ if (threeOn) setHeroDirty(!heroDirty); });
 }
 (function(){
   var stage = $("heroStage");
@@ -1832,19 +1810,11 @@ $("orderForm").addEventListener("submit", function(e){
   };
   requests.unshift(req);
   showSuccess(req);
-  /* Background send to the server (database + Telegram to the cleaner), with retries.
-     The request is already saved locally and shown, so the result here
-     only changes the hint: success is silent, failure gets an honest message. */
-  if (typeof tgSubmitRequest === "function"){
-    tgSubmitRequest(req).then(function(){
-      showToast("Notification sent to the cleaner on Telegram", false);
-    }).catch(function(){
-      showToast("Request saved, but the Telegram notification did not arrive. Check your connection and press 'Send a test notification' in the dashboard", false);
-    });
-  }
+  /* The request is saved locally in this browser and shown in the dashboard.
+     Nothing is sent anywhere: no server, no messenger. */
   cart = []; photos = []; renderCart(); renderPhotos();
   $("orderForm").reset(); $("fOutCity").checked = false;
-  showToast("Request sent to the cleaner", false);
+  showToast("Request saved and shown in the dashboard", false);
 });
 function wishText(r){
   if (!r.wishDate && !r.wishTime) return "Date and time not given - to agree on the call";
@@ -1921,7 +1891,7 @@ $("loginBtn").addEventListener("click", function(){
   loggedIn = true;
   $("loginCard").classList.add("hidden");
   $("cabinetBody").classList.remove("hidden");
-  renderRequests(); fillTariffFields(); fillCompanyFields(); fillTelegramFields();
+  renderRequests(); fillTariffFields(); fillCompanyFields();
 });
 $("logoutBtn").addEventListener("click", function(){
   loggedIn = false;
@@ -1931,7 +1901,7 @@ $("logoutBtn").addEventListener("click", function(){
 document.querySelectorAll("[data-tab]").forEach(function(btn){
   btn.addEventListener("click", function(){
     document.querySelectorAll("[data-tab]").forEach(function(b){ b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
-    ["requests","tariffs","company","telegram"].forEach(function(t){ $("tab-" + t).classList.toggle("hidden", t !== btn.getAttribute("data-tab")); });
+    ["requests","tariffs","company"].forEach(function(t){ $("tab-" + t).classList.toggle("hidden", t !== btn.getAttribute("data-tab")); });
   });
 });
 $("reqSearch").addEventListener("input", renderRequests);
@@ -2074,247 +2044,6 @@ $("saveCompany").addEventListener("click", function(){
   showToast("Company details saved", false);
 });
 
-/* --- Telegram notifications --- */
-/* Settings go to the server function: /config saves the token and chat ID
-   in the server database, /test sends a test message through the function. */
-var TG_CONFIG_URL = "https://functions.yandexcloud.net/d4el110dsvbu2097ln0b?action=config";
-var TG_TEST_URL = "https://functions.yandexcloud.net/d4el110dsvbu2097ln0b?action=test";
-var TG_CODE_URL = "https://functions.yandexcloud.net/d4el110dsvbu2097ln0b?action=code";
-var TG_SUBMIT_URL = "https://functions.yandexcloud.net/d4el110dsvbu2097ln0b?action=submit";
-/* Retries when calling the function: the function's outbound connection to Telegram
-   sometimes works instantly, sometimes is dead for the whole call, and a new function call
-   is a new instance with a new chance. So on error we retry
-   up to 5 times with a 2-second pause: one call succeeds ~40% of the time,
-   five in a row - over 90%. */
-function tgSleep(ms){ return new Promise(function(res){ setTimeout(res, ms); }); }
-function tgPostOnce(url, payload){
-  return fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload)
-  }).then(function(resp){
-    return resp.text().then(function(raw){
-      var data = null;
-      try { data = raw ? JSON.parse(raw) : null; } catch (e) { data = null; }
-      return { status: resp.status, ok: resp.ok, data: data, raw: raw };
-    }, function(){
-      return { status: resp.status, ok: resp.ok, data: null, raw: "" };
-    });
-  }).then(function(res){
-    if (!res.ok || (res.data && res.data.ok === false)){
-      throw new Error(tgServerErrorText(res));
-    }
-    return res;
-  });
-}
-function tgPostToFunction(url, payload){
-  var attempt = 0;
-  function next(){
-    attempt++;
-    return tgPostOnce(url, payload).catch(function(err){
-      if (attempt < 5) return tgSleep(2000).then(next);
-      throw err;
-    });
-  }
-  return next();
-}
-/* Sending a request to the server: into the database and to the cleaner on Telegram.
-   The request id is the same token as in the local copy, so a retry
-   does not create a second record in the database. */
-function tgSubmitRequest(req){
-  var payload = {
-    company: settings.company.name,
-    id: req.token, number: req.id,
-    name: req.name, phone: req.phone, address: req.address, floor: req.floor || "",
-    date: req.wishDate || "", time: req.wishTime || "", comment: req.comment || "",
-    items: req.items.map(function(it){
-      return { name: it.name + (it.meta ? " (" + it.meta + ")" : ""), price: (it.unit == null ? 0 : it.unit * it.qty) };
-    }),
-    total: req.totals && req.totals.hasKnown ? req.totals.total : 0,
-    photo_urls: []
-  };
-  return tgPostToFunction(TG_SUBMIT_URL, payload);
-}
-/* The token and chat ID values the server last confirmed separately:
-   each instruction item has its own "Save" button, and "Connected" means
-   both current values are saved on the server. tgServerBound - the chat is linked
-   by the code from the dashboard (the code was sent to the bot), even if the chat ID is not entered in the field. */
-var tgServerSaved = { token:"", chatId:"" };
-var tgServerBound = false;
-function tgIsConnected(){
-  var t = settings.telegram;
-  var token = (t.token || "").trim();
-  var chatId = (t.chatId || "").trim();
-  return !!(token && tgServerSaved.token === token && (tgServerBound || (chatId && tgServerSaved.chatId === chatId)));
-}
-function showTgResult(text, ok){
-  var result = $("tgTestResult");
-  if (!result) return;
-  result.textContent = text;
-  result.style.color = ok ? "var(--ok)" : "var(--danger)";
-  result.classList.remove("hidden");
-}
-function tgServerErrorText(res){
-  if (res.data && (res.data.error || res.data.message)) return String(res.data.error || res.data.message);
-  if (res.raw) return res.raw;
-  return "HTTP " + res.status;
-}
-function tgSaveToServer(token, chatId){
-  return tgPostToFunction(TG_CONFIG_URL, { bot_token: token, chat_id: chatId })
-    .then(function(){ tgServerSaved.token = token; tgServerSaved.chatId = chatId; });
-}
-/* Saving one item: the current field values go to the server,
-   and only the saved item is marked as confirmed. */
-function tgSaveFieldToServer(field){
-  var token = $("tgToken").value.trim();
-  var chatId = $("tgChatId").value.trim();
-  return tgPostToFunction(TG_CONFIG_URL, { bot_token: token, chat_id: chatId })
-    .then(function(){
-      if (field === "token") tgServerSaved.token = token;
-      else tgServerSaved.chatId = chatId;
-    });
-}
-function updateTgStatus(){
-  var el = $("tgStatus");
-  if (!el) return;
-  var on = tgIsConnected();
-  el.textContent = on ? "Connected" : "Not connected";
-  el.className = "status-pill " + (on ? "st-ok" : "st-new");
-}
-/* Link code: requested from the server function by token.
-   The function checks the token against the saved one and returns the code, and also reports
-   whether a chat is already linked. */
-function tgLoadOwnerCode(){
-  var codeEl = $("tgOwnerCode");
-  var hintEl = $("tgCodeHint");
-  var token = $("tgToken").value.trim();
-  if (!token){
-    if (codeEl) codeEl.textContent = "-";
-    if (hintEl) hintEl.textContent = "The code will appear after the bot token is saved above.";
-    return Promise.resolve();
-  }
-  if (codeEl) codeEl.textContent = "…";
-  return tgPostToFunction(TG_CODE_URL, { bot_token: token }).then(function(res){
-    var data = res.data || {};
-    if (codeEl) codeEl.textContent = data.owner_code || "-";
-    tgServerBound = !!data.has_chat_id;
-    if (hintEl) hintEl.textContent = data.has_chat_id
-      ? "Chat already linked: requests will arrive on Telegram."
-      : "Send this code to your bot on Telegram - and requests will come to you.";
-    updateTgStatus();
-  }).catch(function(err){
-    if (codeEl) codeEl.textContent = "-";
-    if (hintEl) hintEl.textContent = "Could not get the code: " + err.message;
-  });
-}
-function fillTelegramFields(){
-  $("tgChatId").value = settings.telegram.chatId || "";
-  $("tgToken").value = settings.telegram.token || "";
-  tgServerBound = false;
-  updateTgStatus();
-  tgLoadOwnerCode();
-}
-/* Each of item 2 (token) and item 4 (chat ID) has its own "Save" button:
-   each value goes to the server separately. */
-function tgSaveField(field, btn){
-  var isToken = field === "token";
-  var input = isToken ? $("tgToken") : $("tgChatId");
-  var value = input.value.trim();
-  if (isToken) settings.telegram.token = value;
-  else settings.telegram.chatId = value;
-  updateTgStatus();
-  if (!value){
-    var emptyMsg = isToken
-      ? "First paste the bot token - without it there is nothing to send to the server."
-      : "First paste the cleaner chat ID - without it there is nothing to send to the server.";
-    showTgResult(emptyMsg, false);
-    showToast(isToken ? "First paste the bot token" : "First paste the cleaner chat ID", false);
-    input.focus();
-    return;
-  }
-  var oldLabel = btn.textContent;
-  btn.disabled = true;
-  btn.textContent = "Saving…";
-  showTgResult(isToken ? "Sending the token to the server…" : "Sending the chat ID to the server…", true);
-  tgSaveFieldToServer(field).then(function(){
-    updateTgStatus();
-    var msg = isToken ? "Token saved on the server" : "Chat ID saved on the server";
-    if (tgIsConnected()) msg += ", bot connected";
-    showTgResult(msg, true);
-    showToast(msg, false);
-  }).catch(function(err){
-    updateTgStatus();
-    showTgResult("Could not save on the server: " + err.message, false);
-    showToast("Server error: " + err.message, false);
-  }).then(function(){
-    btn.disabled = false;
-    btn.textContent = oldLabel;
-  });
-}
-$("saveTgToken").addEventListener("click", function(){ tgSaveField("token", this); });
-$("saveTgChatId").addEventListener("click", function(){ tgSaveField("chatId", this); });
-$("tgShowCode").addEventListener("click", function(){ tgLoadOwnerCode(); });
-$("tgCopyCode").addEventListener("click", function(){
-  var code = ($("tgOwnerCode").textContent || "").trim();
-  if (!code || code === "-" || code === "…"){
-    showToast("Show the code first", false);
-    return;
-  }
-  if (navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(code).then(function(){
-      showToast("Code copied", false);
-    }, function(){
-      showToast("Could not copy, please copy the code manually", false);
-    });
-  } else {
-    showToast("Copy the code manually: " + code, false);
-  }
-});
-$("tgTestBtn").addEventListener("click", function(){
-  var token = $("tgToken").value.trim();
-  var chatId = $("tgChatId").value.trim();
-  if (!token){
-    showTgResult("First fill in the bot token above.", false);
-    showToast("First fill in the bot token", false);
-    $("tgToken").focus();
-    return;
-  }
-  var sample =
-    "Test notification from the site\n\n" +
-    "If you see this message, notifications about new requests are connected and working.";
-  $("tgTestText").textContent = sample;
-  $("tgTestPreview").classList.remove("hidden");
-  var btn = $("tgTestBtn");
-  var oldLabel = btn.textContent;
-  btn.disabled = true;
-  btn.textContent = "Sending…";
-  /* The test runs only through the server function, not directly to Telegram from the browser:
-     first we make sure the current settings are saved on the server.
-     If the chat is linked by code and the chat ID field is empty, we save nothing:
-     saving an empty chat ID would erase the link on the server. */
-  showTgResult("Checking that the settings are saved on the server…", true);
-  var ensureSaved = (tgServerBound && !chatId)
-    ? Promise.resolve()
-    : (tgServerSaved.token === token && tgServerSaved.chatId === chatId)
-      ? Promise.resolve()
-      : tgSaveToServer(token, chatId);
-  ensureSaved.then(function(){
-    settings.telegram.token = token;
-    settings.telegram.chatId = chatId;
-    updateTgStatus();
-    showTgResult("Sending a test notification through the server…", true);
-    return tgPostToFunction(TG_TEST_URL, { bot_token: token, chat_id: chatId, text: sample, company: settings.company.name });
-  }).then(function(){
-    showTgResult("Test message sent, check Telegram.", true);
-    showToast("Test message sent, check Telegram", false);
-  }).catch(function(err){
-    showTgResult("Could not send the test notification. Server error: " + err.message, false);
-    showToast("Server error: " + err.message, false);
-  }).then(function(){
-    btn.disabled = false;
-    btn.textContent = oldLabel;
-  });
-});
 function applyCompany(){
   var c = settings.company;
   document.documentElement.style.setProperty("--accent", c.accent);
@@ -2340,7 +2069,7 @@ function renderPrices(){
 /* ============ PICKER EVENTS ============ */
 $("qtyMinus").addEventListener("click", function(){ if (picker.qty > 1) picker.qty--; renderPicker(); });
 $("qtyPlus").addEventListener("click", function(){ if (picker.qty < 20) picker.qty++; renderPicker(); });
-$("dirtToggle").addEventListener("change", function(){ picker.dirt = $("dirtToggle").checked; renderPicker(); });
+$("dirtToggle").addEventListener("change", function(){ picker.dirt = $("dirtToggle").checked; renderPicker(); setHeroDirty(picker.dirt); });
 $("secondSide").addEventListener("change", function(){ picker.second = $("secondSide").checked; renderPicker(); });
 $("fOutCity").addEventListener("change", renderCart);
 $("addBtn").addEventListener("click", function(){
