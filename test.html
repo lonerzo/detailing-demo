@@ -1,0 +1,2392 @@
+<!doctype html>
+<html lang="ru" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Тест — выездная химчистка мягкой мебели. Расчёт стоимости онлайн и заявка за минуту." />
+<meta name="theme-color" content="#0A84FF" />
+<link rel="icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAC8klEQVR4nO3dPWqUURiAUSM2VoJgKbF0Ka5Bl2EjsRZsXIZ7cCmWgqUoaJPWwsIQY4h5vD8znNNO886dZ+7cL0O+OTk9e34Hbuvu6gE4bAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERHJv9QBX+PTm/eoRNvXk9YvVI1x2cnr2fPUMv0nnJrbKaJeApPOvNsloizOQem5hk0VbH9AmC3GIdli69QFx0BYHtMN76KAtX0A7EMnKgJa/e47D2mW0A5EIiERAJAIiERCJgEhmf5nq0n2Cmd+zzgtIOpPNyWhGQNJZaHRGw89A6llr9Po7RJOMDcj2s4Ohr4IdiGRgQLaffYx7LXb8t56Lvpx/Xz3CYo/uP1g9wnV8hJEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRrL9D2cdvn1ePsLWv5z+uefTpw8fTJrnSwB3oJre4Vk90wwUcd7vxlR9h6vkv1i7j2IBm/uoHfzP0VXCIJhkekE1ordHrP+Mq7NdzcN/xyY7n554uupSRc3T355X8zF1/9t+BLj23Dy/fTh7g+Kw9JCw+RD9792rtAIdu+QLO/gjjyLiMJxEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGR/AQZAGEUeNkhyQAAAABJRU5ErkJggg==" />
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAIAAADdvvtQAAAC8klEQVR4nO3dPWqUURiAUSM2VoJgKbF0Ka5Bl2EjsRZsXIZ7cCmWgqUoaJPWwsIQY4h5vD8znNNO886dZ+7cL0O+OTk9e34Hbuvu6gE4bAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERHJv9QBX+PTm/eoRNvXk9YvVI1x2cnr2fPUMv0nnJrbKaJeApPOvNsloizOQem5hk0VbH9AmC3GIdli69QFx0BYHtMN76KAtX0A7EMnKgJa/e47D2mW0A5EIiERAJAIiERCJgEhmf5nq0n2Cmd+zzgtIOpPNyWhGQNJZaHRGw89A6llr9Po7RJOMDcj2s4Ohr4IdiGRgQLaffYx7LXb8t56Lvpx/Xz3CYo/uP1g9wnV8hJEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRrL9D2cdvn1ePsLWv5z+uefTpw8fTJrnSwB3oJre4Vk90wwUcd7vxlR9h6vkv1i7j2IBm/uoHfzP0VXCIJhkekE1ordHrP+Mq7NdzcN/xyY7n554uupSRc3T355X8zF1/9t+BLj23Dy/fTh7g+Kw9JCw+RD9792rtAIdu+QLO/gjjyLiMJxEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiASAZEIiERAJAIiERCJgEgERCIgEgGR/AQZAGEUeNkhyQAAAABJRU5ErkJggg==" />
+<link rel="manifest" href="data:application/octet-stream;base64,eyJiYWNrZ3JvdW5kX2NvbG9yIjoiI0Y2RjhGNyIsImRlc2NyaXB0aW9uIjoi0KDQsNGB0YfRkdGCINGB0YLQvtC40LzQvtGB0YLQuCDQuCDQt9Cw0Y/QstC60LAg0L3QsCDQstGL0LXQt9C00L3Rg9GOINGF0LjQvNGH0LjRgdGC0LrRgyDQvNGP0LPQutC+0Lkg0LzQtdCx0LXQu9C4IiwiZGlzcGxheSI6InN0YW5kYWxvbmUiLCJpY29ucyI6W3sicHVycG9zZSI6ImFueSIsInNpemVzIjoiMTkyeDE5MiIsInNyYyI6Imljb24tMTkyLnBuZyIsInR5cGUiOiJpbWFnZS9wbmcifSx7InB1cnBvc2UiOiJhbnkiLCJzaXplcyI6IjUxMng1MTIiLCJzcmMiOiJpY29uLTUxMi5wbmciLCJ0eXBlIjoiaW1hZ2UvcG5nIn0seyJwdXJwb3NlIjoibWFza2FibGUiLCJzaXplcyI6IjUxMng1MTIiLCJzcmMiOiJpY29uLTUxMi5wbmciLCJ0eXBlIjoiaW1hZ2UvcG5nIn1dLCJsYW5nIjoicnUiLCJuYW1lIjoi0JzRj9Cz0LrQviDigJQg0LLRi9C10LfQtNC90LDRjyDRhdC40LzRh9C40YHRgtC60LAg0LzQtdCx0LXQu9C4Iiwib3JpZW50YXRpb24iOiJwb3J0cmFpdC1wcmltYXJ5Iiwic2NvcGUiOiIuIiwic2hvcnRfbmFtZSI6ItCc0Y/Qs9C60L4iLCJzdGFydF91cmwiOiIuIiwidGhlbWVfY29sb3IiOiIjMUY3QTVBIn0=" />
+<title>Тест — выездная химчистка мебели</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --accent:#0C5F57; --accent-ink:#FFFFFF; --accent-soft:color-mix(in srgb, var(--accent) 12%, #ffffff); --link:var(--accent);
+  --bg:#FAF6EF; --surface:#FFFFFF; --surface2:#F1EBDF; --ink:#22251F; --muted:#5A6353;
+  --line:#E2DACA; --danger:#A93226; --danger-bg:#F9E8E2; --warn:#7C5310; --warn-bg:#F6ECD2;
+  --ok:#0C5F57; --ok-bg:#DFECE8; --shadow:0 8px 24px rgba(34,37,31,.07);
+  --radius:14px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  html[data-theme="auto"]{ --bg:#16140F; --surface:#201D17; --surface2:#2A261E; --ink:#F1EDE2; --muted:#B5AC9A;
+    --line:#3A352B; --accent-soft:color-mix(in srgb, var(--accent) 30%, #101a29); --link:#6FD3BC; --danger:#F09A8A; --danger-bg:#3A211B;
+    --warn:#E8BC5A; --warn-bg:#3A3013; --ok:#6FD3BC; --ok-bg:#173B35;
+    --shadow:0 10px 30px rgba(0,0,0,.4); color-scheme:dark; }
+}
+html[data-theme="dark"]{ --bg:#16140F; --surface:#201D17; --surface2:#2A261E; --ink:#F1EDE2; --muted:#B5AC9A;
+  --line:#3A352B; --accent-soft:color-mix(in srgb, var(--accent) 30%, #101a29); --link:#6FD3BC; --danger:#F09A8A; --danger-bg:#3A211B;
+  --warn:#E8BC5A; --warn-bg:#3A3013; --ok:#6FD3BC; --ok-bg:#173B35; --shadow:0 10px 30px rgba(0,0,0,.4); color-scheme:dark; }
+html[data-theme="light"]{ --bg:#FAF6EF; --surface:#FFFFFF; --surface2:#F1EBDF; --ink:#22251F; --muted:#5A6353;
+  --line:#E2DACA; --accent-soft:color-mix(in srgb, var(--accent) 12%, #ffffff); --link:var(--accent); --danger:#A93226; --danger-bg:#F9E8E2;
+  --warn:#7C5310; --warn-bg:#F6ECD2; --ok:#0C5F57; --ok-bg:#DFECE8; --shadow:0 8px 24px rgba(34,37,31,.07);
+  color-scheme:light; color-scheme:only light; }
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.5}
+h1,h2,h3{line-height:1.15;margin:0}
+button,[role="button"],select,summary,input:not([type="checkbox"]){min-height:44px}
+input[type="checkbox"]{width:22px;height:22px;accent-color:var(--accent);flex:none}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:14px;padding:12px 20px;
+  font:inherit;font-weight:700;cursor:pointer;text-decoration:none;min-height:48px;transition:transform .12s ease, background .15s ease}
+.btn:active{transform:scale(.98)}
+.btn-accent{background:var(--accent);color:var(--accent-ink)}
+.btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--line)}
+.btn-soft{background:var(--accent-soft);color:var(--ink)}
+.btn-danger{background:var(--danger-bg);color:var(--danger)}
+.btn-sm{min-height:44px;padding:8px 14px;font-size:14px;border-radius:11px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface2);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--muted)}
+/* header */
+header.site{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:14px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}
+.logo-mark{width:38px;height:38px;border-radius:11px;background:var(--accent);display:grid;place-items:center;color:#fff;font-size:19px}
+nav.main{display:flex;gap:4px;margin-left:auto}
+nav.main a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;padding:10px 12px;border-radius:10px}
+nav.main a:hover{background:var(--surface2)}
+.icon-btn{width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-size:18px;display:grid;place-items:center;flex:none}
+/* intro: калькулятор — главный экран, без hero */
+.intro{padding-top:30px}
+.intro h1{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.01em;max-width:22em;margin-top:14px}
+.intro p.lead{font-size:17px;color:var(--muted);margin:12px 0 0;max-width:40em}
+/* sections */
+section.block{padding-top:44px;padding-bottom:8px}
+.sec-head{margin-bottom:20px}
+.sec-head h2{font-size:clamp(23px,3.4vw,32px);font-weight:800}
+.sec-head p{color:var(--muted);margin:8px 0 0;max-width:44em}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.grid-2{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}
+/* category picker */
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px}
+.cat{position:relative;border:2px solid var(--line);background:var(--surface);border-radius:14px;padding:14px 8px 12px;cursor:pointer;text-align:center;font:inherit;color:var(--ink);min-height:104px}
+.cat[aria-pressed="true"]::after{content:"✓ Выбрано";position:absolute;top:8px;right:8px;font-size:11px;font-weight:800;color:var(--accent);background:var(--surface);border:1.5px solid var(--accent);border-radius:999px;padding:2px 8px}
+.cat svg{width:44px;height:44px;margin:0 auto 6px;display:block}
+.cat span{display:block;font-weight:700;font-size:15px}
+.cat small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.cat[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.field-label{font-weight:700;font-size:14px;margin:18px 0 8px;display:block}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;min-height:46px}
+.seg button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+.seg button[aria-pressed="true"]::before{content:"✓ "}
+.tabs button[aria-pressed="true"]::before{content:"✓ "}
+.switch-row{display:flex;align-items:center;gap:12px;background:var(--surface2);border-radius:14px;padding:13px 16px;margin-top:12px;cursor:pointer}
+.switch-row .txt{flex:1}
+.switch-row .txt b{display:block;font-size:15px}
+.switch-row .txt small{color:var(--muted)}
+textarea,input[type="text"],input[type="tel"],input[type="number"],input[type="date"],input[type="time"],input[type="datetime-local"],select{
+  width:100%;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);
+  font:inherit;padding:11px 14px;min-height:48px}
+textarea{min-height:84px;resize:vertical}
+textarea:focus,input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.qty-row{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+.stepper{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.stepper button{width:48px;height:48px;border:0;background:var(--surface2);color:var(--ink);font-size:22px;cursor:pointer}
+.stepper output{min-width:44px;text-align:center;font-weight:800;font-size:17px}
+.item-price{margin-left:auto;text-align:right}
+.item-price small{display:block;color:var(--muted)}
+.item-price b{font-size:28px}
+.add-row{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.add-row .btn{flex:1}
+/* cart */
+.cart-item{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px;background:var(--surface)}
+.cart-item .top{display:flex;gap:10px;align-items:flex-start}
+.cart-item h4{margin:0;font-size:16px;flex:1}
+.cart-item .meta{color:var(--muted);font-size:14px;margin-top:2px}
+.cart-item .row2{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+.cart-item .sum{margin-left:auto;font-weight:800;font-size:17px}
+.stepper.sm button{width:44px;height:44px;font-size:19px}
+.stepper.sm output{min-width:34px;font-size:15px}
+.totals{border-top:1.5px dashed var(--line);margin-top:14px;padding-top:14px}
+.totals .line{display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-size:15px}
+.totals .line span:first-child{color:var(--muted)}
+.totals .grand{font-size:19px;font-weight:800;padding-top:8px;align-items:baseline}
+.totals .grand span:last-child{font-size:27px}
+.totals .grand span:first-child{color:var(--ink)}
+.empty{border:1.5px dashed var(--line);border-radius:14px;padding:26px 18px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}
+/* form */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-grid .full{grid-column:1/-1}
+.err{color:var(--danger);font-size:13.5px;font-weight:600;margin-top:5px;display:none}
+.err.show{display:block}
+.photos{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.photo-thumb{position:relative;width:86px;height:86px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.photo-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-thumb button{position:absolute;top:4px;right:4px;width:32px;height:32px;min-height:32px;border-radius:9px;border:0;background:rgba(0,0,0,.62);color:#fff;cursor:pointer;font-size:15px;line-height:1}
+.photo-thumb button::after{content:"";position:absolute;inset:-6px}
+.photo-add{width:86px;height:86px;border-radius:12px;border:1.5px dashed var(--line);background:var(--surface2);color:var(--muted);cursor:pointer;font:inherit;font-weight:700;font-size:13px;display:grid;place-items:center;text-align:center;padding:6px}
+.consent{display:flex;gap:12px;align-items:flex-start;background:var(--surface2);border-radius:14px;padding:14px 16px;cursor:pointer;font-size:14.5px}
+/* prices */
+.price-table{width:100%;border-collapse:collapse}
+.price-table td{padding:11px 6px;border-bottom:1px solid var(--line);font-size:15.5px}
+.price-table td:last-child{text-align:right;font-weight:800;white-space:nowrap}
+.price-table tr:last-child td{border-bottom:0}
+/* success / client view */
+.status-pill{display:inline-flex;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:800}
+.st-new{background:var(--warn-bg);color:var(--warn)}
+.st-ok{background:var(--ok-bg);color:var(--ok)}
+.st-done{background:var(--surface2);color:var(--muted)}
+.st-cancel{background:var(--danger-bg);color:var(--danger)}
+.link-box{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.link-box code{flex:1;min-width:200px;background:var(--surface2);border-radius:10px;padding:12px 14px;font-size:14px;word-break:break-all;display:flex;align-items:center}
+/* cabinet */
+.cab-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:26px 0 16px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tabs button{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer;min-height:46px}
+.tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.filters input[type="text"]{flex:1;min-width:180px}
+.filters select{width:auto;min-width:170px}
+.req{border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px;background:var(--surface)}
+.req .r-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap;cursor:pointer;background:none;border:0;font:inherit;color:inherit;width:100%;text-align:left;padding:0;min-height:44px}
+.req .r-head b{font-size:16px}
+.req .r-head .when{color:var(--muted);font-size:13.5px}
+.req .r-body{margin-top:14px;border-top:1px dashed var(--line);padding-top:14px}
+.req .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.req h5{margin:0 0 6px;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.req ul{margin:0;padding-left:18px}
+.req .photos{margin-top:4px}
+.owner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.swatch{width:46px;height:46px;border-radius:13px;border:3px solid transparent;cursor:pointer}
+.swatch[aria-pressed="true"]{border-color:var(--ink)}
+/* sticky bar (моб.) */
+.sticky-bar{display:none}
+@media (max-width:860px){
+  .sticky-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;gap:14px;
+    background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -6px 20px rgba(34,37,31,.08);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+  .sticky-bar .sb-total{flex:1;min-width:0}
+  .sticky-bar .sb-total small{display:block;color:var(--muted);font-size:12.5px;font-weight:600}
+  .sticky-bar .sb-total b{font-size:22px;line-height:1.15;white-space:nowrap}
+  .sticky-bar .btn{flex:none}
+  body{padding-bottom:84px}
+  .toast{bottom:96px}
+}
+/* toast */
+.toast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:22px;z-index:80;background:var(--ink);color:var(--bg);
+  border-radius:14px;padding:13px 18px;display:flex;gap:14px;align-items:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s ease;max-width:calc(100vw - 32px)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.toast button{background:none;border:0;color:inherit;font:inherit;font-weight:800;text-decoration:underline;cursor:pointer;min-height:36px;padding:4px 6px}
+/* offline */
+.offline{position:fixed;inset:0;z-index:100;background:var(--bg);display:none;place-items:center;padding:24px;text-align:center}
+.offline.show{display:grid}
+.offline .box{max-width:380px}
+.offline h2{font-size:24px;margin-bottom:10px}
+.offline p{color:var(--muted)}
+footer.site{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px}
+footer.site .cols{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between}
+.hidden{display:none !important}
+.note{font-size:13.5px;color:var(--muted)}
+@media (max-width:860px){
+  nav.main{display:none}
+  .grid-2{grid-template-columns:1fr}
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .req .cols,.owner-grid,.settings-grid{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .form-grid{grid-template-columns:1fr}
+  .item-price{margin-left:0}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important}
+}
+</style>
+<style>
+/* ===== iOS 26 Liquid Glass ===== */
+:root{
+  --radius:24px; --blue:var(--accent);
+  --bg:#EDF1F5; --surface:#FFFFFF; --surface2:#E6EDF3; --ink:#131C26; --muted:#5B6B7A;
+  --line:#D7E0E9; --accent-soft:color-mix(in srgb, var(--accent) 12%, #ffffff);
+  --glass:rgba(255,255,255,.55); --glass-strong:rgba(255,255,255,.72);
+  --glass-border:rgba(255,255,255,.8); --glass-hi:rgba(255,255,255,.95);
+  --glass-shadow:0 24px 48px rgba(31,52,74,.14);
+  --track:rgba(19,28,38,.06); --input-bg:rgba(255,255,255,.68);
+  --item-bg:rgba(255,255,255,.62);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  html[data-theme="auto"]{
+    --bg:#05080F; --surface:#101A29; --surface2:#1A2639; --ink:#F2F7FC; --muted:#9DB0C2;
+    --line:#24334B; --accent-soft:color-mix(in srgb, var(--accent) 30%, #101a29);
+    --glass:rgba(22,36,56,.52); --glass-strong:rgba(26,42,64,.7);
+    --glass-border:rgba(255,255,255,.16); --glass-hi:rgba(255,255,255,.16);
+    --glass-shadow:0 24px 48px rgba(0,0,0,.45);
+    --track:rgba(255,255,255,.09); --input-bg:rgba(255,255,255,.06);
+    --item-bg:rgba(255,255,255,.05);
+    color-scheme:dark;
+  }
+}
+html[data-theme="dark"]{
+  --bg:#05080F; --surface:#101A29; --surface2:#1A2639; --ink:#F2F7FC; --muted:#9DB0C2;
+  --line:#24334B; --accent-soft:color-mix(in srgb, var(--accent) 30%, #101a29);
+  --glass:rgba(22,36,56,.52); --glass-strong:rgba(26,42,64,.7);
+  --glass-border:rgba(255,255,255,.16); --glass-hi:rgba(255,255,255,.16);
+  --glass-shadow:0 24px 48px rgba(0,0,0,.45);
+  --track:rgba(255,255,255,.09); --input-bg:rgba(255,255,255,.06);
+  --item-bg:rgba(255,255,255,.05);
+  color-scheme:dark;
+}
+html[data-theme="light"]{
+  --bg:#EDF1F5; --surface:#FFFFFF; --surface2:#E6EDF3; --ink:#131C26; --muted:#5B6B7A;
+  --line:#D7E0E9; --accent-soft:color-mix(in srgb, var(--accent) 12%, #ffffff);
+  --glass:rgba(255,255,255,.55); --glass-strong:rgba(255,255,255,.72);
+  --glass-border:rgba(255,255,255,.8); --glass-hi:rgba(255,255,255,.95);
+  --glass-shadow:0 24px 48px rgba(31,52,74,.14);
+  --track:rgba(19,28,38,.06); --input-bg:rgba(255,255,255,.68);
+  --item-bg:rgba(255,255,255,.62);
+  color-scheme:light; color-scheme:only light;
+}
+body{
+  background-color:var(--bg);
+  background-image:
+    radial-gradient(880px 480px at 88% -8%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 62%),
+    radial-gradient(760px 560px at -12% 34%, color-mix(in srgb, var(--accent) 8%, transparent), transparent 60%),
+    radial-gradient(700px 500px at 55% 115%, rgba(48,209,88,.06), rgba(48,209,88,0) 60%);
+  background-attachment:fixed;
+}
+.glass{
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(22px) saturate(165%);
+  backdrop-filter:blur(22px) saturate(165%);
+  border:1px solid var(--glass-border);
+  box-shadow:inset 0 1px 0 var(--glass-hi), var(--glass-shadow);
+  border-radius:28px;
+}
+/* header */
+header.site{
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(22px) saturate(165%);
+  backdrop-filter:blur(22px) saturate(165%);
+  border-bottom:1px solid var(--glass-border);
+  box-shadow:inset 0 1px 0 var(--glass-hi);
+}
+.logo-mark{border-radius:12px;background:var(--blue)}
+.icon-btn{border-radius:50%;background:var(--glass-strong);border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 var(--glass-hi)}
+.btn{border-radius:999px}
+.btn-soft{background:var(--glass-strong);border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 var(--glass-hi)}
+.order-btn{
+  display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;
+  border:1px solid var(--glass-border);background:var(--glass-strong);
+  -webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:inset 0 1px 0 var(--glass-hi), 0 8px 20px rgba(31,52,74,.12);
+  color:var(--ink);font:inherit;font-weight:700;cursor:pointer;flex:none;
+}
+.order-badge{background:var(--blue);color:#fff;border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12.5px;font-weight:800;padding:0 6px}
+.cabinet-icon{display:none;line-height:0}
+.cabinet-icon svg{display:block}
+/* intro */
+.intro{padding-top:36px}
+.intro h1{font-size:clamp(36px,6vw,58px);font-weight:800;letter-spacing:-.022em;line-height:1.04;max-width:12em;margin-top:16px}
+.intro p.lead{font-size:19px;margin-top:14px}
+.chip{background:var(--glass-strong);border:1px solid var(--glass-border);color:var(--muted);box-shadow:inset 0 1px 0 var(--glass-hi)}
+/* hero stage: фон сцены следует за темой — канвас прозрачный, видна стеклянная карточка */
+:root{--stage-hi:rgba(255,255,255,.6)}
+@media (prefers-color-scheme: dark){
+  html[data-theme="auto"]{--stage-hi:rgba(140,180,235,.13)}
+}
+html[data-theme="dark"]{--stage-hi:rgba(140,180,235,.13)}
+.hero-card{padding:14px}
+.hero-stage{
+  position:relative;border-radius:22px;overflow:hidden;perspective:950px;
+  background:radial-gradient(115% 85% at 50% 0%, var(--stage-hi) 0%, rgba(127,160,190,0) 62%);
+  padding:64px 8px 20px;cursor:grab;touch-action:pan-y;user-select:none;-webkit-user-select:none;
+}
+.hero-stage:active{cursor:grabbing}
+.hero-fallback{
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
+  min-height:330px;padding:32px 20px;text-align:center;
+  background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;
+  box-shadow:inset 0 1px 0 var(--glass-hi);
+  color:var(--muted);
+}
+.hero-fallback b{color:var(--ink);font-size:19px}
+.hero-fallback p{margin:0;max-width:30em}
+.hero-fallback-icon{
+  width:148px;height:148px;display:grid;place-items:center;margin-bottom:6px;
+  color:var(--ink);
+  background:var(--glass-strong);border:1px solid var(--glass-border);border-radius:36px;
+  -webkit-backdrop-filter:blur(18px) saturate(160%);backdrop-filter:blur(18px) saturate(160%);
+  box-shadow:inset 0 1px 0 var(--glass-hi), 0 14px 30px rgba(21,38,56,.12);
+}
+.hero-fallback-icon svg{width:104px;height:104px;display:block}
+.hero-canvas{display:block;width:100%;height:330px;touch-action:pan-y;cursor:grab}
+.hero-canvas:active{cursor:grabbing}
+.hero-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:10px;padding:0 4px}
+.hero-hint{color:var(--muted);font-size:13.5px;font-weight:600;margin:0}
+/* pill tabs inside hero card */
+.cats{
+  display:flex;gap:2px;margin:12px 0 2px;padding:5px;border-radius:999px;
+  background:var(--track);border:1px solid var(--glass-border);
+  -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);
+}
+.cat{
+  flex:1;border:0;background:transparent;border-radius:999px;min-height:58px;
+  padding:7px 2px 6px;color:var(--muted);box-shadow:none;
+}
+.cat svg{width:25px;height:25px;margin:0 auto 2px;stroke:currentColor}
+.cat span{font-size:12.5px;font-weight:700}
+.cat small{display:none}
+.cat[aria-pressed="true"]{background:var(--blue);color:#fff;border-color:transparent;box-shadow:0 8px 18px color-mix(in srgb, var(--accent) 35%, transparent)}
+.cat[aria-pressed="true"]::after{display:none}
+/* control panel */
+.side-col{display:grid;gap:20px;align-content:start}
+.panel-card h3{font-size:23px;margin-bottom:6px}
+.panel-card .field-label{margin-top:16px}
+.seg{display:flex;flex-wrap:nowrap;background:var(--track);border-radius:16px;padding:4px;gap:4px}
+.seg button{
+  flex:1;border:0;background:transparent;color:var(--muted);border-radius:12px;
+  padding:9px 6px;min-height:46px;font-size:14.5px;white-space:normal;
+}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 3px 10px rgba(21,38,56,.14)}
+.seg button[aria-pressed="true"]::before{content:""}
+.switch-row{background:transparent;border-radius:0;padding:13px 2px}
+.switch-row input[type="checkbox"]{
+  appearance:none;-webkit-appearance:none;width:52px;height:32px;min-height:32px;border-radius:999px;
+  background:rgba(128,140,152,.4);position:relative;cursor:pointer;flex:none;margin:0;
+  transition:background .2s ease;border:0;padding:0;
+}
+.switch-row input[type="checkbox"]::after{
+  content:"";position:absolute;top:2px;left:2px;width:28px;height:28px;border-radius:50%;
+  background:#fff;box-shadow:0 2px 7px rgba(0,0,0,.28);transition:left .2s ease;
+}
+.switch-row input[type="checkbox"]:checked{background:#30D158}
+.switch-row input[type="checkbox"]:checked::after{left:22px}
+.stepper{border:0;background:var(--track);border-radius:999px;padding:4px;gap:2px}
+.stepper button{border-radius:50%;background:var(--surface);box-shadow:0 2px 7px rgba(21,38,56,.13);width:44px;height:44px}
+.stepper.sm button{width:40px;height:40px}
+.item-price b{font-size:34px;letter-spacing:-.01em}
+#addBtn{background:var(--ink);color:var(--bg)}
+#addBtn::after{content:"→";font-weight:800}
+/* cart inside glass panel */
+.cart-item{background:var(--item-bg);border:1px solid var(--glass-border);border-radius:18px;box-shadow:inset 0 1px 0 var(--glass-hi)}
+.empty{background:var(--track);border:1.5px dashed var(--glass-border);border-radius:18px}
+/* cards & forms */
+.card{border-radius:26px}
+textarea,input[type="text"],input[type="tel"],input[type="number"],input[type="date"],input[type="time"],input[type="datetime-local"],select{
+  border-radius:16px;background:var(--input-bg);border:1px solid var(--line);
+}
+.form-shell{background:transparent;border:0;box-shadow:none;padding:0;border-radius:0}
+.form-card{
+  background:var(--glass);border:1px solid var(--glass-border);border-radius:26px;padding:20px;
+  -webkit-backdrop-filter:blur(22px) saturate(165%);backdrop-filter:blur(22px) saturate(165%);
+  box-shadow:inset 0 1px 0 var(--glass-hi), var(--glass-shadow);
+}
+.address-row{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:14px}
+.form-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-card + .form-card{margin-top:0}
+.form-stack{display:grid;gap:14px}
+.form-card-title{font-size:19px;margin-bottom:14px}
+.tabs button{border-radius:999px}
+.tabs button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue)}
+.req{border-radius:22px}
+.photo-add,.photo-thumb{border-radius:16px}
+.sticky-bar{
+  background:var(--glass-strong);border-top:1px solid var(--glass-border);
+  -webkit-backdrop-filter:blur(22px) saturate(165%);backdrop-filter:blur(22px) saturate(165%);
+  box-shadow:inset 0 1px 0 var(--glass-hi), 0 -10px 28px rgba(21,38,56,.14);
+}
+.toast{border-radius:18px}
+@media (max-width:860px){
+  .grid-2{grid-template-columns:1fr}
+  .form-cards{grid-template-columns:1fr}
+  .hero-fallback{min-height:280px}
+  .hero-fallback-icon{width:120px;height:120px;border-radius:30px}
+  .hero-fallback-icon svg{width:84px;height:84px}
+  .hero-canvas{height:280px}
+}
+@media (max-width:720px){
+  .header-in{flex-wrap:nowrap;gap:8px;padding-top:7px;padding-bottom:7px}
+  header.site .wrap{padding-left:12px;padding-right:12px}
+  .logo{gap:7px;font-size:17px}
+  .logo-mark{width:30px;height:30px;border-radius:9px;font-size:15px}
+  .icon-btn{width:36px;height:36px;min-height:36px;font-size:15px}
+  .order-btn{min-height:36px;padding:6px 12px;font-size:14px;gap:6px}
+  .order-btn svg{width:17px;height:17px}
+  .order-badge{min-width:20px;height:20px;font-size:11.5px}
+  .cabinet-btn{
+    width:36px;height:36px;min-height:36px;padding:0;border-radius:50%;
+    display:grid;place-items:center;flex:none;gap:0;
+  }
+  .cabinet-label{display:none}
+  .cabinet-icon{display:block}
+  .cabinet-icon svg{width:18px;height:18px}
+  .nav-spacer{margin-left:auto}
+  .intro{padding-top:20px}
+  .intro h1{font-size:clamp(32px,9.4vw,40px)}
+}
+@media (max-width:380px){
+  .header-in{gap:6px}
+  .logo{font-size:16px}
+  .order-btn{padding:6px 10px}
+}
+/* ===== доверие, этапы, FAQ, политика ===== */
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.trust-item{background:var(--glass);border:1px solid var(--glass-border);border-radius:22px;padding:20px;
+  -webkit-backdrop-filter:blur(22px) saturate(165%);backdrop-filter:blur(22px) saturate(165%);
+  box-shadow:inset 0 1px 0 var(--glass-hi), var(--glass-shadow)}
+.trust-item .t-ico{width:46px;height:46px;border-radius:14px;background:var(--accent-soft);color:var(--blue);
+  display:grid;place-items:center;margin-bottom:12px}
+.trust-item .t-ico svg{width:26px;height:26px}
+.trust-item h3{font-size:17px;margin-bottom:6px}
+.trust-item p{margin:0;color:var(--muted);font-size:14.5px}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step-item{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px}
+.step-num{width:38px;height:38px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-size:17px;
+  display:grid;place-items:center;margin-bottom:12px}
+.step-item h3{font-size:17px;margin-bottom:6px}
+.step-item p{margin:0;color:var(--muted);font-size:14.5px}
+.faq-list{display:grid;gap:10px}
+.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:4px 20px}
+.faq-item summary{cursor:pointer;font-weight:700;font-size:16px;padding:14px 0;list-style:none;display:flex;gap:10px;align-items:center}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";margin-left:auto;font-size:22px;font-weight:600;color:var(--blue);flex:none}
+.faq-item[open ] summary::after{content:"−"}
+.faq-item p{margin:0 0 16px;color:var(--muted);font-size:15px;max-width:52em}
+.policy-body h3{font-size:18px;margin:22px 0 8px}
+.policy-body h3:first-child{margin-top:0}
+.policy-body p,.policy-body li{color:var(--muted);font-size:15.5px}
+.policy-body p{margin:0 0 8px}
+.policy-body ul{margin:0 0 8px;padding-left:20px}
+@media (max-width:860px){
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .trust-grid{grid-template-columns:1fr}
+}
+</style>
+<style>
+/* ===== v4: дизайн-обновление (ОТКАТ: удалить этот блок целиком; JS-правки помечены /* v4 */) ===== */
+/* 1. Тёплый греж в тон сканди-палитры моделей вместо холодного серо-голубого */
+html[data-theme="light"]{
+  --bg:#EFE8DA; --surface:#FFFDF8; --surface2:#E7DFCE; --ink:#24231D; --muted:#6B6353;
+  --line:#DCD2BE; --accent-soft:color-mix(in srgb, var(--accent) 12%, #FFFDF8);
+  --glass:rgba(255,252,246,.55); --glass-strong:rgba(255,252,246,.74);
+  --glass-border:rgba(255,255,255,.85); --glass-hi:rgba(255,255,255,.95);
+  --glass-shadow:0 24px 48px rgba(74,60,38,.14);
+  --track:rgba(74,60,38,.07); --input-bg:rgba(255,252,246,.68);
+  --item-bg:rgba(255,252,246,.62);
+}
+/* свечение убрано полностью — ровный фон */
+body{
+  background-image:none;
+}
+/* тёплые тени вместо холодных сине-серых */
+.order-btn{box-shadow:inset 0 1px 0 var(--glass-hi), 0 8px 20px rgba(74,60,38,.12)}
+.hero-fallback-icon{box-shadow:inset 0 1px 0 var(--glass-hi), 0 14px 30px rgba(74,60,38,.12)}
+.seg button[aria-pressed="true"]{box-shadow:0 3px 10px rgba(74,60,38,.14)}
+.stepper button{box-shadow:0 2px 7px rgba(74,60,38,.13)}
+.sticky-bar{box-shadow:inset 0 1px 0 var(--glass-hi), 0 -10px 28px rgba(74,60,38,.14)}
+/* 2. Герой крупнее, свечение за моделью убрано полностью — ровный фон */
+.hero-stage{padding:40px 8px 20px;
+  background:none}
+.hero-canvas{height:400px}
+.hero-fallback{min-height:400px}
+@media (max-width:860px){
+  .hero-canvas{height:330px}
+  .hero-fallback{min-height:330px}
+}
+/* 3. Итог крупнее */
+.totals .grand{font-size:21px}
+.totals .grand span:last-child{font-size:33px}
+.item-price b{font-size:36px}
+.sticky-bar .sb-total b{font-size:26px}
+/* 4. Плавная смена категорий: модель и цена растворяются и появляются */
+.hero-canvas,.hero-fallback{transition:opacity .18s ease, transform .18s ease}
+.hero-stage.v4-switch .hero-canvas,.hero-stage.v4-switch .hero-fallback{opacity:0;transform:translateY(8px) scale(.985)}
+.panel-card .item-price b,.panel-card #panelTitle{transition:opacity .18s ease}
+.panel-card.v4-switch .item-price b,.panel-card.v4-switch #panelTitle{opacity:0}
+/* 5. Кнопки: pill и жирность 800 сохраняем, только hover-подъём и нажатие */
+.btn{font-weight:800}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 22px rgba(74,60,38,.16)}
+.btn:active{transform:translateY(0) scale(.98)}
+.cat,.seg button,.tabs button,.stepper button,.icon-btn,.order-btn{transition:transform .12s ease, box-shadow .15s ease}
+.cat:hover,.seg button:hover,.tabs button:hover,.stepper button:hover,.icon-btn:hover,.order-btn:hover{transform:translateY(-2px)}
+/* 6. Типографика: H1 крупнее и плотнее, заголовки секций чуть контрастнее */
+.intro h1{font-size:clamp(40px,6.6vw,64px);line-height:1.0;letter-spacing:-.025em}
+.sec-head h2{font-size:clamp(24px,3.6vw,34px);letter-spacing:-.015em}
+.panel-card h3{font-size:24px}
+@media (max-width:720px){
+  .intro h1{font-size:clamp(36px,9.4vw,44px)}
+}
+/* 7. Trust-блок: тонкий разделитель сверху, иконки и подписи на одной линии */
+.trust-grid{border-top:1px solid var(--line);padding-top:22px}
+.trust-item{display:flex;flex-direction:column}
+.trust-item .t-ico{flex:none}
+.trust-item h3{min-height:2.5em}
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114261162', 'ym');
+
+    ym(114261162, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114261162" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</head>
+<body>
+
+<div class="offline" id="offlineScreen" role="alert">
+  <div class="box">
+    <div style="font-size:44px" aria-hidden="true">🛋️</div>
+    <h2>Нет соединения</h2>
+    <p>Страница «Тест» не может загрузиться без интернета. Проверьте подключение — уже выбранная мебель и заявка на этом экране не пропадут.</p>
+    <button class="btn btn-accent" id="offlineRetry" type="button">Попробовать снова</button>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap header-in">
+    <a class="logo" href="#top" id="logoHome"><span id="logoName">Тест</span></a>
+    <nav class="main" aria-label="Основная навигация">
+      <a href="#calc">Расчёт</a><a href="#process">Как проходит чистка</a><a href="#prices">Цены</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a>
+    </nav>
+    <span style="margin-left:auto" class="nav-spacer"></span>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Переключить тему">◐</button>
+    <button class="order-btn" id="orderBtn" type="button" aria-label="Перейти к вашему заказу">
+      <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2 3h3l2.6 12.5a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/></svg>
+      <span>Заказ</span>
+      <span class="order-badge hidden" id="orderCount">0</span>
+    </button>
+    <button class="btn btn-soft btn-sm cabinet-btn" id="cabinetBtn" type="button" aria-label="Кабинет владельца" title="Кабинет владельца"><span class="cabinet-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.8-3.2 3.6-5 7-5s6.2 1.8 7 5"/></svg></span><span class="cabinet-label">Кабинет владельца</span></button>
+  </div>
+</header>
+
+<main id="clientView">
+  <!-- INTRO: сразу к калькулятору -->
+  <div class="wrap intro" id="top">
+    <span class="chip">Выездная химчистка · <span data-company-city>Санкт-Петербург</span></span>
+    <h1>Любимая мебель.<br/>Снова свежая.</h1>
+    <p class="lead">Выберите мебель — рассчитаем чистку.</p>
+  </div>
+
+  <!-- CALCULATOR + CART -->
+  <section class="block wrap" id="calc">
+    <div class="sec-head">
+      <h2>Что нужно почистить?</h2>
+      <p>Соберите заявку из одного или нескольких предметов. Цена пересчитывается сразу, а итог мастер подтвердит после звонка.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card glass hero-card" aria-label="Выбор мебели">
+        <div class="hero-stage" id="heroStage">
+          <canvas id="heroCanvas" class="hero-canvas hidden" role="img" aria-label="Интерактивная 3D-модель выбранной мебели: потяните, чтобы повернуть"></canvas>
+          <div class="hero-fallback" id="heroFallback">
+            <div class="hero-fallback-icon" id="heroFallbackIcon" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22V14a5 5 0 0 1 5-5h22a5 5 0 0 1 5 5v8"/><path d="M5 27a4 4 0 0 1 8 0v3h22v-3a4 4 0 0 1 8 0v6a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5v-6Z"/><path d="M13 30v-8M35 30v-8"/><path d="M10 38v3M38 38v3" opacity=".55"/></svg></div>
+            <b id="heroFallbackName">Диван</b>
+            <p>3D-модель не загрузилась. Выберите мебель ниже — расчёт цены и заявка работают как обычно.</p>
+          </div>
+        </div>
+        <div class="hero-row">
+          <p class="hero-hint">Потяните, чтобы повернуть</p>
+        </div>
+        <div class="cats" id="cats" role="group" aria-label="Категория мебели"></div>
+      </div>
+
+      <div class="side-col">
+      <div class="card glass panel-card" aria-label="Параметры чистки">
+        <h3 id="panelTitle">Диван</h3>
+        <div id="variantBlock">
+          <span class="field-label" id="variantLabel">Вариант</span>
+          <div class="seg" id="variants" role="group" aria-label="Вариант мебели"></div>
+        </div>
+
+        <div id="otherBlock" class="hidden">
+          <label class="field-label" for="otherDesc">Что это и что случилось?</label>
+          <textarea id="otherDesc" placeholder="Например: пуф с пятном от кофе, ковёр 2×3 м, детское автокресло…"></textarea>
+          <p class="err" id="otherDescErr">Опишите предмет в паре слов — так мастер сможет оценить работу по фото.</p>
+        </div>
+
+        <div id="secondSideRow" class="hidden">
+          <label class="switch-row" for="secondSide">
+            <span class="txt"><b>Чистить вторую сторону</b><small>Доплата <span id="secondPctLabel">+50%</span> к цене матраса</small></span>
+            <input type="checkbox" id="secondSide" aria-label="Чистить вторую сторону матраса" />
+          </label>
+        </div>
+
+        <label class="switch-row" for="dirtToggle">
+          <span class="txt"><b>Сильные загрязнения</b><small>Пятна, запахи, следы животных — доплата <span id="dirtPctLabel">+30%</span></small></span>
+          <input type="checkbox" id="dirtToggle" aria-label="Сильные загрязнения" />
+        </label>
+
+        <div class="qty-row">
+          <span style="font-weight:700">Количество</span>
+          <span class="stepper">
+            <button type="button" id="qtyMinus" aria-label="Уменьшить количество">−</button>
+            <output id="qtyOut" aria-live="polite">1</output>
+            <button type="button" id="qtyPlus" aria-label="Увеличить количество">+</button>
+          </span>
+          <div class="item-price">
+            <small>Предварительно за позицию</small>
+            <b id="itemPrice">0 ₽</b>
+          </div>
+        </div>
+
+        <div class="add-row">
+          <button class="btn btn-accent" id="addBtn" type="button">Добавить в заявку</button>
+          <a class="btn btn-ghost" href="#order">К оформлению ↓</a>
+        </div>
+        <p class="note" style="margin-top:12px" id="priceNote">Цена предварительная: мастер подтвердит её по фото и описанию до выезда.</p>
+      </div>
+
+      <div class="card glass" id="cartCard" aria-label="Состав заказа">
+        <h3 style="font-size:20px;margin-bottom:14px">Ваш заказ</h3>
+        <div id="cartList"></div>
+        <div class="totals" id="totalsBox"></div>
+        <p class="note" style="margin-top:10px">Минимум заказа относится к чистке, выезд за город добавляется отдельно. Предметы «по фото» в сумму не входят — их оценит мастер.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="block wrap" id="trust">
+    <div class="sec-head">
+      <h2>Почему заказывают у нас</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.8-3.2 3.6-5 7-5s6.2 1.8 7 5"/></svg></div>
+        <h3>Опытный мастер</h3>
+        <p>На выезд приезжает специалист, который занимается именно химчисткой мебели: разбирается в тканях, подбирает средство под обивку и честно предупреждает, если видит риск для материала.</p>
+      </div>
+      <div class="trust-item">
+        <div class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="3"/><path d="M3 10.5h18"/><path d="M7 15.5h4"/></svg></div>
+        <h3>Выезд без предоплаты</h3>
+        <p>Заявка, звонок и сам выезд не требуют никакой предоплаты. Заранее платить не нужно ни за что.</p>
+      </div>
+      <div class="trust-item">
+        <div class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5 9.5 17 4 11.5"/></svg></div>
+        <h3>Оплата после приёма работы</h3>
+        <p>Сначала вы смотрите результат и принимаете работу, и только после этого платите мастеру. Цена подтверждается до выезда и не меняется по факту.</p>
+      </div>
+      <div class="trust-item">
+        <div class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 5 6v5.5c0 4.4 2.9 7.4 7 9 4.1-1.6 7-4.6 7-9V6l-7-2.5Z"/><path d="m9 11.8 2.2 2.2 3.8-4"/></svg></div>
+        <h3>Гарантия 14 дней</h3>
+        <p>Если в течение 14 дней после чистки проявится недочёт по нашей вине, мастер приедет повторно и исправит его бесплатно.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="block wrap" id="process">
+    <div class="sec-head">
+      <h2>Как проходит чистка</h2>
+      <p>От заявки до сухой мебели — шесть шагов. Вся работа делается у вас дома, увозить мебель никуда не нужно.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num" aria-hidden="true">1</div>
+        <h3>Заявка и фото</h3>
+        <p>Вы собираете заявку в калькуляторе выше и, если можете, прикладываете фото мебели. По фото мастер заранее видит объём работы и состояние обивки.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num" aria-hidden="true">2</div>
+        <h3>Подтверждение цены и времени</h3>
+        <p>Мастер связывается с вами, уточняет детали и называет итоговую цену и время выезда. Всё фиксируется до приезда — сюрпризов по цене на месте не будет.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num" aria-hidden="true">3</div>
+        <h3>Выезд и осмотр</h3>
+        <p>Мастер приезжает с оборудованием в согласованное время и осматривает ткань на месте. От вас нужны только розетка и доступ к воде.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num" aria-hidden="true">4</div>
+        <h3>Подбор химии</h3>
+        <p>Средство подбирается под конкретный материал обивки и сначала проверяется на незаметном участке. Используется гипоаллергенная химия, безопасная для детей и животных после высыхания.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num" aria-hidden="true">5</div>
+        <h3>Глубокая чистка</h3>
+        <p>Раствор наносится на обивку и вместе с грязью вытягивается профессиональным экстрактором из глубины наполнителя. Обычно чистка занимает от 1,5 до 3 часов.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num" aria-hidden="true">6</div>
+        <h3>Приём работы и оплата</h3>
+        <p>Вы осматриваете результат и платите только после приёма работы. Полностью мебель высыхает за 12–24 часа, а гарантия 14 дней продолжает действовать и после выезда.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section class="block wrap" id="order">
+    <div class="sec-head">
+      <h2>Куда и когда приехать?</h2>
+      <p>Дата и время — пожелание: мастер подтвердит запись после разговора. Онлайн-оплаты нет, оплата мастеру после работы.</p>
+    </div>
+    <form class="card form-shell" id="orderForm" novalidate>
+      <div class="form-cards">
+      <div class="form-card">
+        <h3 class="form-card-title">Как с вами связаться</h3>
+      <div class="form-grid" style="grid-template-columns:1fr">
+        <div>
+          <label class="field-label" for="fName" style="margin-top:0">Ваше имя *</label>
+          <input type="text" id="fName" autocomplete="name" placeholder="Как к вам обращаться" />
+          <p class="err" id="eName">Укажите имя.</p>
+        </div>
+        <div>
+          <label class="field-label" for="fPhone" style="margin-top:0">Телефон *</label>
+          <input type="tel" id="fPhone" autocomplete="tel" inputmode="tel" placeholder="+7 (___) ___-__-__" />
+          <p class="err" id="ePhone">Укажите телефон: минимум 10 цифр, чтобы мастер мог перезвонить.</p>
+        </div>
+      </div>
+      </div>
+      <div class="form-card">
+        <h3 class="form-card-title">Адрес выезда</h3>
+      <div class="form-grid" style="grid-template-columns:1fr">
+        <div class="full address-row">
+          <div>
+            <label class="field-label" for="fAddress" style="margin-top:0">Улица, дом и квартира *</label>
+            <input type="text" id="fAddress" autocomplete="street-address" placeholder="Улица, дом, квартира" />
+            <p class="err" id="eAddress">Укажите адрес — мастеру нужно знать, куда ехать.</p>
+          </div>
+          <div>
+            <label class="field-label" for="fFloor" style="margin-top:0">Этаж</label>
+            <input type="text" id="fFloor" inputmode="numeric" placeholder="3" />
+          </div>
+        </div>
+        <div class="full">
+          <label class="switch-row" for="fOutCity" style="margin-top:0">
+            <span class="txt"><b>Выезд за город</b><small>Фиксированная доплата <span id="outFeeLabel">800 ₽</span> к заказу</small></span>
+            <input type="checkbox" id="fOutCity" aria-label="Выезд за город" />
+          </label>
+        </div>
+      </div>
+      </div>
+      </div>
+      <div class="form-card" style="margin-top:14px">
+        <h3 class="form-card-title">Когда приехать и детали</h3>
+      <div class="form-grid">
+        <div>
+          <label class="field-label" for="fDate" style="margin-top:0">Желаемая дата</label>
+          <input type="date" id="fDate" />
+        </div>
+        <div>
+          <label class="field-label" for="fTime" style="margin-top:0">Желаемое время</label>
+          <input type="time" id="fTime" />
+          <p class="err" id="eTime">Для конкретного времени выберите и дату.</p>
+        </div>
+        <div class="full">
+          <span class="field-label" style="margin-top:0">Фотографии мебели — до 3 шт.</span>
+          <p class="note" style="margin:0">JPEG, PNG или WebP. <span id="photoHint">Для предметов из раздела «Другое» нужно хотя бы одно фото.</span></p>
+          <div class="photos" id="photoBox">
+            <label class="photo-add" for="photoInput">＋<br/>Добавить фото</label>
+            <input type="file" id="photoInput" accept="image/jpeg,image/png,image/webp" multiple class="hidden" />
+          </div>
+          <p class="err" id="ePhotos">Для предмета «Другое» приложите хотя бы одно фото — без него оценить работу нельзя.</p>
+        </div>
+        <div class="full">
+          <label class="field-label" for="fComment" style="margin-top:0">Комментарий</label>
+          <textarea id="fComment" placeholder="Пятна, запахи, этаж, домофон, удобное время для звонка…"></textarea>
+        </div>
+      </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+        <button class="btn btn-accent" type="submit" id="submitBtn" style="flex:1;min-width:220px">Отправить заявку</button>
+      </div>
+      <p class="note" style="margin-top:10px;font-size:13px">Нажимая кнопку, вы соглашаетесь с <a href="#privacy" data-privacy-link>политикой конфиденциальности</a></p>
+      <p class="err" id="eCart">Сначала добавьте хотя бы один предмет в заявку выше.</p>
+    </form>
+
+    <div class="card hidden" id="successCard" style="margin-top:20px" tabindex="-1">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <h3 style="font-size:22px">Заявка принята</h3>
+        <span class="status-pill st-new" id="successStatus">Новая</span>
+      </div>
+      <p style="color:var(--muted);margin:10px 0 0">Номер заявки: <b id="successNum" style="color:var(--ink)"></b>. Мастер свяжется с вами, подтвердит итоговую цену и время.</p>
+      <div id="successBody" style="margin-top:14px"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+        <button class="btn btn-ghost btn-sm" id="newOrderBtn" type="button">Собрать ещё одну заявку</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="block wrap" id="prices">
+    <div class="sec-head">
+      <h2>Цены</h2>
+      <p>Базовые цены за один предмет. Сильные загрязнения — +<span data-dirt-pct>30</span>%, вторая сторона матраса — +<span data-second-pct>50</span>%, минимальный заказ — <span data-min-order>3 000 ₽</span>, выезд за город — +<span data-out-fee>800 ₽</span>.</p>
+    </div>
+    <div class="card"><table class="price-table" id="priceTable" aria-label="Прайс"></table></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block wrap" id="faq">
+    <div class="sec-head">
+      <h2>Частые вопросы</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>Сколько времени занимает чистка?</summary>
+        <p>Обычно от 1,5 до 3 часов. Точное время зависит от размера мебели, количества предметов и степени загрязнения: диван с сильными пятнами займёт больше времени, чем одно кресло.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Когда мебелью можно пользоваться после чистки?</summary>
+        <p>Полное высыхание занимает 12–24 часа. Проветривание комнаты заметно ускоряет процесс. Спать на матрасе и садиться на диван лучше уже после полного высыхания.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Химия безопасна для детей и домашних животных?</summary>
+        <p>Да, мы работаем гипоаллергенной химией, а после чистки её остатки вместе с грязной водой вытягиваются экстрактором. Детям и животным лучше возвращаться к мебели после полного высыхания.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Что нужно подготовить к приезду мастера?</summary>
+        <p>Почти ничего: нужны свободный доступ к мебели, розетка и доступ к воде для оборудования. Мелкие вещи с мебели лучше убрать заранее, а двигать тяжёлую мебель специально не требуется.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Как и когда платить?</summary>
+        <p>Предоплаты нет. Итоговая цена подтверждается по телефону до выезда, а платите вы мастеру после того, как приняли готовую работу.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Что, если пятно не уйдёт полностью?</summary>
+        <p>Большинство свежих пятен уходит полностью, но честно предупреждаем: застарелые пятна и следы самостоятельных попыток чистки иногда остаются частично видимыми, мастер скажет об этом до начала работы. А если в течение 14 дней после чистки проявится недочёт по нашей вине, повторный выезд и исправление будут бесплатными по гарантии.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Вы выезжаете за город?</summary>
+        <p>Да, выезжаем по городу и ближайшим пригородам, а также за город за фиксированную доплату — она сразу видна в калькуляторе, когда вы отмечаете «Выезд за город» в заявке.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="block wrap" id="contacts">
+    <div class="sec-head"><h2>Контакты</h2></div>
+    <div class="card">
+      <p style="margin:0 0 6px;font-size:18px"><b data-company-name>Тест</b> · <span data-company-city>Санкт-Петербург</span></p>
+      <p style="margin:0;color:var(--muted)">Территория выезда: <span data-company-area>город и ближайшие пригороды</span></p>
+      <p style="margin:10px 0 0">Телефон: <a href="#" data-company-phone-link><span data-company-phone>+7 (900) 123-45-67</span></a></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+        <a class="btn btn-accent btn-sm" href="#calc">Рассчитать чистку</a>
+        <a class="btn btn-ghost btn-sm" href="#" data-company-phone-link>Позвонить</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <span>© <span data-company-name>Тест</span> — выездная химчистка мягкой мебели, <span data-company-city>Санкт-Петербург</span></span>
+      <span>Цены на странице предварительные и подтверждаются мастером до выезда.</span>
+      <span><a href="#privacy" data-privacy-link>Политика конфиденциальности</a></span>
+    </div>
+  </footer>
+
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sb-total"><small>Предварительно</small><b id="sbTotal">Пока пусто</b></div>
+    <button class="btn btn-accent" id="sbSubmit" type="button" disabled>Отправить заявку</button>
+  </div>
+</main>
+
+<!-- CABINET -->
+<main id="cabinetView" class="hidden">
+  <div class="wrap">
+    <div class="cab-head">
+      <h2 style="font-size:26px">Кабинет владельца</h2>
+      <span style="margin-left:auto"></span>
+      <button class="btn btn-ghost btn-sm" id="backToSite" type="button">← На сайт</button>
+    </div>
+
+    <div class="card" id="loginCard" style="max-width:440px">
+      <h3 style="font-size:19px;margin-bottom:8px">Вход в кабинет</h3>
+      <p class="note" style="margin:0 0 14px">В кабинете собраны заявки с сайта, тарифы и доплаты, данные компании и настройка уведомлений в Telegram.</p>
+      <button class="btn btn-accent" id="loginBtn" type="button" style="width:100%">Открыть кабинет</button>
+    </div>
+
+    <div id="cabinetBody" class="hidden">
+      <div class="tabs" role="group" aria-label="Разделы кабинета">
+        <button type="button" data-tab="requests" aria-pressed="true">Заявки</button>
+        <button type="button" data-tab="tariffs" aria-pressed="false">Тарифы</button>
+        <button type="button" data-tab="company" aria-pressed="false">Компания</button>
+        <button type="button" data-tab="telegram" aria-pressed="false">Telegram-уведомления</button>
+        <span style="margin-left:auto"></span>
+        <button type="button" id="logoutBtn" class="btn btn-ghost btn-sm">Выйти</button>
+      </div>
+
+      <div id="tab-requests">
+        <div class="filters">
+          <input type="text" id="reqSearch" placeholder="Поиск: имя, телефон, адрес, номер заявки…" aria-label="Поиск по заявкам" />
+          <select id="reqFilter" aria-label="Фильтр по статусу">
+            <option value="all">Все статусы</option>
+            <option value="new">Новые</option>
+            <option value="agreed">Согласованные</option>
+            <option value="done">Завершённые</option>
+            <option value="cancelled">Отменённые</option>
+          </select>
+          <button class="btn btn-soft btn-sm" id="refreshReq" type="button">Обновить список</button>
+        </div>
+        <div id="reqList"></div>
+      </div>
+
+      <div id="tab-tariffs" class="hidden">
+        <div class="card">
+          <h3 style="font-size:19px;margin-bottom:4px">Тарифы и доплаты</h3>
+          <p class="note" style="margin:0 0 16px">Цены в рублях за один предмет. Изменения сразу действуют на калькулятор и прайс на сайте; уже отправленные заявки сохраняют расчёт на момент отправки.</p>
+          <div class="settings-grid" id="tariffFields"></div>
+          <button class="btn btn-accent" id="saveTariffs" type="button" style="margin-top:18px">Сохранить тарифы</button>
+        </div>
+      </div>
+
+      <div id="tab-company" class="hidden">
+        <div class="card">
+          <h3 style="font-size:19px;margin-bottom:16px">Компания</h3>
+          <div class="settings-grid">
+            <div><label class="field-label" for="cName" style="margin-top:0">Название</label><input type="text" id="cName" /></div>
+            <div><label class="field-label" for="cPhone" style="margin-top:0">Телефон</label><input type="tel" id="cPhone" /></div>
+            <div><label class="field-label" for="cCity" style="margin-top:0">Город</label><input type="text" id="cCity" /></div>
+            <div><label class="field-label" for="cArea" style="margin-top:0">Территория выезда</label><input type="text" id="cArea" /></div>
+          </div>
+          <span class="field-label">Акцентный цвет</span>
+          <div class="swatches" id="accentSwatches"></div>
+          <button class="btn btn-accent" id="saveCompany" type="button" style="margin-top:18px">Сохранить компанию</button>
+        </div>
+      </div>
+
+      <div id="tab-telegram" class="hidden">
+        <div class="card">
+          <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+            <h3 style="font-size:19px">Telegram-уведомления</h3>
+            <span class="status-pill st-new" id="tgStatus">Не подключено</span>
+          </div>
+          <p class="note" style="margin:8px 0 0">Новая заявка с сайта будет приходить мастеру сообщением в Telegram. Впишите ниже токен своего бота, чтобы прямо отсюда проверить отправку тестового сообщения; при постоянной работе токен хранится в настройках серверной функции.</p>
+          <p class="note" style="margin:8px 0 0">Токен, введённый здесь, передаётся на сервер и хранится в базе данных, после этого бот начинает работать.</p>
+
+          <h4 style="font-size:16px;margin:20px 0 8px">Как настроить бота</h4>
+          <ol style="margin:0;padding-left:22px;display:grid;gap:14px;font-size:15px;line-height:1.55">
+            <li>Откройте <a href="https://t.me/BotFather" target="_blank" rel="noopener"><b>@BotFather</b></a>, создайте бота командой <b>/newbot</b> и скопируйте токен.</li>
+            <li>
+              Вставьте токен и нажмите «Сохранить».
+              <label class="field-label" for="tgToken" style="margin-top:10px">Токен бота</label>
+              <div style="display:flex;gap:8px">
+                <input type="text" id="tgToken" placeholder="123456789:AAEx…" autocomplete="off" style="flex:1;min-width:0" />
+              </div>
+              <button class="btn btn-accent btn-sm" id="saveTgToken" type="button" style="margin-top:10px">Сохранить</button>
+            </li>
+            <li>
+              Проще всего — по коду. Откройте своего бота в Telegram и отправьте ему код ниже: после этого заявки будут приходить вам, а chat ID вводить не нужно.
+              <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:10px">
+                <code id="tgOwnerCode" style="font-size:20px;font-weight:700;letter-spacing:2px;background:var(--surface2);border:1px solid var(--line);border-radius:10px;padding:8px 12px">—</code>
+                <button class="btn btn-ghost btn-sm" id="tgShowCode" type="button">Показать код</button>
+                <button class="btn btn-ghost btn-sm" id="tgCopyCode" type="button">Скопировать</button>
+              </div>
+              <p class="note" id="tgCodeHint" style="margin:8px 0 0">Код появится после того, как токен бота сохранён выше.</p>
+            </li>
+            <li>
+              Или вставьте chat ID вручную. Свой chat ID узнайте у бота <b>@getmyid_bot</b>: напишите ему любое сообщение, он пришлёт вам ваш ID.
+              <label class="field-label" for="tgChatId" style="margin-top:10px">Chat ID мастера</label>
+              <input type="text" id="tgChatId" placeholder="Например, 123456789" inputmode="numeric" autocomplete="off" />
+              <button class="btn btn-accent btn-sm" id="saveTgChatId" type="button" style="margin-top:10px">Сохранить</button>
+            </li>
+          </ol>
+
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+            <button class="btn btn-ghost" id="tgTestBtn" type="button">Отправить тестовое уведомление</button>
+          </div>
+          <p class="note" style="margin-top:12px">Кнопка «Отправить тестовое уведомление» сначала сохраняет настройки на сервере, а затем отправляет сообщение через серверную функцию. Результат отправки покажется ниже.</p>
+          <p id="tgTestResult" class="hidden" style="margin-top:10px;font-size:15px;font-weight:600"></p>
+
+          <div id="tgTestPreview" class="hidden" style="margin-top:14px;background:var(--surface2);border:1px solid var(--line);border-radius:16px;padding:16px">
+            <p style="margin:0 0 8px"><b>Текст тестового сообщения</b></p>
+            <pre id="tgTestText" style="margin:0;white-space:pre-wrap;word-break:break-word;font:inherit;font-size:14.5px;line-height:1.55"></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="height:40px"></div>
+</main>
+
+<!-- PRIVACY POLICY -->
+<main id="privacyView" class="hidden">
+  <div class="wrap">
+    <div class="cab-head">
+      <h2 style="font-size:26px">Политика конфиденциальности</h2>
+      <span style="margin-left:auto"></span>
+      <button class="btn btn-ghost btn-sm" id="privacyBack" type="button">← На сайт</button>
+    </div>
+    <div class="card policy-body" style="max-width:820px">
+      <p class="note" style="margin-bottom:18px">Редакция от 12 ноября 2026 года. Сервис выездной химчистки мебели <span data-company-name>Тест</span> (<span data-company-city>Санкт-Петербург</span>).</p>
+
+      <h3>1. Общие положения</h3>
+      <p>Эта политика описывает, какие данные мы получаем, когда вы оставляете заявку на сайте, зачем они нужны и как вы можете ими распорядиться. Оставляя заявку, вы соглашаетесь с условиями этой политики.</p>
+
+      <h3>2. Какие данные мы собираем</h3>
+      <ul>
+        <li>имя и номер телефона — из формы заявки;</li>
+        <li>адрес выезда, желаемые дату и время, комментарий к заказу;</li>
+        <li>состав заказа: выбранная мебель, опции чистки и предварительный расчёт;</li>
+        <li>фотографии мебели, которые вы прикладываете к заявке по своему желанию.</li>
+      </ul>
+      <p>Мы не запрашиваем паспортные данные, данные банковских карт и другую информацию, которая не нужна для выполнения заказа. Онлайн-оплаты на сайте нет.</p>
+
+      <h3>3. Зачем нужны эти данные</h3>
+      <ul>
+        <li>связаться с вами и подтвердить итоговую цену и время выезда;</li>
+        <li>приехать по нужному адресу и выполнить чистку выбранной мебели;</li>
+        <li>учесть ваши пожелания из комментария и оценить работу по фотографиям;</li>
+        <li>исполнить гарантийные обязательства в течение 14 дней после чистки.</li>
+      </ul>
+      <p>Мы не используем ваши данные для рекламных рассылок без вашего отдельного согласия.</p>
+
+      <h3>4. Передача третьим лицам</h3>
+      <p>Мы не продаём и не передаём ваши данные третьим лицам в рекламных целях. Доступ к заявке получает только мастер и владелец сервиса — в объёме, необходимом для выполнения вашего заказа. Данные могут быть предоставлены государственным органам только в случаях, прямо предусмотренных законом.</p>
+
+      <h3>5. Хранение и защита</h3>
+      <p>Данные хранятся не дольше, чем это нужно для выполнения заказа и гарантийных обязательств, после чего удаляются. Мы принимаем разумные организационные и технические меры, чтобы данные не попали к посторонним.</p>
+
+      <h3>6. Ваши права</h3>
+      <p>Вы вправе в любой момент узнать, какие ваши данные у нас есть, попросить исправить их или удалить, а также отозвать согласие на обработку. Для этого достаточно позвонить по телефону сервиса: <a href="#" data-company-phone-link><span data-company-phone>+7 (900) 123-45-67</span></a>. Запрос на удаление мы выполняем после завершения заказа и гарантийного срока, если более долгое хранение не требуется по закону.</p>
+
+      <h3>7. Изменения политики</h3>
+      <p>Если мы изменим эту политику, актуальная редакция будет опубликована на этой странице с новой датой. Продолжая пользоваться сайтом после изменения, вы соглашаетесь с обновлёнными условиями.</p>
+    </div>
+  </div>
+  <div style="height:40px"></div>
+</main>
+
+<div class="toast" id="toast" role="status"><span id="toastText"></span><button type="button" id="toastAction" class="hidden">Отменить</button></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+"use strict";
+/* ============ ДАННЫЕ ШАБЛОНА ============ */
+var CATEGORIES = {
+  sofa:     { name:"Диван",   hint:"2, 3 места, угловой", variants:[
+    { id:"sofa2", label:"2 места" }, { id:"sofa3", label:"3 места" }, { id:"sofaCorner", label:"Угловой" } ] },
+  armchair: { name:"Кресло",  hint:"обычное, реклайнер", variants:[
+    { id:"armchair", label:"Обычное" }, { id:"recliner", label:"Реклайнер" } ] },
+  mattress: { name:"Матрас",  hint:"1- и 2-спальный", variants:[
+    { id:"mattressSingle", label:"Односпальный" }, { id:"mattressDouble", label:"Двуспальный" } ] },
+  chair:    { name:"Стул",    hint:"сиденье, со спинкой", variants:[
+    { id:"chairSeat", label:"Только сиденье" }, { id:"chairBack", label:"Сиденье со спинкой" } ] },
+  other:    { name:"Другое",  hint:"цена по фото", variants:[] }
+};
+var VARIANT_NAMES = {
+  sofa2:"Диван · 2 места", sofa3:"Диван · 3 места", sofaCorner:"Диван · угловой",
+  armchair:"Кресло · обычное", recliner:"Кресло · реклайнер",
+  mattressSingle:"Матрас · односпальный", mattressDouble:"Матрас · двуспальный",
+  chairSeat:"Стул · только сиденье", chairBack:"Стул · сиденье со спинкой"
+};
+var ICONS = {
+  sofa:'<svg viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22V14a5 5 0 0 1 5-5h22a5 5 0 0 1 5 5v8"/><path d="M5 27a4 4 0 0 1 8 0v3h22v-3a4 4 0 0 1 8 0v6a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5v-6Z"/><path d="M13 30v-8M35 30v-8"/></svg>',
+  armchair:'<svg viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 20v-7a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v7"/><path d="M10 26a4 4 0 0 1 8 0v4h12v-4a4 4 0 0 1 8 0v5a5 5 0 0 1-5 5H15a5 5 0 0 1-5-5v-5Z"/></svg>',
+  mattress:'<svg viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="16" width="36" height="16" rx="5"/><path d="M6 24h36M14 16v16M24 16v16M34 16v16" opacity=".55"/></svg>',
+  chair:'<svg viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 6v16M32 6v16M16 14h16"/><path d="M12 22h24v6H12z"/><path d="M15 28v12M33 28v12"/></svg>',
+  other:'<svg viewBox="0 0 48 48" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="10" width="32" height="28" rx="5"/><circle cx="17" cy="19" r="2.6"/><path d="M10 34l9-9 6 6 5-5 8 8"/></svg>'
+};
+/* Линейные иконки запасного варианта героя (если Three.js не загрузился):
+   тот же контурный стиль, что у пикера, но крупно и в цвете текущей темы.
+   Для «Другое» — пуф, а не картинка-«фото». */
+var FALLBACK_ICONS = {
+  sofa:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22V14a5 5 0 0 1 5-5h22a5 5 0 0 1 5 5v8"/><path d="M5 27a4 4 0 0 1 8 0v3h22v-3a4 4 0 0 1 8 0v6a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5v-6Z"/><path d="M13 30v-8M35 30v-8"/><path d="M10 38v3M38 38v3" opacity=".55"/></svg>',
+  armchair:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 20v-7a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v7"/><path d="M10 26a4 4 0 0 1 8 0v4h12v-4a4 4 0 0 1 8 0v5a5 5 0 0 1-5 5H15a5 5 0 0 1-5-5v-5Z"/><path d="M14 36v3M34 36v3" opacity=".55"/></svg>',
+  mattress:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="16" width="36" height="16" rx="5"/><path d="M6 24h36M14 16v16M24 16v16M34 16v16" opacity=".55"/><path d="M10 32v3M38 32v3" opacity=".55"/></svg>',
+  chair:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 6v16M32 6v16M16 14h16"/><path d="M12 22h24v6H12z"/><path d="M15 28v12M33 28v12"/></svg>',
+  other:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="15" width="30" height="21" rx="10"/><path d="M9 25h30" opacity=".55"/><circle cx="24" cy="20" r="1.6"/><path d="M15 36v3M33 36v3" opacity=".55"/></svg>'
+};
+var STATUS = {
+  new:{ label:"Новая", cls:"st-new" }, agreed:{ label:"Согласована", cls:"st-ok" },
+  done:{ label:"Завершена", cls:"st-done" }, cancelled:{ label:"Отменена", cls:"st-cancel" }
+};
+var ACCENTS = ["#0A84FF","#0C5F57","#1D5C73","#40513B","#7A4A21","#6E3B4E","#3E4A5A","#22A447","#06B6D4","#F58220"];
+
+/* Настройки компании и прайс: владелец меняет их в кабинете. */
+var settings = {
+  prices:{ sofa2:3500, sofa3:4500, sofaCorner:5500, armchair:2000, recliner:2500,
+           mattressSingle:2500, mattressDouble:3500, chairSeat:500, chairBack:700 },
+  minOrder:3000, dirtPct:30, secondPct:50, outFee:800,
+  company:{ name:"Тест", phone:"+7 (900) 123-45-67", city:"Санкт-Петербург",
+            area:"город и ближайшие пригороды", accent:"#0A84FF" },
+  telegram:{ chatId:"", token:"" }
+};
+
+/* ============ СОСТОЯНИЕ ============ */
+var picker = { cat:"sofa", variant:"sofa2", qty:1, dirt:false, second:false };
+var cart = [];           /* {key, variantId|null, name, qty, dirt, second, desc, unit|null} unit=null => по фото */
+var photos = [];         /* {url, name} — превью в памяти этой сессии */
+var requests = [];
+var reqSeq = 1001;
+var loggedIn = false;
+var lastRemoved = null, toastTimer = null;
+
+function $(id){ return document.getElementById(id); }
+function fmt(n){ return n.toLocaleString("ru-RU") + " ₽"; }
+/* ===== v4: плавный пересчёт сумм (count-up) и плавная смена категорий.
+   ОТКАТ: удалить этот блок и вернуть вызовы v4SetMoney/v4SwitchCat на прямые присваивания. ===== */
+var v4PrevItem = null, v4PrevGrand = null, v4PrevSb = null, v4SwitchTimer = 0;
+function v4SetMoney(el, to, suffix, emptyText, prev){
+  if (!el) return;
+  if (el._raf) cancelAnimationFrame(el._raf);
+  if (to == null){ el.textContent = emptyText; return; }
+  var from = (typeof prev === "number") ? prev : to;
+  if (reduceMotion || from === to){ el.textContent = fmt(to) + (suffix || ""); return; }
+  var start = null, dur = 380;
+  function step(ts){
+    if (start == null) start = ts;
+    var k = Math.min(1, (ts - start) / dur);
+    var e = 1 - Math.pow(1 - k, 3);
+    el.textContent = fmt(Math.round(from + (to - from) * e)) + (suffix || "");
+    if (k < 1) el._raf = requestAnimationFrame(step);
+  }
+  el._raf = requestAnimationFrame(step);
+}
+function v4SwitchCat(fn){
+  if (reduceMotion){ fn(); return; }
+  var stage = $("heroStage"), panel = document.querySelector(".panel-card");
+  stage.classList.add("v4-switch");
+  if (panel) panel.classList.add("v4-switch");
+  clearTimeout(v4SwitchTimer);
+  v4SwitchTimer = setTimeout(function(){
+    fn();
+    stage.classList.remove("v4-switch");
+    if (panel) panel.classList.remove("v4-switch");
+  }, 170);
+}
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+
+/* ============ РАСЧЁТ ============ */
+/* Порядок: база → вторая сторона матраса → сильные загрязнения → количество.
+   Минимум применяется к сумме чистки, выезд за город добавляется после. */
+function unitPrice(variantId, dirt, second){
+  var base = settings.prices[variantId];
+  if (base == null) return null;
+  var p = base;
+  if (second) p += Math.round(base * settings.secondPct / 100);
+  if (dirt)   p += Math.round(p * settings.dirtPct / 100);
+  return Math.round(p / 10) * 10;
+}
+function calcTotals(outCity){
+  var known = 0, manualCount = 0;
+  cart.forEach(function(it){
+    if (it.unit == null) manualCount += it.qty;
+    else known += it.unit * it.qty;
+  });
+  var cleaning = known;
+  var minApplied = false;
+  if (known > 0 && known < settings.minOrder){ cleaning = settings.minOrder; minApplied = true; }
+  var travel = outCity ? settings.outFee : 0;
+  return { known:known, cleaning:cleaning, minApplied:minApplied, travel:travel,
+           total:cleaning + travel, manualCount:manualCount, hasKnown:known>0 };
+}
+
+/* ============ ВЫБОР МЕБЕЛИ ============ */
+function renderCats(){
+  $("cats").innerHTML = Object.keys(CATEGORIES).map(function(k){
+    var c = CATEGORIES[k];
+    return '<button type="button" class="cat" data-cat="'+k+'" aria-pressed="'+(picker.cat===k)+'">'+ICONS[k]+'<span>'+c.name+'</span><small>'+c.hint+'</small></button>';
+  }).join("");
+  Array.prototype.forEach.call($("cats").children, function(btn){
+    btn.addEventListener("click", function(){
+      picker.cat = btn.getAttribute("data-cat");
+      var vs = CATEGORIES[picker.cat].variants;
+      picker.variant = vs.length ? vs[0].id : null;
+      picker.second = false; $("secondSide").checked = false;
+      v4SwitchCat(renderPicker); /* v4: плавная смена категории */
+    });
+  });
+}
+function renderPicker(){
+  renderCats();
+  var c = CATEGORIES[picker.cat];
+  $("variantBlock").classList.toggle("hidden", !c.variants.length);
+  $("otherBlock").classList.toggle("hidden", picker.cat !== "other");
+  $("variants").innerHTML = c.variants.map(function(v){
+    return '<button type="button" data-v="'+v.id+'" aria-pressed="'+(picker.variant===v.id)+'">'+v.label+' · '+fmt(settings.prices[v.id])+'</button>';
+  }).join("");
+  Array.prototype.forEach.call($("variants").children, function(btn){
+    btn.addEventListener("click", function(){ picker.variant = btn.getAttribute("data-v"); renderPicker(); });
+  });
+  $("secondSideRow").classList.toggle("hidden", picker.cat !== "mattress");
+  $("dirtPctLabel").textContent = "+" + settings.dirtPct + "%";
+  $("secondPctLabel").textContent = "+" + settings.secondPct + "%";
+  $("outFeeLabel").textContent = fmt(settings.outFee);
+  $("qtyOut").textContent = picker.qty;
+  var p = picker.cat === "other" ? null : unitPrice(picker.variant, picker.dirt, picker.second && picker.cat==="mattress");
+  /* v4: плавный пересчёт цены позиции */
+  v4SetMoney($("itemPrice"), p == null ? null : p * picker.qty, "", "По фото", v4PrevItem);
+  v4PrevItem = p == null ? null : p * picker.qty;
+  $("addBtn").textContent = picker.cat === "other" ? "Добавить «Другое» в заказ" : "Добавить в заказ";
+  $("panelTitle").textContent = c.name;
+  updateHero();
+}
+
+/* ============ ГЕРОЙ: НАСТОЯЩЕЕ 3D (Three.js), ПОВОРОТ ============ */
+var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* --- Настоящая 3D-сцена: модели собраны процедурно из примитивов Three.js --- */
+var threeTried = false, threeOn = false, heroScene = null, spinGroup = null;
+var heroModels = {}, currentModel = null, MAT = null;
+var spin = { y:-0.55, x:0.05 }, spinHome = { y:-0.55, x:0.05 };
+var heroDrag = null, lastInteract = 0;
+/* Инерция вращения после перетаскивания и плавный возврат по кнопке сброса */
+var spinVel = { y:0, x:0 }, resetting = false, resetTargetY = 0;
+/* Кадрирование: своя дистанция и высота цели камеры для каждой модели */
+var HERO_FRAME = { /* v4: камера ближе — модель крупнее на ~15% */
+  sofa:{ dist:5.6, ty:1.0 }, armchair:{ dist:5.2, ty:0.98 }, mattress:{ dist:5.6, ty:0.45 },
+  chair:{ dist:5.9, ty:1.18 }, other:{ dist:4.5, ty:0.72 }
+};
+var camGoal = { dist:5.6, ty:1.0 }, camCur = { dist:5.6, ty:0.95 }; /* v4 */
+
+/* Скруглённый параллелепипед: subdivided box, вершины спроецированы на
+   скруглённую поверхность, дубли вершин сшиты — гладкие нормали, мягкие грани. */
+/* ============ 3D-МОДЕЛИ: стиль «Сканди Плюс — Чистый» ============
+   Скруглённые боксы на 18 сегментах, выпуклые подушки-«короны»,
+   точёные деревянные ножки (LatheGeometry, 32 сегмента), плетение
+   ткани как bumpMap и roughnessMap одновременно. Без лиц и ручек.
+   Кант только у матраса (двойной, сверху и снизу). */
+
+/* Плетение ткани: процедурная карта для bumpMap и roughnessMap. */
+function weaveTexture(){
+  var c = document.createElement("canvas");
+  c.width = 256; c.height = 256;
+  var x = c.getContext("2d");
+  x.fillStyle = "#a0a0a0"; x.fillRect(0, 0, 256, 256);
+  var s = 8;
+  for (var j = 0; j < 256 / s; j++){
+    for (var i = 0; i < 256 / s; i++){
+      var over = (i + j) % 2 === 0;
+      var v = over ? 235 : 200;
+      v += Math.floor(Math.random() * 12) - 6;
+      x.fillStyle = "rgb(" + v + "," + v + "," + v + ")";
+      x.fillRect(i * s + 1, j * s + 1, s - 2, s - 2);
+    }
+  }
+  var t = new THREE.CanvasTexture(c);
+  t.wrapS = t.wrapT = THREE.RepeatWrapping;
+  t.repeat.set(1, 1); /* масштаб плетения — в UV, они уже в мировых единицах */
+  return t;
+}
+
+/* Скруглённый параллелепипед: subdivided box, вершины спроецированы на
+   скруглённую поверхность, дубли вершин сшиты — гладкие нормали, мягкие грани. */
+function roundedBoxGeo(w, h, d, r, seg){
+  var s = seg || 18;
+  var src = new THREE.BoxGeometry(w, h, d, s, s, s);
+  var pos = src.attributes.position, idx = src.index.array;
+  var hw = w/2 - r, hh = h/2 - r, hd = d/2 - r;
+  var v = new THREE.Vector3();
+  for (var i = 0; i < pos.count; i++){
+    v.fromBufferAttribute(pos, i);
+    var cx = Math.max(-hw, Math.min(hw, v.x));
+    var cy = Math.max(-hh, Math.min(hh, v.y));
+    var cz = Math.max(-hd, Math.min(hd, v.z));
+    var dx = v.x - cx, dy = v.y - cy, dz = v.z - cz;
+    var len = Math.sqrt(dx*dx + dy*dy + dz*dz);
+    if (len > 0.0001){
+      var s2 = r / len;
+      pos.setXYZ(i, cx + dx*s2, cy + dy*s2, cz + dz*s2);
+    }
+  }
+  var map = {}, verts = [], outIdx = [];
+  for (var t = 0; t < idx.length; t++){
+    var vi = idx[t];
+    var key = pos.getX(vi).toFixed(3) + "," + pos.getY(vi).toFixed(3) + "," + pos.getZ(vi).toFixed(3);
+    if (map[key] === undefined){ map[key] = verts.length / 3; verts.push(pos.getX(vi), pos.getY(vi), pos.getZ(vi)); }
+    outIdx.push(map[key]);
+  }
+  var geo = new THREE.BufferGeometry();
+  geo.setAttribute("position", new THREE.Float32BufferAttribute(verts, 3));
+  geo.setIndex(outIdx);
+  geo.computeVertexNormals();
+  /* UV-развёртка после сшивки вершин: исходные UV бокса теряются при
+     сварке, без них bumpMap/roughnessMap не работают (вся грань сэмплит
+     один тексель). Проекция по доминирующей оси нормали, масштаб —
+     в мировых единицах, поэтому плетение одинаковой плотности на всех
+     деталях, а швы проекций на равномерном плетении не видны. */
+  var nrm = geo.attributes.normal, p2 = geo.attributes.position;
+  var uv = new Float32Array(p2.count * 2), K = 1.2;
+  for (var u2 = 0; u2 < p2.count; u2++){
+    var nx = Math.abs(nrm.getX(u2)), ny = Math.abs(nrm.getY(u2)), nz = Math.abs(nrm.getZ(u2));
+    var px = p2.getX(u2), py = p2.getY(u2), pz = p2.getZ(u2), uu, vv;
+    if (nx >= ny && nx >= nz){ uu = pz; vv = py; }
+    else if (ny >= nx && ny >= nz){ uu = px; vv = pz; }
+    else { uu = px; vv = py; }
+    uv[u2 * 2] = uu * K; uv[u2 * 2 + 1] = vv * K;
+  }
+  geo.setAttribute("uv", new THREE.BufferAttribute(uv, 2));
+  return geo;
+}
+/* Выпуклая подушка-«корона»: скруглённый бокс, у которого одна грань
+   выгнута наружу параболой. axis "y" — выпуклость вверх (сиденье),
+   "z" — вперёд (спинка). Края подушки не трогаем. */
+function crownGeo(w, h, d, r, crown, axis){
+  var geo = roundedBoxGeo(w, h, d, r, 18);
+  var pos = geo.attributes.position;
+  var v = new THREE.Vector3();
+  for (var i = 0; i < pos.count; i++){
+    v.fromBufferAttribute(pos, i);
+    var u = v.x / (w / 2);
+    var vv = axis === "z" ? v.y / (h / 2) : v.z / (d / 2);
+    var fall = Math.max(0, 1 - u * u) * Math.max(0, 1 - vv * vv);
+    if (axis === "z"){
+      if (v.z > 0) pos.setZ(i, v.z + crown * fall);
+    } else {
+      if (v.y > 0) pos.setY(i, v.y + crown * fall);
+    }
+  }
+  geo.computeVertexNormals();
+  return geo;
+}
+function part(geo, mat, x, y, z, rx, ry, rz){
+  var m = new THREE.Mesh(geo, mat);
+  m.position.set(x || 0, y || 0, z || 0);
+  if (rx) m.rotation.x = rx;
+  if (ry) m.rotation.y = ry;
+  if (rz) m.rotation.z = rz;
+  m.castShadow = true; m.receiveShadow = true;
+  return m;
+}
+function box(parent, w, h, d, r, mat, x, y, z, rx){
+  var m = part(roundedBoxGeo(w, h, d, r, 18), mat, x, y, z, rx || 0, 0, 0);
+  parent.add(m);
+  return m;
+}
+/* Точёная деревянная ножка: профиль с утолщениями-«бочонками»,
+   LatheGeometry на 32 сегмента. Основание — на полу (y = 0). */
+function woodLeg(parent, x, z, h, r){
+  r = r || 0.045;
+  var prof = [[0.001,0],[0.55,0],[0.78,0.03],[1.0,0.14],[0.8,0.32],[0.72,0.5],[0.95,0.68],[1.0,0.8],[0.7,0.93],[0.62,1.0],[0.001,1.0]];
+  var pts = prof.map(function(p){ return new THREE.Vector2(p[0] * r, p[1] * h); });
+  var m = part(new THREE.LatheGeometry(pts, 32), MAT.leg, x, 0, z);
+  parent.add(m);
+  return m;
+}
+function roundedRectShape(w, h, r){
+  var s = new THREE.Shape(), x = -w/2, y = -h/2;
+  s.moveTo(x + r, y);
+  s.lineTo(x + w - r, y); s.quadraticCurveTo(x + w, y, x + w, y + r);
+  s.lineTo(x + w, y + h - r); s.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+  s.lineTo(x + r, y + h); s.quadraticCurveTo(x, y + h, x, y + h - r);
+  s.lineTo(x, y + r); s.quadraticCurveTo(x, y, x + r, y);
+  return s;
+}
+/* Кант-трубочка по скруглённому прямоугольнику в горизонтальной плоскости. */
+function piping(parent, w, d, r, y, tubeR, mat){
+  var pts = roundedRectShape(w, d, r).getPoints(40).map(function(p){ return new THREE.Vector3(p.x, y, p.y); });
+  var curve = new THREE.CatmullRomCurve3(pts, true);
+  parent.add(part(new THREE.TubeGeometry(curve, 72, tubeR, 8, true), mat, 0, 0, 0));
+}
+/* Подушка спинки: выпуклая. */
+function backCushion(parent, w, h, d, r, mat, x, y, z, rx, crown){
+  var cg = new THREE.Group();
+  cg.position.set(x, y, z);
+  cg.rotation.x = rx || 0;
+  cg.add(part(crownGeo(w, h, d, r, crown || 0.06, "z"), mat, 0, 0, 0));
+  parent.add(cg);
+  return cg;
+}
+/* Подушка сиденья: выпуклая вверх. */
+function seatCushion(parent, w, h, d, r, mat, x, y, z, crown){
+  var cg = new THREE.Group();
+  cg.position.set(x, y, z);
+  cg.add(part(crownGeo(w, h, d, r, crown || 0.05, "y"), mat, 0, 0, 0));
+  parent.add(cg);
+  return cg;
+}
+
+function buildSofa(){
+  var g = new THREE.Group();
+  [[-1.45,-0.55],[1.45,-0.55],[-1.45,0.55],[1.45,0.55]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.34, 0.05); });
+  box(g, 3.3, 0.62, 1.5, 0.16, MAT.fabric, 0, 0.63, 0);                    /* основание */
+  box(g, 3.3, 1.2, 0.4, 0.15, MAT.fabricDark, 0, 1.5, -0.58, -0.07);       /* спинка */
+  [-1.06, 0, 1.06].forEach(function(x){
+    seatCushion(g, 1.0, 0.3, 1.04, 0.12, MAT.fabricLight, x, 1.08, 0.14, 0.05);  /* подушки сиденья */
+    backCushion(g, 1.0, 0.82, 0.26, 0.11, MAT.fabricLight, x, 1.62, -0.34, -0.1, 0.06); /* подушки спинки */
+  });
+  [-1.58, 1.58].forEach(function(x){ box(g, 0.52, 0.9, 1.5, 0.19, MAT.fabric, x, 1.06, 0); }); /* подлокотники */
+  /* акцентные подушки: шалфей и серо-синий, прислонены к спинке */
+  g.add(part(crownGeo(0.55, 0.55, 0.18, 0.09, 0.045, "z"), MAT.accentSage, -1.12, 1.42, -0.05, -0.28, 0.12, 0.18));
+  g.add(part(crownGeo(0.55, 0.55, 0.18, 0.09, 0.045, "z"), MAT.accentBlue, 1.12, 1.42, -0.05, -0.28, -0.12, -0.15));
+  return g;
+}
+function buildArmchair(){
+  var g = new THREE.Group();
+  [[-0.6,-0.48],[0.6,-0.48],[-0.6,0.48],[0.6,0.48]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.32, 0.05); });
+  box(g, 1.65, 0.58, 1.35, 0.15, MAT.fabric, 0, 0.6, 0);
+  box(g, 1.65, 1.15, 0.38, 0.14, MAT.fabricDark, 0, 1.45, -0.52, -0.07);
+  seatCushion(g, 1.02, 0.28, 0.98, 0.11, MAT.fabricLight, 0, 1.02, 0.12, 0.05);  /* одна подушка сиденья */
+  backCushion(g, 1.02, 0.78, 0.25, 0.11, MAT.fabricLight, 0, 1.55, -0.3, -0.1, 0.06); /* одна подушка спинки */
+  [-0.82, 0.82].forEach(function(x){ box(g, 0.44, 0.82, 1.35, 0.17, MAT.fabric, x, 1.0, 0); });
+  g.add(part(crownGeo(0.5, 0.5, 0.17, 0.09, 0.04, "z"), MAT.accentSage, -0.35, 1.32, -0.02, -0.25, 0.2, 0.15));
+  return g;
+}
+function buildMattress(){
+  var g = new THREE.Group();
+  g.add(part(crownGeo(3.3, 0.55, 2.0, 0.17, 0.05, "y"), MAT.fabricLight, 0, 0.32, 0)); /* плоский объёмный блок, верх чуть выпуклый */
+  /* двойной кант по верхней грани: петли лежат на грани, а не парят над ней */
+  piping(g, 3.28, 1.98, 0.16, 0.585, 0.03, MAT.fabricDark);               /* кант сверху, по краю */
+  piping(g, 3.18, 1.88, 0.14, 0.605, 0.026, MAT.fabricDark);              /* второй кант сверху, внутри */
+  piping(g, 3.28, 1.98, 0.16, 0.055, 0.03, MAT.fabricDark);               /* кант снизу, по краю */
+  piping(g, 3.18, 1.88, 0.14, 0.035, 0.026, MAT.fabricDark);              /* второй кант снизу, внутри */
+  return g;
+}
+function buildChair(){
+  var g = new THREE.Group();
+  [[-0.44,-0.4],[0.44,-0.4],[-0.44,0.4],[0.44,0.4]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.9, 0.035); });
+  box(g, 1.15, 0.2, 1.0, 0.08, MAT.fabric, 0, 0.98, 0);                    /* сиденье */
+  seatCushion(g, 1.05, 0.12, 0.9, 0.06, MAT.fabricLight, 0, 1.12, 0, 0.03); /* тонкая подушка сиденья */
+  [-0.44, 0.44].forEach(function(x){                                       /* стойки спинки */
+    g.add(part(new THREE.CylinderGeometry(0.04, 0.04, 0.62, 32), MAT.leg, x, 1.36, -0.43));
+  });
+  backCushion(g, 1.15, 0.95, 0.18, 0.08, MAT.fabricLight, 0, 1.95, -0.44, -0.06, 0.05); /* спинка */
+  return g;
+}
+function buildPouf(){
+  var g = new THREE.Group();
+  [[-0.58,-0.58],[0.58,-0.58],[-0.58,0.58],[0.58,0.58]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.12, 0.05); });
+  g.add(part(crownGeo(1.85, 1.2, 1.85, 0.48, 0.06, "y"), MAT.fabric, 0, 0.72, 0)); /* пуф для «Другое», верх чуть выпуклый */
+  g.add(part(new THREE.CylinderGeometry(0.1, 0.12, 0.06, 16), MAT.fabricDark, 0, 1.37, 0)); /* пуговица */
+  return g;
+}
+var HERO_BUILDERS = { sofa:buildSofa, armchair:buildArmchair, mattress:buildMattress, chair:buildChair, other:buildPouf };
+
+function sizeHero3D(){
+  if (!heroScene) return;
+  var c = heroScene.canvas;
+  var w = c.clientWidth || 600, h = c.clientHeight || 330;
+  heroScene.renderer.setSize(w, h, false);
+  heroScene.camera.aspect = w / h;
+  heroScene.camera.updateProjectionMatrix();
+}
+function initHero3D(){
+  if (typeof THREE === "undefined") return false;
+  try {
+    var canvas = $("heroCanvas");
+    var renderer = new THREE.WebGLRenderer({ canvas:canvas, antialias:true, alpha:true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    renderer.toneMappingExposure = 1.06;
+    var scene = new THREE.Scene();
+    /* Фон не задаём: канвас прозрачный, сквозь него видна стеклянная карточка.
+       Туман лишь добавляет глубину, его цвет подстраивается под тему. */
+    scene.fog = new THREE.Fog(0xE9F1F5, 9.5, 19);
+    var camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
+    camera.position.set(0, 2.1, 6.6);
+    camera.lookAt(0, 0.95, 0);
+    var hemi = new THREE.HemisphereLight(0xffffff, 0x8FA5B5, 0.35);       /* полусфера: мягкий общий свет */
+    scene.add(hemi);
+    var key = new THREE.DirectionalLight(0xFFF1DC, 1.7);                  /* ключевой свет с тенями, тёплый */
+    key.position.set(3.5, 6, 4);
+    key.castShadow = true;
+    key.shadow.mapSize.set(2048, 2048);
+    key.shadow.camera.left = -4; key.shadow.camera.right = 4;
+    key.shadow.camera.top = 4; key.shadow.camera.bottom = -3;
+    key.shadow.camera.far = 20;
+    key.shadow.radius = 4;
+    key.shadow.bias = -0.0004;
+    key.shadow.normalBias = 0.03;
+    scene.add(key);
+    var fill = new THREE.DirectionalLight(0xDFEAF5, 0.3);                   /* заполняющий свет слева */
+    fill.position.set(-4, 3, 2.5);
+    scene.add(fill);
+    var rim = new THREE.DirectionalLight(0xffffff, 0.35);                   /* контровой свет: кромка модели */
+    rim.position.set(-2.5, 4.5, -4.5);
+    scene.add(rim);
+    var ground = new THREE.Mesh(new THREE.CircleGeometry(3.6, 40), new THREE.ShadowMaterial({ opacity:0.22 }));
+    ground.rotation.x = -Math.PI / 2;
+    ground.receiveShadow = true;
+    scene.add(ground);
+    spinGroup = new THREE.Group();
+    scene.add(spinGroup);
+    var weave = weaveTexture();
+    MAT = {
+      fabric:      new THREE.MeshStandardMaterial({ color:0xCDBFA6, roughness:1.0, bumpMap:weave, bumpScale:0.025, roughnessMap:weave }),
+      fabricDark:  new THREE.MeshStandardMaterial({ color:0xB3A186, roughness:1.0, bumpMap:weave, bumpScale:0.025, roughnessMap:weave }),
+      fabricLight: new THREE.MeshStandardMaterial({ color:0xE4D9C3, roughness:1.0, bumpMap:weave, bumpScale:0.025, roughnessMap:weave }),
+      accentSage:  new THREE.MeshStandardMaterial({ color:0x9CAF88, roughness:1.0, bumpMap:weave, bumpScale:0.025, roughnessMap:weave }),
+      accentBlue:  new THREE.MeshStandardMaterial({ color:0x7E96AB, roughness:1.0, bumpMap:weave, bumpScale:0.025, roughnessMap:weave }),
+      white:       new THREE.MeshStandardMaterial({ color:0xF5F8F9, roughness:0.5 }),
+      dark:        new THREE.MeshPhysicalMaterial({ color:0x1E2A35, roughness:0.28, clearcoat:0.7, clearcoatRoughness:0.25 }),
+      leg:         new THREE.MeshStandardMaterial({ color:0xA67C52, roughness:0.55, metalness:0.0 })
+    };
+    heroScene = { renderer:renderer, scene:scene, camera:camera, canvas:canvas,
+                  hemi:hemi, key:key, fill:fill, rim:rim, groundMat:ground.material };
+    applySceneTheme();
+    canvas.classList.remove("hidden");
+    $("heroFallback").classList.add("hidden");
+    sizeHero3D();
+    window.addEventListener("resize", sizeHero3D);
+    (function loop(){
+      requestAnimationFrame(loop);
+      if (resetting){
+        /* плавный возврат к исходному ракурсу кратчайшим путём */
+        spin.y += (resetTargetY - spin.y) * 0.14;
+        spin.x += (spinHome.x - spin.x) * 0.14;
+        if (Math.abs(resetTargetY - spin.y) < 0.002 && Math.abs(spinHome.x - spin.x) < 0.002){
+          spin.y = resetTargetY; spin.x = spinHome.x; resetting = false;
+        }
+      } else if (!heroDrag && (Math.abs(spinVel.y) > 0.0004 || Math.abs(spinVel.x) > 0.0004)){
+        /* инерция: модель докручивается после отпускания и плавно замирает */
+        spin.y += spinVel.y;
+        spin.x = Math.max(-0.22, Math.min(0.38, spin.x + spinVel.x));
+        spinVel.y *= 0.94; spinVel.x *= 0.9;
+        lastInteract = Date.now();
+      } else if (!heroDrag && !reduceMotion && Date.now() - lastInteract > 2600){
+        spin.y += 0.0045; /* медленное автовращение в покое */
+      }
+      spinGroup.rotation.y = spin.y;
+      spinGroup.rotation.x = spin.x;
+      /* аккуратное кадрирование: камера плавно занимает ракурс текущей модели,
+         на узких экранах отъезжает чуть дальше, чтобы модель не обрезалась */
+      var aspect = camera.aspect || 1;
+      var fit = aspect >= 1.15 ? 1 : Math.min(1.4, Math.pow(1.15 / Math.max(aspect, 0.5), 0.55));
+      camCur.dist += (camGoal.dist * fit - camCur.dist) * 0.08;
+      camCur.ty += (camGoal.ty - camCur.ty) * 0.08;
+      camera.position.set(0, camCur.ty + 1.15, camCur.dist);
+      camera.lookAt(0, camCur.ty, 0);
+      renderer.render(scene, camera);
+    })();
+    return true;
+  } catch (e) { return false; }
+}
+/* --- Тема сцены: свет, туман и контактная тень следуют за темой сайта --- */
+function isDarkTheme(){
+  var t = document.documentElement.getAttribute("data-theme");
+  if (t === "dark") return true;
+  if (t === "light") return false;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches;
+}
+function applySceneTheme(){
+  if (!heroScene) return;
+  var dark = isDarkTheme();
+  heroScene.scene.fog.color.setHex(dark ? 0x0C1624 : 0xEFE8DA); /* v4: тёплый туман */
+  heroScene.hemi.color.setHex(dark ? 0xC7DDF5 : 0xFFFFFF);
+  heroScene.hemi.groundColor.setHex(dark ? 0x141F30 : 0x8FA5B5);
+  heroScene.hemi.intensity = dark ? 0.5 : 0.35;
+  heroScene.key.color.setHex(dark ? 0xEAF2FD : 0xFFF1DC);
+  heroScene.key.intensity = dark ? 0.85 : 1.7;
+  heroScene.fill.color.setHex(dark ? 0x7E97B5 : 0xDFEAF5);
+  heroScene.fill.intensity = dark ? 0.35 : 0.3;
+  heroScene.rim.color.setHex(dark ? 0xA9CCFF : 0xFFFFFF);
+  heroScene.rim.intensity = dark ? 0.7 : 0.35;
+  heroScene.groundMat.opacity = dark ? 0.42 : 0.30; /* v4: контактная тень чуть сильнее */
+  heroScene.renderer.toneMappingExposure = dark ? 1.15 : 1.06;
+}
+/* Переключение темы кнопкой и смена системной темы — без перезагрузки */
+if (window.MutationObserver){
+  new MutationObserver(function(){ applySceneTheme(); })
+    .observe(document.documentElement, { attributes:true, attributeFilter:["data-theme"] });
+}
+var schemeMq = window.matchMedia("(prefers-color-scheme: dark)");
+if (schemeMq.addEventListener) schemeMq.addEventListener("change", applySceneTheme);
+else if (schemeMq.addListener) schemeMq.addListener(applySceneTheme);
+
+function setHeroModel(cat){
+  if (!threeOn || !HERO_BUILDERS[cat]) return;
+  if (!heroModels[cat]){
+    var m = HERO_BUILDERS[cat]();
+    var bb = new THREE.Box3().setFromObject(m);
+    var bc = bb.getCenter(new THREE.Vector3());
+    m.position.x -= bc.x; m.position.z -= bc.z;   /* модель строго по центру кадра */
+    heroModels[cat] = m;
+    spinGroup.add(m);
+  }
+  if (currentModel) currentModel.visible = false;
+  currentModel = heroModels[cat];
+  currentModel.visible = true;
+  var fr = HERO_FRAME[cat];
+  if (fr){ camGoal.dist = fr.dist; camGoal.ty = fr.ty; }
+}
+function updateHero(){
+  /* Запасной вариант всегда соответствует выбранной вкладке */
+  $("heroFallbackIcon").innerHTML = FALLBACK_ICONS[picker.cat] || "";
+  $("heroFallbackName").textContent = CATEGORIES[picker.cat].name;
+  if (!threeTried){
+    threeTried = true;
+    threeOn = initHero3D();
+  }
+  if (threeOn){
+    setHeroModel(picker.cat);
+  } else {
+    /* Three.js не загрузился — стеклянная карточка с линейной иконкой мебели, без ИИ-картинки */
+    $("heroCanvas").classList.add("hidden");
+    $("heroFallback").classList.remove("hidden");
+  }
+}
+(function(){
+  var stage = $("heroStage");
+  stage.addEventListener("pointerdown", function(e){
+    if (e.target.closest("button")) return;
+    heroDrag = { id:e.pointerId, sx:e.clientX, sy:e.clientY, lx:e.clientX, ly:e.clientY };
+    spinVel.y = 0; spinVel.x = 0; resetting = false;
+    lastInteract = Date.now();
+    if (stage.setPointerCapture) { try { stage.setPointerCapture(e.pointerId); } catch (err) {} }
+  });
+  stage.addEventListener("pointermove", function(e){
+    if (!heroDrag || e.pointerId !== heroDrag.id) return;
+    lastInteract = Date.now();
+    if (threeOn){
+      /* настоящее вращение модели: 360° по горизонтали, немного по вертикали;
+         скорость запоминаем — после отпускания сработает инерция */
+      var ddx = (e.clientX - heroDrag.lx) * 0.011;
+      var ddy = (e.clientY - heroDrag.ly) * 0.005;
+      spin.y += ddx;
+      spin.x = Math.max(-0.22, Math.min(0.38, spin.x + ddy));
+      spinVel.y = spinVel.y * 0.55 + ddx * 0.45;
+      spinVel.x = spinVel.x * 0.55 + ddy * 0.45;
+      heroDrag.lx = e.clientX; heroDrag.ly = e.clientY;
+    }
+  });
+  function endDrag(e){
+    if (heroDrag && e.pointerId === heroDrag.id){
+      heroDrag = null;
+      if (reduceMotion){ spinVel.y = 0; spinVel.x = 0; }  /* без лишнего движения при reduced motion */
+      lastInteract = Date.now();
+    }
+  }
+  stage.addEventListener("pointerup", endDrag);
+  stage.addEventListener("pointercancel", endDrag);
+})();
+
+/* ============ КОРЗИНА ============ */
+function itemName(it){ return it.variantId ? VARIANT_NAMES[it.variantId] : "Другое"; }
+function itemMeta(it){
+  var parts = [];
+  if (it.desc) parts.push(it.desc);
+  if (it.second) parts.push("вторая сторона");
+  if (it.dirt) parts.push("сильные загрязнения");
+  return parts.join(" · ");
+}
+function renderCart(){
+  var box = $("cartList");
+  if (!cart.length){
+    box.innerHTML = '<div class="empty"><b>Пока пусто</b>Выберите мебель и нажмите «Добавить в заказ». Можно собрать несколько предметов.</div>';
+  } else {
+    box.innerHTML = cart.map(function(it, i){
+      var sum = it.unit == null ? "По фото" : fmt(it.unit * it.qty);
+      return '<div class="cart-item"><div class="top"><h4>'+esc(itemName(it))+'</h4>'+
+        '<button type="button" class="btn btn-danger btn-sm" data-del="'+i+'">Удалить</button></div>'+
+        (itemMeta(it) ? '<div class="meta">'+esc(itemMeta(it))+'</div>' : '')+
+        '<div class="row2"><span class="stepper sm"><button type="button" data-dec="'+i+'" aria-label="Уменьшить">−</button><output>'+it.qty+'</output><button type="button" data-inc="'+i+'" aria-label="Увеличить">+</button></span>'+
+        '<label style="display:inline-flex;gap:7px;align-items:center;font-size:14px;cursor:pointer;min-height:44px"><input type="checkbox" aria-label="Сильные загрязнения для этой позиции" data-dirt="'+i+'" '+(it.dirt?"checked":"")+' style="width:22px;height:22px"/> сильные загрязнения</label>'+
+        '<span class="sum">'+sum+'</span></div></div>';
+    }).join("");
+    box.querySelectorAll("[data-del]").forEach(function(b){ b.addEventListener("click", function(){ removeItem(+b.getAttribute("data-del")); }); });
+    box.querySelectorAll("[data-inc]").forEach(function(b){ b.addEventListener("click", function(){ cart[+b.getAttribute("data-inc")].qty++; renderCart(); }); });
+    box.querySelectorAll("[data-dec]").forEach(function(b){ b.addEventListener("click", function(){ var it = cart[+b.getAttribute("data-dec")]; if (it.qty > 1) it.qty--; renderCart(); }); });
+    box.querySelectorAll("[data-dirt]").forEach(function(cb){ cb.addEventListener("change", function(){
+      var it = cart[+cb.getAttribute("data-dirt")];
+      it.dirt = cb.checked;
+      if (it.variantId) it.unit = unitPrice(it.variantId, it.dirt, it.second);
+      renderCart();
+    }); });
+  }
+  var t = calcTotals($("fOutCity").checked);
+  var rows = "";
+  if (cart.length){
+    if (t.hasKnown) rows += '<div class="line"><span>Чистка по тарифу</span><span>'+fmt(t.known)+'</span></div>';
+    if (t.minApplied) rows += '<div class="line"><span>Доведено до минимума заказа</span><span>'+fmt(t.cleaning)+'</span></div>';
+    if (t.manualCount) rows += '<div class="line"><span>По фото (оценит мастер)</span><span>'+t.manualCount+' предм.</span></div>';
+    if (t.travel) rows += '<div class="line"><span>Выезд за город</span><span>'+fmt(t.travel)+'</span></div>';
+    rows += '<div class="line grand"><span>Предварительно</span><span>'+(t.hasKnown ? fmt(t.total) : "По фото")+(t.manualCount && t.hasKnown ? " + по фото" : "")+'</span></div>';
+  }
+  $("totalsBox").innerHTML = rows;
+  /* v4: плавный пересчёт итога */
+  var v4gEl = $("totalsBox").querySelector(".grand span:last-child");
+  if (v4gEl){
+    if (t.hasKnown){ v4SetMoney(v4gEl, t.total, (t.manualCount ? " + по фото" : ""), "По фото", v4PrevGrand); v4PrevGrand = t.total; }
+    else { v4gEl.textContent = "По фото"; v4PrevGrand = null; }
+  }
+  if (!cart.length) v4PrevGrand = null;
+  var orderQty = cart.reduce(function(s, it){ return s + it.qty; }, 0);
+  $("orderCount").textContent = orderQty;
+  $("orderCount").classList.toggle("hidden", !orderQty);
+  if (!cart.length){ v4SetMoney($("sbTotal"), null, "", "Пока пусто", v4PrevSb); v4PrevSb = null; $("sbSubmit").disabled = true; }
+  else {
+    /* v4: плавный пересчёт суммы в липкой панели */
+    v4SetMoney($("sbTotal"), t.hasKnown ? t.total : null, (t.manualCount ? " + по фото" : ""), "По фото", v4PrevSb);
+    v4PrevSb = t.hasKnown ? t.total : null;
+    $("sbSubmit").disabled = false;
+  }
+}
+function removeItem(i){
+  lastRemoved = { item:cart[i], index:i };
+  cart.splice(i,1);
+  renderCart();
+  showToast("Позиция удалена", true);
+}
+function showToast(text, withUndo){
+  $("toastText").textContent = text;
+  $("toastAction").classList.toggle("hidden", !withUndo);
+  $("toast").classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ $("toast").classList.remove("show"); }, 6000);
+}
+$("toastAction").addEventListener("click", function(){
+  if (lastRemoved){ cart.splice(Math.min(lastRemoved.index, cart.length), 0, lastRemoved.item); lastRemoved = null; renderCart(); }
+  $("toast").classList.remove("show");
+});
+
+/* ============ ФОТО ============ */
+function renderPhotos(){
+  var box = $("photoBox");
+  box.querySelectorAll(".photo-thumb").forEach(function(n){ n.remove(); });
+  var add = box.querySelector(".photo-add");
+  photos.forEach(function(p, i){
+    var d = document.createElement("div");
+    d.className = "photo-thumb";
+    d.innerHTML = '<img src="'+p.url+'" alt="Фото мебели '+(i+1)+'"/><button type="button" aria-label="Удалить фото">✕</button>';
+    d.querySelector("button").addEventListener("click", function(){ photos.splice(i,1); renderPhotos(); });
+    box.insertBefore(d, add);
+  });
+  add.style.display = photos.length >= 3 ? "none" : "grid";
+}
+$("photoInput").addEventListener("change", function(e){
+  var files = Array.prototype.slice.call(e.target.files || []);
+  var okTypes = ["image/jpeg","image/png","image/webp"];
+  var added = 0;
+  files.forEach(function(f){
+    if (photos.length >= 3) return;
+    if (okTypes.indexOf(f.type) === -1){ showToast("Поддерживаются только JPEG, PNG и WebP", false); return; }
+    photos.push({ url:URL.createObjectURL(f), name:f.name });
+    added++;
+  });
+  e.target.value = "";
+  renderPhotos();
+  if (added) $("ePhotos").classList.remove("show");
+});
+
+/* ============ ОТПРАВКА ЗАЯВКИ ============ */
+function digits(s){ return (s||"").replace(/\D/g,""); }
+/* Маска телефона +7 (___) ___-__-__ */
+$("fPhone").addEventListener("input", function(){
+  var d = digits(this.value);
+  if (d.charAt(0) === "8") d = "7" + d.slice(1);
+  if (d && d.charAt(0) !== "7") d = "7" + d;
+  d = d.slice(0, 11);
+  var out = "";
+  if (d.length > 0) out = "+7";
+  if (d.length > 1) out += " (" + d.slice(1, 4);
+  if (d.length >= 4) out += ") " + d.slice(4, 7);
+  if (d.length >= 7) out += "-" + d.slice(7, 9);
+  if (d.length >= 9) out += "-" + d.slice(9, 11);
+  this.value = out;
+});
+/* Стеклянная кнопка «Заказ» в шапке */
+$("orderBtn").addEventListener("click", function(){
+  var el = cart.length ? $("cartCard") : $("calc");
+  el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block:"start" });
+});
+$("sbSubmit").addEventListener("click", function(){
+  var form = $("orderForm");
+  if (form.requestSubmit) form.requestSubmit();
+  else form.dispatchEvent(new Event("submit", { cancelable:true }));
+});
+$("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var valid = true, firstBad = null;
+  function check(id, errId, bad){ $(errId).classList.toggle("show", bad); if (bad){ valid = false; if (!firstBad) firstBad = $(id); } }
+  check("fName","eName", !$("fName").value.trim());
+  check("fPhone","ePhone", digits($("fPhone").value).length < 10);
+  check("fAddress","eAddress", !$("fAddress").value.trim());
+  var hasTimeNoDate = $("fTime").value && !$("fDate").value;
+  $("eTime").classList.toggle("show", hasTimeNoDate); if (hasTimeNoDate){ valid = false; if (!firstBad) firstBad = $("fDate"); }
+  var hasOther = cart.some(function(it){ return it.variantId === null; });
+  var photosBad = hasOther && photos.length === 0;
+  $("ePhotos").classList.toggle("show", photosBad); if (photosBad){ valid = false; if (!firstBad) firstBad = $("photoBox"); }
+  $("eCart").classList.toggle("show", !cart.length);
+  if (!cart.length){ valid = false; if (!firstBad) firstBad = $("addBtn"); }
+  if (!valid){
+    var target = firstBad || document.querySelector(".err.show");
+    if (target){ target.scrollIntoView({behavior:"smooth", block:"center"}); if (target.focus) target.focus({preventScroll:true}); }
+    return;
+  }
+
+  var t = calcTotals($("fOutCity").checked);
+  var token = "m" + Math.random().toString(36).slice(2,10) + Date.now().toString(36);
+  var floorVal = $("fFloor").value.trim();
+  var addressVal = $("fAddress").value.trim() + (floorVal ? ", этаж " + floorVal : "");
+  var req = {
+    id:"МЯ-" + (reqSeq++), token:token, status:"new",
+    created:new Date().toLocaleString("ru-RU",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}),
+    name:$("fName").value.trim(), phone:$("fPhone").value.trim(), address:addressVal, floor:floorVal,
+    outCity:$("fOutCity").checked, wishDate:$("fDate").value, wishTime:$("fTime").value,
+    comment:$("fComment").value.trim(),
+    items:cart.map(function(it){ return { name:itemName(it), meta:itemMeta(it), qty:it.qty, unit:it.unit, desc:it.desc||"" }; }),
+    photos:photos.slice(), totals:t,
+    tariffSnapshot:JSON.parse(JSON.stringify({ prices:settings.prices, minOrder:settings.minOrder, dirtPct:settings.dirtPct, secondPct:settings.secondPct, outFee:settings.outFee })),
+    finalPrice:"", agreedWhen:"", note:""
+  };
+  requests.unshift(req);
+  showSuccess(req);
+  /* Фоновая отправка на сервер (база + Telegram мастеру), с повторами.
+     Заявка уже сохранена локально и показана, поэтому результат здесь
+     только меняет подсказку: успех — тихо, неудача — честное сообщение. */
+  if (typeof tgSubmitRequest === "function"){
+    tgSubmitRequest(req).then(function(){
+      showToast("Уведомление мастеру отправлено в Telegram", false);
+    }).catch(function(){
+      showToast("Заявка сохранена, но уведомление в Telegram не дошло, проверьте связь и нажмите «Отправить тестовое уведомление» в кабинете", false);
+    });
+  }
+  cart = []; photos = []; renderCart(); renderPhotos();
+  $("orderForm").reset(); $("fOutCity").checked = false;
+  showToast("Заявка отправлена мастеру", false);
+});
+function wishText(r){
+  if (!r.wishDate && !r.wishTime) return "Дата и время не указаны — договориться при звонке";
+  var s = r.wishDate ? new Date(r.wishDate + "T00:00:00").toLocaleDateString("ru-RU",{day:"numeric",month:"long",weekday:"short"}) : "";
+  return (s + (r.wishTime ? " · " + r.wishTime : "")).trim() + " (пожелание, подтвердит мастер)";
+}
+function itemsHtml(r){
+  return "<ul>" + r.items.map(function(it){
+    return "<li>" + esc(it.name) + " × " + it.qty +
+      (it.meta ? ' <span style="color:var(--muted)">('+esc(it.meta)+")</span>" : "") +
+      " — <b>" + (it.unit == null ? "по фото" : fmt(it.unit * it.qty)) + "</b></li>";
+  }).join("") + "</ul>";
+}
+function photosHtml(r){
+  if (!r.photos.length) return '<p class="note">Без фото</p>';
+  return '<div class="photos">' + r.photos.map(function(p,i){ return '<span class="photo-thumb"><img src="'+p.url+'" alt="Фото к заявке '+(i+1)+'"/></span>'; }).join("") + "</div>";
+}
+function showSuccess(r){
+  var card = $("successCard");
+  card.classList.remove("hidden");
+  $("successNum").textContent = r.id;
+  var st = STATUS[r.status];
+  var sp = $("successStatus"); sp.textContent = st.label; sp.className = "status-pill " + st.cls;
+  $("successBody").innerHTML =
+    itemsHtml(r) +
+    '<p style="margin:10px 0 0">Предварительный расчёт: <b>' + (r.totals.hasKnown ? fmt(r.totals.total) : "по фото") + (r.totals.manualCount && r.totals.hasKnown ? " + предметы по фото" : "") + '</b>' +
+    (r.finalPrice ? '<br/>Итоговая цена от мастера: <b>' + fmt(+r.finalPrice) + '</b>' : '') +
+    (r.agreedWhen ? '<br/>Согласованное время: <b>' + esc(r.agreedWhen) + '</b>' : '<br/>Пожелание по времени: ' + esc(wishText(r))) + '</p>';
+  card.setAttribute("data-req", r.id);
+  card.scrollIntoView({behavior:"smooth", block:"start"});
+  card.focus({preventScroll:true});
+}
+$("newOrderBtn").addEventListener("click", function(){
+  $("successCard").classList.add("hidden");
+  document.getElementById("calc").scrollIntoView({behavior:"smooth"});
+});
+
+/* ============ КАБИНЕТ ============ */
+function openCabinet(){
+  $("clientView").classList.add("hidden");
+  $("privacyView").classList.add("hidden");
+  $("cabinetView").classList.remove("hidden");
+  window.scrollTo(0,0);
+  if (loggedIn){ $("loginCard").classList.add("hidden"); $("cabinetBody").classList.remove("hidden"); renderRequests(); }
+}
+function closeCabinet(){
+  $("cabinetView").classList.add("hidden");
+  $("clientView").classList.remove("hidden");
+  window.scrollTo(0,0);
+}
+$("cabinetBtn").addEventListener("click", openCabinet);
+$("backToSite").addEventListener("click", closeCabinet);
+$("logoHome").addEventListener("click", function(){
+  if (!$("cabinetView").classList.contains("hidden")) closeCabinet();
+  if (!$("privacyView").classList.contains("hidden")) closePrivacy();
+});
+/* ============ ПОЛИТИКА КОНФИДЕНЦИАЛЬНОСТИ ============ */
+function openPrivacy(){
+  $("clientView").classList.add("hidden");
+  $("cabinetView").classList.add("hidden");
+  $("privacyView").classList.remove("hidden");
+  window.scrollTo(0,0);
+}
+function closePrivacy(){
+  $("privacyView").classList.add("hidden");
+  $("clientView").classList.remove("hidden");
+  window.scrollTo(0,0);
+}
+document.querySelectorAll("[data-privacy-link]").forEach(function(a){
+  a.addEventListener("click", function(e){ e.preventDefault(); openPrivacy(); });
+});
+$("privacyBack").addEventListener("click", closePrivacy);
+$("loginBtn").addEventListener("click", function(){
+  loggedIn = true;
+  $("loginCard").classList.add("hidden");
+  $("cabinetBody").classList.remove("hidden");
+  renderRequests(); fillTariffFields(); fillCompanyFields(); fillTelegramFields();
+});
+$("logoutBtn").addEventListener("click", function(){
+  loggedIn = false;
+  $("cabinetBody").classList.add("hidden");
+  $("loginCard").classList.remove("hidden");
+});
+document.querySelectorAll("[data-tab]").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    document.querySelectorAll("[data-tab]").forEach(function(b){ b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+    ["requests","tariffs","company","telegram"].forEach(function(t){ $("tab-" + t).classList.toggle("hidden", t !== btn.getAttribute("data-tab")); });
+  });
+});
+$("reqSearch").addEventListener("input", renderRequests);
+$("reqFilter").addEventListener("change", renderRequests);
+$("refreshReq").addEventListener("click", function(){ renderRequests(); showToast("Список заявок обновлён", false); });
+
+function renderRequests(){
+  var q = ($("reqSearch").value || "").toLowerCase().trim();
+  var f = $("reqFilter").value;
+  var list = requests.filter(function(r){
+    if (f !== "all" && r.status !== f) return false;
+    if (!q) return true;
+    return (r.name + " " + r.phone + " " + r.address + " " + r.id).toLowerCase().indexOf(q) !== -1;
+  });
+  var box = $("reqList");
+  if (!list.length){
+    box.innerHTML = requests.length
+      ? '<div class="empty"><b>Ничего не нашлось</b>По этим условиям заявок нет. Измените запрос в поиске или фильтр по статусу.</div>'
+      : '<div class="empty"><b>Заявок пока нет</b>Новые заявки с сайта появятся здесь сразу после отправки.</div>';
+    return;
+  }
+  box.innerHTML = list.map(function(r){
+    var st = STATUS[r.status];
+    return '<article class="req"><button type="button" class="r-head" data-toggle="'+r.id+'">'+
+      '<b>'+r.id+'</b> '+
+      '<span class="status-pill '+st.cls+'">'+st.label+'</span>'+
+      '<span>'+esc(r.name)+' · '+esc(r.phone)+'</span>'+
+      '<span class="when">'+esc(r.created)+'</span><span style="margin-left:auto">▾</span></button>'+
+      '<div class="r-body hidden" id="body-'+r.id+'">'+
+        '<div class="cols"><div><h5>Состав и расчёт</h5>'+itemsHtml(r)+
+          '<p style="margin:8px 0 0">Предварительно: <b>'+(r.totals.hasKnown ? fmt(r.totals.total) : "по фото")+'</b>'+
+          (r.totals.minApplied ? ' (с минимумом '+fmt(r.totals.cleaning)+')' : '')+
+          (r.totals.travel ? ' · выезд за город +'+fmt(r.totals.travel) : '')+'</p>'+
+          '<p class="note" style="margin:6px 0 0">Тариф на момент заявки: минимум '+fmt(r.tariffSnapshot.minOrder)+', загрязнения +'+r.tariffSnapshot.dirtPct+'%, вторая сторона +'+r.tariffSnapshot.secondPct+'%.</p></div>'+
+        '<div><h5>Клиент и пожелания</h5>'+
+          '<p style="margin:0 0 4px"><a href="tel:'+esc(digits(r.phone))+'">'+esc(r.phone)+'</a> · '+esc(r.name)+'</p>'+
+          '<p style="margin:0 0 4px">'+esc(r.address)+(r.outCity ? ' · <b>за город</b>' : '')+'</p>'+
+          '<p style="margin:0 0 4px">'+esc(wishText(r))+'</p>'+
+          (r.comment ? '<p style="margin:0 0 4px">«'+esc(r.comment)+'»</p>' : '')+
+          '<h5 style="margin-top:12px">Фото клиента</h5>'+photosHtml(r)+'</div></div>'+
+        '<div class="owner-grid">'+
+          '<div><label class="field-label" for="fp-'+r.id+'" style="margin-top:0">Итоговая цена, ₽</label><input type="number" min="0" step="50" id="fp-'+r.id+'" value="'+esc(r.finalPrice)+'" placeholder="Например, 5200"/></div>'+
+          '<div><label class="field-label" for="aw-'+r.id+'" style="margin-top:0">Согласованное время</label><input type="datetime-local" id="aw-'+r.id+'" value="'+esc(r.agreedWhenRaw||"")+'"/></div>'+
+          '<div><label class="field-label" for="st-'+r.id+'" style="margin-top:0">Статус</label><select id="st-'+r.id+'">'+
+            Object.keys(STATUS).map(function(k){ return '<option value="'+k+'"'+(r.status===k?" selected":"")+'>'+STATUS[k].label+'</option>'; }).join("")+
+          '</select></div>'+
+        '</div>'+
+        '<div style="margin-top:12px"><label class="field-label" for="nt-'+r.id+'" style="margin-top:0">Приватная заметка владельца <span style="font-weight:500;color:var(--muted)">(клиент её не видит)</span></label>'+
+        '<textarea id="nt-'+r.id+'" style="min-height:56px" placeholder="Что учесть при выезде…">'+esc(r.note)+'</textarea></div>'+
+        '<p class="err" id="eAgree-'+r.id+'">Для статуса «Согласована» укажите итоговую цену и согласованное время.</p>'+
+        '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">'+
+          '<button type="button" class="btn btn-accent btn-sm" data-save="'+r.id+'">Сохранить изменения</button>'+
+          '<button type="button" class="btn btn-ghost btn-sm" data-client="'+r.id+'">Как видит клиент</button>'+
+        '</div>'+
+      '</div></article>';
+  }).join("");
+  box.querySelectorAll("[data-toggle]").forEach(function(b){
+    b.addEventListener("click", function(){ $("body-" + b.getAttribute("data-toggle")).classList.toggle("hidden"); });
+  });
+  box.querySelectorAll("[data-save]").forEach(function(b){
+    b.addEventListener("click", function(){ saveRequest(b.getAttribute("data-save")); });
+  });
+  box.querySelectorAll("[data-client]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var r = requests.find(function(x){ return x.id === b.getAttribute("data-client"); });
+      closeCabinet(); showSuccess(r);
+    });
+  });
+}
+function saveRequest(id){
+  var r = requests.find(function(x){ return x.id === id; });
+  if (!r) return;
+  var newStatus = $("st-" + id).value;
+  var price = $("fp-" + id).value;
+  var whenRaw = $("aw-" + id).value;
+  var bad = newStatus === "agreed" && (!price || !whenRaw);
+  $("eAgree-" + id).classList.toggle("show", bad);
+  if (bad) return;
+  r.status = newStatus;
+  r.finalPrice = price;
+  r.agreedWhenRaw = whenRaw;
+  r.agreedWhen = whenRaw ? new Date(whenRaw).toLocaleString("ru-RU",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"}) : "";
+  r.note = $("nt-" + id).value;
+  renderRequests();
+  var body = $("body-" + id); if (body) body.classList.remove("hidden");
+  showToast("Заявка " + id + " сохранена", false);
+  var sc = $("successCard");
+  if (!sc.classList.contains("hidden") && sc.getAttribute("data-req") === id) showSuccess(r);
+}
+
+/* --- Тарифы --- */
+var TARIFF_FIELDS = [
+  ["sofa2","Диван · 2 места, ₽"], ["sofa3","Диван · 3 места, ₽"], ["sofaCorner","Диван · угловой, ₽"],
+  ["armchair","Кресло · обычное, ₽"], ["recliner","Кресло · реклайнер, ₽"],
+  ["mattressSingle","Матрас · односпальный, ₽"], ["mattressDouble","Матрас · двуспальный, ₽"],
+  ["chairSeat","Стул · только сиденье, ₽"], ["chairBack","Стул · сиденье со спинкой, ₽"]
+];
+function fillTariffFields(){
+  $("tariffFields").innerHTML = TARIFF_FIELDS.map(function(f){
+    return '<div><label class="field-label" for="tf-'+f[0]+'" style="margin-top:0">'+f[1]+'</label><input type="number" min="0" step="50" id="tf-'+f[0]+'" value="'+settings.prices[f[0]]+'"/></div>';
+  }).join("") +
+  '<div><label class="field-label" for="tf-minOrder" style="margin-top:0">Минимальный заказ (только чистка), ₽</label><input type="number" min="0" step="100" id="tf-minOrder" value="'+settings.minOrder+'"/></div>' +
+  '<div><label class="field-label" for="tf-dirtPct" style="margin-top:0">Сильные загрязнения, %</label><input type="number" min="0" max="200" id="tf-dirtPct" value="'+settings.dirtPct+'"/></div>' +
+  '<div><label class="field-label" for="tf-secondPct" style="margin-top:0">Вторая сторона матраса, %</label><input type="number" min="0" max="200" id="tf-secondPct" value="'+settings.secondPct+'"/></div>' +
+  '<div><label class="field-label" for="tf-outFee" style="margin-top:0">Выезд за город, ₽ (фиксированно)</label><input type="number" min="0" step="50" id="tf-outFee" value="'+settings.outFee+'"/></div>';
+}
+$("saveTariffs").addEventListener("click", function(){
+  TARIFF_FIELDS.forEach(function(f){ settings.prices[f[0]] = Math.max(0, +$("tf-" + f[0]).value || 0); });
+  settings.minOrder = Math.max(0, +$("tf-minOrder").value || 0);
+  settings.dirtPct = Math.max(0, +$("tf-dirtPct").value || 0);
+  settings.secondPct = Math.max(0, +$("tf-secondPct").value || 0);
+  settings.outFee = Math.max(0, +$("tf-outFee").value || 0);
+  cart.forEach(function(it){ if (it.variantId) it.unit = unitPrice(it.variantId, it.dirt, it.second); });
+  renderPicker(); renderCart(); renderPrices(); applyCompany();
+  showToast("Тарифы сохранены — калькулятор обновлён", false);
+});
+
+/* --- Компания --- */
+function fillCompanyFields(){
+  $("cName").value = settings.company.name;
+  $("cPhone").value = settings.company.phone;
+  $("cCity").value = settings.company.city;
+  $("cArea").value = settings.company.area;
+  $("accentSwatches").innerHTML = ACCENTS.map(function(a){
+    return '<button type="button" class="swatch" data-accent="'+a+'" style="background:'+a+'" aria-label="Акцент '+a+'" aria-pressed="'+(settings.company.accent===a)+'"></button>';
+  }).join("");
+  $("accentSwatches").querySelectorAll("[data-accent]").forEach(function(b){
+    b.addEventListener("click", function(){
+      settings.company.accent = b.getAttribute("data-accent");
+      applyCompany(); fillCompanyFields();
+    });
+  });
+}
+$("saveCompany").addEventListener("click", function(){
+  settings.company.name = $("cName").value.trim() || settings.company.name;
+  settings.company.phone = $("cPhone").value.trim();
+  settings.company.city = $("cCity").value.trim();
+  settings.company.area = $("cArea").value.trim();
+  applyCompany();
+  showToast("Данные компании сохранены", false);
+});
+
+/* --- Telegram-уведомления --- */
+/* Настройки уходят на серверную функцию: /config сохраняет токен и chat ID
+   в базе данных на сервере, /test отправляет тестовое сообщение через функцию. */
+var TG_CONFIG_URL = "https://functions.yandexcloud.net/d4el110dsvbu2097ln0b?action=config";
+var TG_TEST_URL = "https://functions.yandexcloud.net/d4el110dsvbu2097ln0b?action=test";
+var TG_CODE_URL = "https://functions.yandexcloud.net/d4el110dsvbu2097ln0b?action=code";
+var TG_SUBMIT_URL = "https://functions.yandexcloud.net/d4el110dsvbu2097ln0b?action=submit";
+/* Повторы при обращении к функции: исходящая связь функции до Telegram
+   то работает мгновенно, то мертва весь вызов, а новый вызов функции —
+   это новый экземпляр с новым шансом. Поэтому при ошибке повторяем
+   до 5 раз с паузой 2 секунды: шанс успеха одного вызова ~40%,
+   пяти подряд — больше 90%. */
+function tgSleep(ms){ return new Promise(function(res){ setTimeout(res, ms); }); }
+function tgPostOnce(url, payload){
+  return fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  }).then(function(resp){
+    return resp.text().then(function(raw){
+      var data = null;
+      try { data = raw ? JSON.parse(raw) : null; } catch (e) { data = null; }
+      return { status: resp.status, ok: resp.ok, data: data, raw: raw };
+    }, function(){
+      return { status: resp.status, ok: resp.ok, data: null, raw: "" };
+    });
+  }).then(function(res){
+    if (!res.ok || (res.data && res.data.ok === false)){
+      throw new Error(tgServerErrorText(res));
+    }
+    return res;
+  });
+}
+function tgPostToFunction(url, payload){
+  var attempt = 0;
+  function next(){
+    attempt++;
+    return tgPostOnce(url, payload).catch(function(err){
+      if (attempt < 5) return tgSleep(2000).then(next);
+      throw err;
+    });
+  }
+  return next();
+}
+/* Отправка заявки на сервер: в базу и мастеру в Telegram.
+   id заявки — тот же token, что и в локальной копии, поэтому повтор
+   не создаёт вторую запись в базе. */
+function tgSubmitRequest(req){
+  var payload = {
+    company: settings.company.name,
+    id: req.token, number: req.id,
+    name: req.name, phone: req.phone, address: req.address, floor: req.floor || "",
+    date: req.wishDate || "", time: req.wishTime || "", comment: req.comment || "",
+    items: req.items.map(function(it){
+      return { name: it.name + (it.meta ? " (" + it.meta + ")" : ""), price: (it.unit == null ? 0 : it.unit * it.qty) };
+    }),
+    total: req.totals && req.totals.hasKnown ? req.totals.total : 0,
+    photo_urls: []
+  };
+  return tgPostToFunction(TG_SUBMIT_URL, payload);
+}
+/* Значения токена и chat ID, которые сервер последний раз подтвердил по отдельности:
+   у каждого пункта инструкции своя кнопка «Сохранить», и «Подключено» означает,
+   что на сервере сохранены оба текущих значения. tgServerBound — чат привязан
+   по коду из кабинета (код отправлен боту), даже если chat ID в поле не вписан. */
+var tgServerSaved = { token:"", chatId:"" };
+var tgServerBound = false;
+function tgIsConnected(){
+  var t = settings.telegram;
+  var token = (t.token || "").trim();
+  var chatId = (t.chatId || "").trim();
+  return !!(token && tgServerSaved.token === token && (tgServerBound || (chatId && tgServerSaved.chatId === chatId)));
+}
+function showTgResult(text, ok){
+  var result = $("tgTestResult");
+  if (!result) return;
+  result.textContent = text;
+  result.style.color = ok ? "var(--ok)" : "var(--danger)";
+  result.classList.remove("hidden");
+}
+function tgServerErrorText(res){
+  if (res.data && (res.data.error || res.data.message)) return String(res.data.error || res.data.message);
+  if (res.raw) return res.raw;
+  return "HTTP " + res.status;
+}
+function tgSaveToServer(token, chatId){
+  return tgPostToFunction(TG_CONFIG_URL, { bot_token: token, chat_id: chatId })
+    .then(function(){ tgServerSaved.token = token; tgServerSaved.chatId = chatId; });
+}
+/* Сохранение одного пункта: на сервер уходят текущие значения полей,
+   а подтверждённым помечается только сохранённый пункт. */
+function tgSaveFieldToServer(field){
+  var token = $("tgToken").value.trim();
+  var chatId = $("tgChatId").value.trim();
+  return tgPostToFunction(TG_CONFIG_URL, { bot_token: token, chat_id: chatId })
+    .then(function(){
+      if (field === "token") tgServerSaved.token = token;
+      else tgServerSaved.chatId = chatId;
+    });
+}
+function updateTgStatus(){
+  var el = $("tgStatus");
+  if (!el) return;
+  var on = tgIsConnected();
+  el.textContent = on ? "Подключено" : "Не подключено";
+  el.className = "status-pill " + (on ? "st-ok" : "st-new");
+}
+/* Код для привязки: запрашивается у серверной функции по токену.
+   Функция сверяет токен с сохранённым и отдаёт код, а заодно сообщает,
+   привязан ли уже какой-то чат. */
+function tgLoadOwnerCode(){
+  var codeEl = $("tgOwnerCode");
+  var hintEl = $("tgCodeHint");
+  var token = $("tgToken").value.trim();
+  if (!token){
+    if (codeEl) codeEl.textContent = "—";
+    if (hintEl) hintEl.textContent = "Код появится после того, как токен бота сохранён выше.";
+    return Promise.resolve();
+  }
+  if (codeEl) codeEl.textContent = "…";
+  return tgPostToFunction(TG_CODE_URL, { bot_token: token }).then(function(res){
+    var data = res.data || {};
+    if (codeEl) codeEl.textContent = data.owner_code || "—";
+    tgServerBound = !!data.has_chat_id;
+    if (hintEl) hintEl.textContent = data.has_chat_id
+      ? "Чат уже привязан: заявки будут приходить в Telegram."
+      : "Отправьте этот код своему боту в Telegram — и заявки будут приходить вам.";
+    updateTgStatus();
+  }).catch(function(err){
+    if (codeEl) codeEl.textContent = "—";
+    if (hintEl) hintEl.textContent = "Не удалось получить код: " + err.message;
+  });
+}
+function fillTelegramFields(){
+  $("tgChatId").value = settings.telegram.chatId || "";
+  $("tgToken").value = settings.telegram.token || "";
+  tgServerBound = false;
+  updateTgStatus();
+  tgLoadOwnerCode();
+}
+/* Своя кнопка «Сохранить» у пункта 2 (токен) и пункта 4 (chat ID):
+   каждое значение отдельно уходит на сервер. */
+function tgSaveField(field, btn){
+  var isToken = field === "token";
+  var input = isToken ? $("tgToken") : $("tgChatId");
+  var value = input.value.trim();
+  if (isToken) settings.telegram.token = value;
+  else settings.telegram.chatId = value;
+  updateTgStatus();
+  if (!value){
+    var emptyMsg = isToken
+      ? "Сначала вставьте токен бота — без него его на сервер не отправить."
+      : "Сначала вставьте chat ID мастера — без него его на сервер не отправить.";
+    showTgResult(emptyMsg, false);
+    showToast(isToken ? "Сначала вставьте токен бота" : "Сначала вставьте chat ID мастера", false);
+    input.focus();
+    return;
+  }
+  var oldLabel = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "Сохраняем…";
+  showTgResult(isToken ? "Отправляем токен на сервер…" : "Отправляем chat ID на сервер…", true);
+  tgSaveFieldToServer(field).then(function(){
+    updateTgStatus();
+    var msg = isToken ? "Токен сохранён на сервере" : "Chat ID сохранён на сервере";
+    if (tgIsConnected()) msg += ", бот подключён";
+    showTgResult(msg, true);
+    showToast(msg, false);
+  }).catch(function(err){
+    updateTgStatus();
+    showTgResult("Не удалось сохранить на сервере: " + err.message, false);
+    showToast("Ошибка сервера: " + err.message, false);
+  }).then(function(){
+    btn.disabled = false;
+    btn.textContent = oldLabel;
+  });
+}
+$("saveTgToken").addEventListener("click", function(){ tgSaveField("token", this); });
+$("saveTgChatId").addEventListener("click", function(){ tgSaveField("chatId", this); });
+$("tgShowCode").addEventListener("click", function(){ tgLoadOwnerCode(); });
+$("tgCopyCode").addEventListener("click", function(){
+  var code = ($("tgOwnerCode").textContent || "").trim();
+  if (!code || code === "—" || code === "…"){
+    showToast("Сначала покажите код", false);
+    return;
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(code).then(function(){
+      showToast("Код скопирован", false);
+    }, function(){
+      showToast("Не удалось скопировать, скопируйте код вручную", false);
+    });
+  } else {
+    showToast("Скопируйте код вручную: " + code, false);
+  }
+});
+$("tgTestBtn").addEventListener("click", function(){
+  var token = $("tgToken").value.trim();
+  var chatId = $("tgChatId").value.trim();
+  if (!token){
+    showTgResult("Сначала заполните токен бота выше.", false);
+    showToast("Сначала заполните токен бота", false);
+    $("tgToken").focus();
+    return;
+  }
+  var sample =
+    "Тестовое уведомление с сайта\n\n" +
+    "Если вы видите это сообщение, уведомления о новых заявках подключены и работают.";
+  $("tgTestText").textContent = sample;
+  $("tgTestPreview").classList.remove("hidden");
+  var btn = $("tgTestBtn");
+  var oldLabel = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "Отправляем…";
+  /* Тест идёт только через серверную функцию, а не напрямую в Telegram из браузера:
+     сначала убеждаемся, что текущие настройки сохранены на сервере.
+     Если чат привязан по коду, а поле chat ID пустое, ничего не сохраняем:
+     сохранение пустого chat ID стёрло бы привязку на сервере. */
+  showTgResult("Проверяем, что настройки сохранены на сервере…", true);
+  var ensureSaved = (tgServerBound && !chatId)
+    ? Promise.resolve()
+    : (tgServerSaved.token === token && tgServerSaved.chatId === chatId)
+      ? Promise.resolve()
+      : tgSaveToServer(token, chatId);
+  ensureSaved.then(function(){
+    settings.telegram.token = token;
+    settings.telegram.chatId = chatId;
+    updateTgStatus();
+    showTgResult("Отправляем тестовое уведомление через сервер…", true);
+    return tgPostToFunction(TG_TEST_URL, { bot_token: token, chat_id: chatId, text: sample, company: settings.company.name });
+  }).then(function(){
+    showTgResult("Тестовое сообщение отправлено, проверьте Telegram.", true);
+    showToast("Тестовое сообщение отправлено, проверьте Telegram", false);
+  }).catch(function(err){
+    showTgResult("Не удалось отправить тестовое уведомление. Ошибка сервера: " + err.message, false);
+    showToast("Ошибка сервера: " + err.message, false);
+  }).then(function(){
+    btn.disabled = false;
+    btn.textContent = oldLabel;
+  });
+});
+function applyCompany(){
+  var c = settings.company;
+  document.documentElement.style.setProperty("--accent", c.accent);
+  document.querySelectorAll("[data-company-name]").forEach(function(el){ el.textContent = c.name; });
+  document.querySelectorAll("[data-company-city]").forEach(function(el){ el.textContent = c.city; });
+  document.querySelectorAll("[data-company-area]").forEach(function(el){ el.textContent = c.area; });
+  document.querySelectorAll("[data-company-phone]").forEach(function(el){ el.textContent = c.phone; });
+  document.querySelectorAll("[data-company-phone-link]").forEach(function(el){ el.setAttribute("href", "tel:" + digits(c.phone)); });
+  $("logoName").textContent = c.name;
+  document.title = c.name + " — выездная химчистка мебели";
+  document.querySelectorAll("[data-dirt-pct]").forEach(function(el){ el.textContent = settings.dirtPct; });
+  document.querySelectorAll("[data-second-pct]").forEach(function(el){ el.textContent = settings.secondPct; });
+  document.querySelectorAll("[data-min-order]").forEach(function(el){ el.textContent = fmt(settings.minOrder); });
+  document.querySelectorAll("[data-out-fee]").forEach(function(el){ el.textContent = fmt(settings.outFee); });
+  document.querySelectorAll("[data-price-sofa3]").forEach(function(el){ el.textContent = fmt(settings.prices.sofa3); });
+}
+function renderPrices(){
+  $("priceTable").innerHTML = Object.keys(VARIANT_NAMES).map(function(id){
+    return "<tr><td>" + VARIANT_NAMES[id] + "</td><td>" + fmt(settings.prices[id]) + "</td></tr>";
+  }).join("") + "<tr><td>Другое (пуфы, ковры, автокресла)</td><td>По фото</td></tr>";
+}
+
+/* ============ СОБЫТИЯ ВЫБОРА ============ */
+$("qtyMinus").addEventListener("click", function(){ if (picker.qty > 1) picker.qty--; renderPicker(); });
+$("qtyPlus").addEventListener("click", function(){ if (picker.qty < 20) picker.qty++; renderPicker(); });
+$("dirtToggle").addEventListener("change", function(){ picker.dirt = $("dirtToggle").checked; renderPicker(); });
+$("secondSide").addEventListener("change", function(){ picker.second = $("secondSide").checked; renderPicker(); });
+$("fOutCity").addEventListener("change", renderCart);
+$("addBtn").addEventListener("click", function(){
+  if (picker.cat === "other"){
+    var desc = $("otherDesc").value.trim();
+    $("otherDescErr").classList.toggle("show", !desc);
+    if (!desc){ $("otherDesc").focus(); return; }
+    var keyO = "other|" + desc.toLowerCase() + "|" + picker.dirt;
+    var exO = cart.find(function(it){ return it.key === keyO; });
+    if (exO) exO.qty += picker.qty;
+    else cart.push({ key:keyO, variantId:null, qty:picker.qty, dirt:picker.dirt, second:false, desc:desc, unit:null });
+  } else {
+    var second = picker.cat === "mattress" ? picker.second : false;
+    var key = picker.variant + "|" + picker.dirt + "|" + second;
+    var ex = cart.find(function(it){ return it.key === key; });
+    if (ex) ex.qty += picker.qty;
+    else cart.push({ key:key, variantId:picker.variant, qty:picker.qty, dirt:picker.dirt, second:second, desc:"", unit:unitPrice(picker.variant, picker.dirt, second) });
+  }
+  renderCart();
+  showToast("Добавлено в заказ", false);
+  document.getElementById("cartCard").scrollIntoView({behavior:"smooth", block:"nearest"});
+});
+
+/* ============ ТЕМА И ОФЛАЙН ============ */
+$("themeBtn").addEventListener("click", function(){
+  var cur = document.documentElement.getAttribute("data-theme");
+  var dark = cur === "dark" || (cur === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  document.documentElement.setAttribute("data-theme", dark ? "light" : "dark");
+});
+function updateOnline(){ $("offlineScreen").classList.toggle("show", !navigator.onLine); }
+window.addEventListener("online", updateOnline);
+window.addEventListener("offline", updateOnline);
+$("offlineRetry").addEventListener("click", updateOnline);
+
+/* ============ СТАРТ ============ */
+renderPicker();
+renderCart();
+renderPhotos();
+renderPrices();
+applyCompany();
+updateOnline();
+</script>
+</body>
+</html>
