@@ -254,8 +254,8 @@ body{
   background:var(--glass);
   -webkit-backdrop-filter:blur(22px) saturate(165%);
   backdrop-filter:blur(22px) saturate(165%);
-  border:1px solid var(--glass-border);
-  box-shadow:inset 0 1px 0 var(--glass-hi);
+  border:1px solid var(--line);
+  box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-md);
   border-radius:28px;
 }
 /* header */
@@ -263,7 +263,7 @@ header.site{
   background:var(--glass);
   -webkit-backdrop-filter:blur(22px) saturate(165%);
   backdrop-filter:blur(22px) saturate(165%);
-  border-bottom:1px solid var(--glass-border);
+  border-bottom:1px solid var(--line);
   box-shadow:inset 0 1px 0 var(--glass-hi);
 }
 .logo-mark{border-radius:12px;background:var(--blue)}
@@ -299,7 +299,7 @@ html[data-theme="dark"]{--stage-hi:rgba(140,180,235,.13)}
 .hero-fallback{
   display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
   min-height:330px;padding:32px 20px;text-align:center;
-  background:var(--glass);border:1px solid var(--glass-border);border-radius:20px;
+  background:var(--glass);border:1px solid var(--line);border-radius:20px;
   box-shadow:inset 0 1px 0 var(--glass-hi);
   color:var(--muted);
 }
@@ -308,7 +308,7 @@ html[data-theme="dark"]{--stage-hi:rgba(140,180,235,.13)}
 .hero-fallback-icon{
   width:148px;height:148px;display:grid;place-items:center;margin-bottom:6px;
   color:var(--ink);
-  background:var(--glass-strong);border:1px solid var(--glass-border);border-radius:36px;
+  background:var(--glass-strong);border:1px solid var(--line);border-radius:36px;
   box-shadow:inset 0 1px 0 var(--glass-hi);
 }
 .hero-fallback-icon svg{width:104px;height:104px;display:block}
@@ -319,7 +319,7 @@ html[data-theme="dark"]{--stage-hi:rgba(140,180,235,.13)}
 /* pill tabs inside hero card */
 .cats{
   display:flex;gap:2px;margin:12px 0 2px;padding:5px;border-radius:999px;
-  background:var(--track);border:1px solid var(--glass-border);
+  background:var(--track);border:1px solid var(--line);
 }
 .cat{
   flex:1;border:0;background:transparent;border-radius:999px;min-height:58px;
@@ -360,7 +360,7 @@ html[data-theme="dark"]{--stage-hi:rgba(140,180,235,.13)}
 .item-price b,.totals .grand span:last-child,.sticky-bar .sb-total b{font-variant-numeric:tabular-nums}
 #addBtn{background:var(--ink);color:var(--bg)}
 /* cart inside glass panel */
-.cart-item{background:var(--item-bg);border:1px solid var(--glass-border);border-radius:18px;box-shadow:inset 0 1px 0 var(--glass-hi)}
+.cart-item{background:var(--item-bg);border:1px solid var(--line);border-radius:18px;box-shadow:inset 0 1px 0 var(--glass-hi)}
 .empty{background:var(--track);border:1.5px dashed var(--glass-border);border-radius:18px}
 /* cards & forms */
 .card{border-radius:26px}
@@ -372,8 +372,8 @@ input[type="date"],input[type="time"],input[type="datetime-local"],select{
 }
 .form-shell{background:transparent;border:0;box-shadow:none;padding:0;border-radius:0}
 .form-card{
-  background:var(--glass);border:1px solid var(--glass-border);border-radius:26px;padding:20px;
-  box-shadow:inset 0 1px 0 var(--glass-hi);
+  background:var(--glass);border:1px solid var(--line);border-radius:26px;padding:20px;
+  box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-md);
 }
 .address-row{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:14px}
 .form-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -425,7 +425,7 @@ input[type="date"],input[type="time"],input[type="datetime-local"],select{
 }
 /* ===== trust, steps, FAQ, policy ===== */
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.trust-item{background:var(--glass);border:1px solid var(--glass-border);border-radius:22px;padding:20px;
+.trust-item{background:var(--glass);border:1px solid var(--line);border-radius:22px;padding:20px;
   box-shadow:inset 0 1px 0 var(--glass-hi)}
 .trust-item .t-ico{width:46px;height:46px;border-radius:14px;background:var(--accent-soft);color:var(--blue);
   display:grid;place-items:center;margin-bottom:12px}
@@ -468,7 +468,7 @@ input[type="date"],input[type="time"],input[type="datetime-local"],select{
 .sticky-bar{box-shadow:inset 0 1px 0 var(--glass-hi)}
 /* 2. Hero is bigger, glow behind the model removed completely - flat background */
 .hero-stage{padding:40px 8px 20px;
-  background:none}
+  background:color-mix(in srgb, var(--line) 30%, var(--bg));}
 .hero-canvas{height:440px}
 .hero-fallback{min-height:440px}
 @media (max-width:860px){
@@ -1168,8 +1168,11 @@ var spin = { y:-0.55, x:0.05 }, spinHome = { y:-0.55, x:0.05 };
 var heroDrag = null, lastInteract = 0;
 /* Rotation inertia after dragging and smooth return via the reset button */
 var spinVel = { y:0, x:0 }, resetting = false, resetTargetY = 0;
-/* Framing is computed per model from its bounding box (see frameForModel):
-   the distance fits the rotating footprint and height at any aspect, with margin. */
+/* Framing: its own camera distance and target height for each model */
+var HERO_FRAME = { /* v4: camera closer - model ~15% bigger */
+  sofa:{ dist:5.6, ty:1.0 }, armchair:{ dist:5.2, ty:0.98 }, mattress:{ dist:5.6, ty:0.45 },
+  chair:{ dist:5.9, ty:1.18 }, other:{ dist:4.5, ty:0.72 }
+};
 var camGoal = { dist:5.6, ty:1.0 }, camCur = { dist:5.6, ty:0.95 }; /* v4 */
 
 /* Rounded box: subdivided box, vertices projected onto
@@ -1330,22 +1333,7 @@ function seatCushion(parent, w, h, d, r, mat, x, y, z, crown){
   return cg;
 }
 
-function buildSofa2(){
-  var g = new THREE.Group();
-  [[-0.95,-0.55],[0.95,-0.55],[-0.95,0.55],[0.95,0.55]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.34, 0.05); });
-  box(g, 2.3, 0.62, 1.5, 0.16, MAT.fabric, 0, 0.63, 0);                    /* base */
-  box(g, 2.3, 1.2, 0.4, 0.15, MAT.fabricDark, 0, 1.5, -0.58, -0.07);       /* backrest */
-  [-0.53, 0.53].forEach(function(x){
-    seatCushion(g, 1.0, 0.3, 1.04, 0.12, MAT.fabricLight, x, 1.08, 0.14, 0.05);  /* seat cushions */
-    backCushion(g, 1.0, 0.82, 0.26, 0.11, MAT.fabricLight, x, 1.62, -0.34, -0.1, 0.06); /* backrest cushions */
-  });
-  [-1.08, 1.08].forEach(function(x){ box(g, 0.52, 0.9, 1.5, 0.19, MAT.fabric, x, 1.06, 0); }); /* armrests */
-  /* accent cushions: sage and gray-blue, leaning on the backrest */
-  g.add(part(crownGeo(0.55, 0.55, 0.18, 0.09, 0.045, "z"), MAT.accentSage, -0.62, 1.42, -0.05, -0.28, 0.12, 0.18));
-  g.add(part(crownGeo(0.55, 0.55, 0.18, 0.09, 0.045, "z"), MAT.accentBlue, 0.62, 1.42, -0.05, -0.28, -0.12, -0.15));
-  return g;
-}
-function buildSofa3(){
+function buildSofa(){
   var g = new THREE.Group();
   [[-1.45,-0.55],[1.45,-0.55],[-1.45,0.55],[1.45,0.55]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.34, 0.05); });
   box(g, 3.3, 0.62, 1.5, 0.16, MAT.fabric, 0, 0.63, 0);                    /* base */
@@ -1360,23 +1348,6 @@ function buildSofa3(){
   g.add(part(crownGeo(0.55, 0.55, 0.18, 0.09, 0.045, "z"), MAT.accentBlue, 1.12, 1.42, -0.05, -0.28, -0.12, -0.15));
   return g;
 }
-function buildSofaCorner(){
-  var g = new THREE.Group();
-  [[-1.25,-0.55],[1.25,-0.55],[-1.25,0.55],[1.25,0.55],[2.05,1.3],[0.95,1.3]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.34, 0.05); });
-  box(g, 3.0, 0.62, 1.5, 0.16, MAT.fabric, 0, 0.63, 0);                    /* main base */
-  box(g, 1.5, 0.62, 2.25, 0.16, MAT.fabric, 1.5, 0.63, 0.375);            /* chaise base: extends forward on the right */
-  box(g, 3.0, 1.2, 0.4, 0.15, MAT.fabricDark, 0, 1.5, -0.58, -0.07);       /* backrest */
-  [-0.85, 0.2].forEach(function(x){
-    seatCushion(g, 1.0, 0.3, 1.04, 0.12, MAT.fabricLight, x, 1.08, 0.14, 0.05);  /* seat cushions */
-    backCushion(g, 1.0, 0.82, 0.26, 0.11, MAT.fabricLight, x, 1.62, -0.34, -0.1, 0.06); /* backrest cushions */
-  });
-  seatCushion(g, 1.35, 0.3, 1.35, 0.12, MAT.fabricLight, 1.5, 1.08, 0.55, 0.05); /* chaise seat cushion */
-  box(g, 0.52, 0.9, 1.5, 0.19, MAT.fabric, -1.42, 1.06, 0);               /* left armrest only */
-  /* accent cushions: sage on the main run, gray-blue on the chaise */
-  g.add(part(crownGeo(0.55, 0.55, 0.18, 0.09, 0.045, "z"), MAT.accentSage, -0.95, 1.42, -0.05, -0.28, 0.12, 0.18));
-  g.add(part(crownGeo(0.55, 0.55, 0.18, 0.09, 0.045, "z"), MAT.accentBlue, 1.5, 1.42, 0.35, -0.28, -0.12, -0.15));
-  return g;
-}
 function buildArmchair(){
   var g = new THREE.Group();
   [[-0.6,-0.48],[0.6,-0.48],[-0.6,0.48],[0.6,0.48]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.32, 0.05); });
@@ -1388,40 +1359,17 @@ function buildArmchair(){
   g.add(part(crownGeo(0.5, 0.5, 0.17, 0.09, 0.04, "z"), MAT.accentSage, -0.35, 1.32, -0.02, -0.25, 0.2, 0.15));
   return g;
 }
-
-function buildRecliner(){
+function buildMattress(){
   var g = new THREE.Group();
-  [[-0.6,-0.48],[0.6,-0.48],[-0.6,0.48],[0.6,0.48]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.32, 0.05); });
-  box(g, 1.65, 0.58, 1.35, 0.15, MAT.fabric, 0, 0.6, 0);
-  box(g, 1.65, 1.05, 0.38, 0.14, MAT.fabricDark, 0, 1.32, -0.62, -0.3);    /* backrest tilted back */
-  seatCushion(g, 1.02, 0.28, 0.98, 0.11, MAT.fabricLight, 0, 1.02, 0.12, 0.05);  /* one seat cushion */
-  backCushion(g, 1.02, 0.72, 0.25, 0.11, MAT.fabricLight, 0, 1.42, -0.42, -0.32, 0.06); /* back cushion, tilted */
-  [-0.82, 0.82].forEach(function(x){ box(g, 0.44, 0.82, 1.35, 0.17, MAT.fabric, x, 1.0, 0); });
-  box(g, 1.0, 0.22, 0.7, 0.09, MAT.fabricLight, 0, 0.62, 1.05, 0);        /* footrest, extended forward */
-  [[-0.42,1.32],[0.42,1.32]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.5, 0.035); }); /* footrest legs */
-  g.add(part(crownGeo(0.5, 0.5, 0.17, 0.09, 0.04, "z"), MAT.accentSage, -0.35, 1.28, -0.18, -0.5, 0.2, 0.15));
-  return g;
-}
-function buildMattressW(w){
-  var g = new THREE.Group();
-  g.add(part(crownGeo(w, 0.55, 2.0, 0.17, 0.05, "y"), MAT.fabricLight, 0, 0.32, 0)); /* flat solid block, top slightly convex */
+  g.add(part(crownGeo(3.3, 0.55, 2.0, 0.17, 0.05, "y"), MAT.fabricLight, 0, 0.32, 0)); /* flat solid block, top slightly convex */
   /* double piping along the top edge: the loops lie on the edge, not floating above it */
-  piping(g, w - 0.02, 1.98, 0.16, 0.585, 0.03, MAT.fabricDark);           /* piping on top, along the edge */
-  piping(g, w - 0.12, 1.88, 0.14, 0.605, 0.026, MAT.fabricDark);          /* second piping on top, inside */
-  piping(g, w - 0.02, 1.98, 0.16, 0.055, 0.03, MAT.fabricDark);           /* piping at the bottom, along the edge */
-  piping(g, w - 0.12, 1.88, 0.14, 0.035, 0.026, MAT.fabricDark);          /* second piping at the bottom, inside */
+  piping(g, 3.28, 1.98, 0.16, 0.585, 0.03, MAT.fabricDark);               /* piping on top, along the edge */
+  piping(g, 3.18, 1.88, 0.14, 0.605, 0.026, MAT.fabricDark);              /* second piping on top, inside */
+  piping(g, 3.28, 1.98, 0.16, 0.055, 0.03, MAT.fabricDark);               /* piping at the bottom, along the edge */
+  piping(g, 3.18, 1.88, 0.14, 0.035, 0.026, MAT.fabricDark);              /* second piping at the bottom, inside */
   return g;
 }
-function buildMattressTwin(){ return buildMattressW(1.9); }
-function buildMattressQueen(){ return buildMattressW(3.3); }
-function buildChairSeat(){
-  var g = new THREE.Group();
-  [[-0.44,-0.4],[0.44,-0.4],[-0.44,0.4],[0.44,0.4]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.9, 0.035); });
-  box(g, 1.15, 0.2, 1.0, 0.08, MAT.fabric, 0, 0.98, 0);                    /* seat */
-  seatCushion(g, 1.05, 0.12, 0.9, 0.06, MAT.fabricLight, 0, 1.12, 0, 0.03); /* thin seat cushion */
-  return g;
-}
-function buildChairBack(){
+function buildChair(){
   var g = new THREE.Group();
   [[-0.44,-0.4],[0.44,-0.4],[-0.44,0.4],[0.44,0.4]].forEach(function(p){ woodLeg(g, p[0], p[1], 0.9, 0.035); });
   box(g, 1.15, 0.2, 1.0, 0.08, MAT.fabric, 0, 0.98, 0);                    /* seat */
@@ -1439,7 +1387,7 @@ function buildPouf(){
   g.add(part(new THREE.CylinderGeometry(0.1, 0.12, 0.06, 16), MAT.fabricDark, 0, 1.37, 0)); /* button */
   return g;
 }
-var HERO_BUILDERS = { sofa2:buildSofa2, sofa3:buildSofa3, sofaCorner:buildSofaCorner, armchair:buildArmchair, recliner:buildRecliner, mattressSingle:buildMattressTwin, mattressDouble:buildMattressQueen, chairSeat:buildChairSeat, chairBack:buildChairBack, other:buildPouf };
+var HERO_BUILDERS = { sofa:buildSofa, armchair:buildArmchair, mattress:buildMattress, chair:buildChair, other:buildPouf };
 
 function sizeHero3D(){
   if (!heroScene) return;
@@ -1533,15 +1481,11 @@ function initHero3D(){
       }
       spinGroup.rotation.y = spin.y;
       spinGroup.rotation.x = spin.x;
-      /* framing from the current model's bounding box: the distance fits the
-         rotating footprint and height at any aspect, with margin, so no edge clips */
+      /* careful framing: the camera smoothly takes the angle of the current model,
+         on narrow screens it pulls back a bit so the model is not cut off */
       var aspect = camera.aspect || 1;
-      var fr = heroFrame[currentModelKey];
-      if (fr){
-        var need = Math.max(fr.hy, fr.rh / Math.max(aspect, 0.5)) / Math.tan(17 * Math.PI / 180) * 1.18;
-        camGoal.dist = need; camGoal.ty = fr.ty;
-      }
-      camCur.dist += (camGoal.dist - camCur.dist) * 0.08;
+      var fit = aspect >= 1.15 ? 1 : Math.min(1.4, Math.pow(1.15 / Math.max(aspect, 0.5), 0.55));
+      camCur.dist += (camGoal.dist * fit - camCur.dist) * 0.08;
       camCur.ty += (camGoal.ty - camCur.ty) * 0.08;
       camera.position.set(0, camCur.ty + 1.15, camCur.dist);
       camera.lookAt(0, camCur.ty, 0);
@@ -1583,49 +1527,74 @@ var schemeMq = window.matchMedia("(prefers-color-scheme: dark)");
 if (schemeMq.addEventListener) schemeMq.addEventListener("change", applySceneTheme);
 else if (schemeMq.addListener) schemeMq.addListener(applySceneTheme);
 
-var currentModelKey = "sofa2";
-var heroFrame = {}; /* variant id -> {rh, hy, ty} for camera framing */
-/* Frame a model from its bounding box: rh is the radius of the rotating
-   footprint, hy the half height, ty the box center height (camera target). */
-function frameForModel(m){
-  var bb = new THREE.Box3().setFromObject(m);
-  var size = bb.getSize(new THREE.Vector3());
-  var c = bb.getCenter(new THREE.Vector3());
-  var rh = Math.sqrt(size.x * size.x + size.z * size.z) / 2;
-  return { rh:rh, hy:size.y / 2, ty:c.y };
-}
-function setHeroModel(key){
-  if (!threeOn || !HERO_BUILDERS[key]) return;
-  if (!heroModels[key]){
-    var m = HERO_BUILDERS[key]();
+function setHeroModel(cat){
+  if (!threeOn || !HERO_BUILDERS[cat]) return;
+  if (!heroModels[cat]){
+    var m = HERO_BUILDERS[cat]();
     var bb = new THREE.Box3().setFromObject(m);
     var bc = bb.getCenter(new THREE.Vector3());
     m.position.x -= bc.x; m.position.z -= bc.z;   /* model strictly centered in frame */
-    heroModels[key] = m;
-    heroFrame[key] = frameForModel(m);
+    heroModels[cat] = m;
     spinGroup.add(m);
   }
   if (currentModel) currentModel.visible = false;
-  currentModel = heroModels[key];
+  currentModel = heroModels[cat];
   currentModel.visible = true;
-  currentModelKey = key;
+  var fr = HERO_FRAME[cat];
+  if (fr){ camGoal.dist = fr.dist; camGoal.ty = fr.ty; }
 }
 function updateHero(){
-  /* The fallback always matches the selected variant */
-  $("heroFallbackIcon").innerHTML = FALLBACK_ICONS[picker.variant] || FALLBACK_ICONS[picker.cat] || "";
-  $("heroFallbackName").textContent = picker.variant ? VARIANT_NAMES[picker.variant] : "Other";
+  /* The fallback always matches the selected tab */
+  $("heroFallbackIcon").innerHTML = FALLBACK_ICONS[picker.cat] || "";
+  $("heroFallbackName").textContent = CATEGORIES[picker.cat].name;
   if (!threeTried){
     threeTried = true;
     threeOn = initHero3D();
   }
   if (threeOn){
-    setHeroModel(picker.variant || "other");
+    setHeroModel(picker.cat);
   } else {
     /* Three.js failed to load - glass card with a line icon of the furniture, no AI picture */
     $("heroCanvas").classList.add("hidden");
     $("heroFallback").classList.remove("hidden");
   }
 }
+(function(){
+  var stage = $("heroStage");
+  stage.addEventListener("pointerdown", function(e){
+    if (e.target.closest("button")) return;
+    heroDrag = { id:e.pointerId, sx:e.clientX, sy:e.clientY, lx:e.clientX, ly:e.clientY };
+    spinVel.y = 0; spinVel.x = 0; resetting = false;
+    lastInteract = Date.now();
+    if (stage.setPointerCapture) { try { stage.setPointerCapture(e.pointerId); } catch (err) {} }
+  });
+  stage.addEventListener("pointermove", function(e){
+    if (!heroDrag || e.pointerId !== heroDrag.id) return;
+    lastInteract = Date.now();
+    if (threeOn){
+      /* real model rotation: 360 degrees horizontally, a bit vertically;
+         we remember the speed - inertia kicks in after release */
+      var ddx = (e.clientX - heroDrag.lx) * 0.011;
+      var ddy = (e.clientY - heroDrag.ly) * 0.005;
+      spin.y += ddx;
+      spin.x = Math.max(-0.22, Math.min(0.38, spin.x + ddy));
+      spinVel.y = spinVel.y * 0.55 + ddx * 0.45;
+      spinVel.x = spinVel.x * 0.55 + ddy * 0.45;
+      heroDrag.lx = e.clientX; heroDrag.ly = e.clientY;
+    }
+  });
+  function endDrag(e){
+    if (heroDrag && e.pointerId === heroDrag.id){
+      heroDrag = null;
+      if (reduceMotion){ spinVel.y = 0; spinVel.x = 0; }  /* no extra motion with reduced motion */
+      lastInteract = Date.now();
+    }
+  }
+  stage.addEventListener("pointerup", endDrag);
+  stage.addEventListener("pointercancel", endDrag);
+})();
+
+/* ============ CART ============ */
 function itemName(it){ return it.variantId ? VARIANT_NAMES[it.variantId] : "Other"; }
 function itemMeta(it){
   var parts = [];
