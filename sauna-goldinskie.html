@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Голдинские бани - калькулятор стоимости</title>
+<meta name="description" content="Голдинские бани, Санкт-Петербург, ул. Салова, 49а. Посчитайте стоимость аренды зала: зал, дата, гости, время - и сразу итоговая цена.">
+<style>
+  :root{
+    --bg:#FFFFFF; --surface:#FFFFFF; --line:#E3E3E0; --ink:#232323; --muted:#6E6E6A;
+    --accent:#5C3A21; --accent-ink:#FFFFFF; --soft:#F5F5F5; --soft2:#FBF7F0;
+    --ok:#2E7D4F; --radius:18px;
+    --shadow:0 10px 22px rgba(36,35,29,.10);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+  .wrap{max-width:860px;margin:0 auto;padding:24px 16px 64px}
+  header{padding:8px 0 20px}
+  .eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+  h1{font-size:32px;line-height:1.15;margin:0 0 8px}
+  .sub{color:var(--muted);margin:0;max-width:560px}
+  .sub a{color:var(--accent)}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin:18px 0}
+  .card h2{font-size:18px;margin:0 0 4px}
+  .hint{color:var(--muted);font-size:14px;margin:0 0 14px}
+  .halls{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .hall{border:1.5px solid var(--line);border-radius:14px;padding:16px;cursor:pointer;background:#fff;text-align:left;font:inherit;color:inherit;width:100%}
+  .hall[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 3px rgba(92,58,33,.14)}
+  .hall b{font-size:17px;display:block}
+  .hall span{color:var(--muted);font-size:14px;display:block;margin-top:4px}
+  .hall .price{color:var(--ink);font-weight:700;margin-top:8px;display:block}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  label{display:block;font-weight:600;font-size:14px;margin:0 0 6px}
+  input[type="date"]{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:12px;background:var(--soft);font:inherit;color:inherit}
+  .seg{display:flex;gap:8px}
+  .seg button{flex:1;padding:12px 8px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font:inherit;cursor:pointer;color:inherit}
+  .seg button[aria-pressed="true"]{border-color:var(--accent);background:var(--soft2);font-weight:700}
+  .stepper{display:flex;align-items:center;gap:12px}
+  .stepper button{width:44px;height:44px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:20px;cursor:pointer;color:inherit}
+  .stepper b{font-size:20px;min-width:32px;text-align:center}
+  .stepper .unit{color:var(--muted);font-size:14px}
+  .daytag{font-size:13px;color:var(--muted);margin-top:6px}
+  .daytag b{color:var(--ink)}
+  .extras{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .extra{display:flex;align-items:flex-start;gap:10px;border:1.5px solid var(--line);border-radius:12px;padding:12px;cursor:pointer;background:#fff}
+  .extra input{width:18px;height:18px;margin-top:2px;accent-color:var(--accent)}
+  .extra b{font-size:15px;display:block}
+  .extra span{color:var(--muted);font-size:13px;display:block}
+  .extra .eprice{margin-left:auto;font-weight:700;white-space:nowrap}
+  .mini-stepper{display:flex;align-items:center;gap:8px;margin-left:auto}
+  .mini-stepper button{width:30px;height:30px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:16px;cursor:pointer;color:inherit}
+  .mini-stepper b{min-width:20px;text-align:center}
+  .breakdown{border-top:1px solid var(--line);margin-top:16px;padding-top:14px}
+  .line{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:15px}
+  .line span{color:var(--muted)}
+  .line b{white-space:nowrap}
+  .total{display:flex;justify-content:space-between;align-items:baseline;gap:12px;border-top:1px solid var(--line);margin-top:10px;padding-top:14px}
+  .total .t-label{font-size:18px;font-weight:700}
+  .total .t-sum{font-size:34px;font-weight:800;color:var(--accent)}
+  .cta{display:block;text-align:center;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:700;font-size:17px;padding:15px;border-radius:14px;margin-top:16px;box-shadow:0 10px 22px rgba(92,58,33,.28)}
+  .note{font-size:13px;color:var(--muted);text-align:center;margin:12px 0 0}
+  .tariffs{font-size:14px}
+  .tariffs table{width:100%;border-collapse:collapse}
+  .tariffs th,.tariffs td{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left}
+  .tariffs th{color:var(--muted);font-weight:600}
+  .tariffs td:last-child,.tariffs th:last-child{text-align:right;white-space:nowrap}
+  footer{color:var(--muted);font-size:13px;margin-top:8px}
+  @media (max-width:560px){
+    h1{font-size:26px}
+    .halls{grid-template-columns:1fr}
+    .row{grid-template-columns:1fr}
+    .extras{grid-template-columns:1fr}
+    .total .t-sum{font-size:28px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="eyebrow">Санкт-Петербург, ул. Салова, 49а</p>
+    <h1>Голдинские бани</h1>
+    <p class="sub">Настоящая русская баня на дровах. Выберите зал, дату и гостей - и сразу увидите итоговую стоимость, без звонков и подсчетов в уме.</p>
+  </header>
+
+  <section class="card" aria-label="Калькулятор">
+    <h2>Рассчитать стоимость</h2>
+    <p class="hint">Цена зависит от зала, дня недели и времени суток. Все тарифы - как в прайсе бань.</p>
+
+    <div class="halls" role="group" aria-label="Зал">
+      <button class="hall" type="button" id="hallBig" aria-pressed="true">
+        <b>Большой зал</b>
+        <span>Русская парная на дровах, бассейн 3x6 м, купель, банкетный зал до 30 человек</span>
+        <span class="price">от 2 800 ₽/час</span>
+      </button>
+      <button class="hall" type="button" id="hallSmall" aria-pressed="false">
+        <b>Малый зал</b>
+        <span>Русская парная на дровах, душ с обливными ведрами, комната отдыха до 6 человек</span>
+        <span class="price">от 1 700 ₽/час</span>
+      </button>
+    </div>
+
+    <div class="row" style="margin-top:16px">
+      <div>
+        <label for="date">Дата</label>
+        <input type="date" id="date">
+        <p class="daytag" id="dayTag"></p>
+      </div>
+      <div>
+        <label>Время суток</label>
+        <div class="seg" role="group" aria-label="Время суток">
+          <button type="button" id="bandDay" aria-pressed="true">День<br><small>9:00-16:00</small></button>
+          <button type="button" id="bandEvening" aria-pressed="false">Вечер<br><small>16:00-9:00</small></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:16px">
+      <div>
+        <label>Продолжительность</label>
+        <div class="stepper">
+          <button type="button" id="hoursMinus" aria-label="Меньше часов">-</button>
+          <b id="hoursVal">3</b><span class="unit">часа</span>
+          <button type="button" id="hoursPlus" aria-label="Больше часов">+</button>
+        </div>
+        <p class="daytag" id="hoursHint">Аренда от 2 часов, в вечернее время - от 3 часов.</p>
+      </div>
+      <div>
+        <label>Гости</label>
+        <div class="stepper">
+          <button type="button" id="guestsMinus" aria-label="Меньше гостей">-</button>
+          <b id="guestsVal">6</b><span class="unit">человек</span>
+          <button type="button" id="guestsPlus" aria-label="Больше гостей">+</button>
+        </div>
+        <p class="daytag" id="guestsHint"></p>
+      </div>
+    </div>
+
+    <h2 style="margin-top:20px">Дополнительно</h2>
+    <p class="hint">Разовые услуги - один раз за визит. Текстиль и веники - на каждого гостя.</p>
+    <div class="extras">
+      <label class="extra"><input type="checkbox" id="exCork"><span><b>Пробковый сбор</b><span>Свой алкоголь и еда</span></span><span class="eprice">+500 ₽</span></label>
+      <label class="extra"><input type="checkbox" id="exTable"><span><b>Сервировка стола</b><span>Посуда и накрытие</span></span><span class="eprice">+500 ₽</span></label>
+      <label class="extra"><input type="checkbox" id="exBroomClean"><span><b>Уборка веников</b><span>Если принесли свои веники</span></span><span class="eprice">+500 ₽</span></label>
+      <div class="extra"><span><b>Веник</b><span>Березовый или дубовый, на гостя</span></span><span class="mini-stepper"><button type="button" id="broomMinus" aria-label="Меньше веников">-</button><b id="broomVal">0</b><button type="button" id="broomPlus" aria-label="Больше веников">+</button></span></div>
+      <label class="extra"><input type="checkbox" id="exTowel"><span><b>Полотенце</b><span>На каждого гостя</span></span><span class="eprice">+150 ₽/гость</span></label>
+      <label class="extra"><input type="checkbox" id="exSheet"><span><b>Простыня</b><span>На каждого гостя</span></span><span class="eprice">+150 ₽/гость</span></label>
+      <label class="extra"><input type="checkbox" id="exSlippers"><span><b>Тапочки</b><span>На каждого гостя</span></span><span class="eprice">+150 ₽/гость</span></label>
+      <label class="extra"><input type="checkbox" id="exRobe"><span><b>Халат</b><span>На каждого гостя</span></span><span class="eprice">+400 ₽/гость</span></label>
+    </div>
+
+    <div class="breakdown" id="breakdown"></div>
+    <div class="total">
+      <span class="t-label">Итого</span>
+      <span class="t-sum" id="totalSum">0 ₽</span>
+    </div>
+    <a class="cta" href="tel:+79991883030">Позвонить и забронировать: +7 (999) 188-30-30</a>
+    <p class="note">Итоговая цена - предварительная. Точную стоимость подтвердит администратор при бронировании.</p>
+  </section>
+
+  <section class="card tariffs" aria-label="Прайс">
+    <h2>Прайс</h2>
+    <p class="hint">Так выглядит прайс сейчас. Калькулятор выше считает по этим же тарифам.</p>
+    <h2 style="font-size:16px">Большой зал</h2>
+    <table>
+      <tr><th>День</th><th>Цена за час</th></tr>
+      <tr><td>Пн-Чт, 9:00-16:00</td><td>2 800 ₽</td></tr>
+      <tr><td>Пн-Чт, 16:00-9:00</td><td>3 300 ₽</td></tr>
+      <tr><td>Пт-Вс, 9:00-16:00</td><td>3 200 ₽</td></tr>
+      <tr><td>Пт-Вс, 16:00-9:00</td><td>3 900 ₽</td></tr>
+    </table>
+    <p class="hint" style="margin-top:8px">Включено до 6 гостей, свыше - доплата 300 ₽/час за гостя. Аренда от 2 часов, вечером - от 3 часов.</p>
+    <h2 style="font-size:16px">Малый зал</h2>
+    <table>
+      <tr><th>День</th><th>Цена за час</th></tr>
+      <tr><td>Пн-Чт, 9:00-16:00</td><td>1 700 ₽</td></tr>
+      <tr><td>Пн-Чт, 16:00-9:00</td><td>2 000 ₽</td></tr>
+      <tr><td>Пт-Вс, 9:00-16:00</td><td>1 900 ₽</td></tr>
+      <tr><td>Пт-Вс, 16:00-9:00</td><td>2 200 ₽</td></tr>
+    </table>
+    <p class="hint" style="margin-top:8px">Включено до 4 гостей, свыше - доплата 400 ₽/час за гостя. Аренда от 2 часов, вечером - от 3 часов.</p>
+  </section>
+
+  <footer>
+    Голдинские бани, Санкт-Петербург, ул. Салова, 49а. Работают круглосуточно. Телефон +7 (999) 188-30-30.<br>
+    Демо-калькулятор: цены - по данным каталога саун, точную стоимость уточняйте у администратора.
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var HALLS = {
+    big: {
+      name: "Большой зал",
+      rates: { weekdayDay: 2800, weekdayEvening: 3300, weekendDay: 3200, weekendEvening: 3900 },
+      included: 6, extraPerHour: 300, maxGuests: 30
+    },
+    small: {
+      name: "Малый зал",
+      rates: { weekdayDay: 1700, weekdayEvening: 2000, weekendDay: 1900, weekendEvening: 2200 },
+      included: 4, extraPerHour: 400, maxGuests: 6
+    }
+  };
+  var state = { hall: "big", band: "day", hours: 3, guests: 6, brooms: 0 };
+
+  function $(id){ return document.getElementById(id); }
+  function fmt(n){ return n.toLocaleString("ru-RU") + " ₽"; }
+  function plural(n, one, few, many){
+    var m = Math.abs(n) % 100, d = m % 10;
+    if (m > 10 && m < 20) return many;
+    if (d > 1 && d < 5) return few;
+    if (d === 1) return one;
+    return many;
+  }
+  function nextSaturday(){
+    var d = new Date();
+    var add = (6 - d.getDay() + 7) % 7;
+    if (add === 0) add = 7;
+    d.setDate(d.getDate() + add);
+    return d;
+  }
+  function toISO(d){
+    var m = String(d.getMonth() + 1).padStart(2, "0");
+    var day = String(d.getDate()).padStart(2, "0");
+    return d.getFullYear() + "-" + m + "-" + day;
+  }
+  function isWeekend(dateStr){
+    var d = new Date(dateStr + "T12:00:00");
+    var day = d.getDay();
+    return day === 5 || day === 6 || day === 0;
+  }
+  function dayName(dateStr){
+    var d = new Date(dateStr + "T12:00:00");
+    var names = ["воскресенье", "понедельник", "вторник", "среда", "четверг", "пятница", "суббота"];
+    return names[d.getDay()];
+  }
+  function minHours(){ return state.band === "evening" ? 3 : 2; }
+
+  function calc(){
+    var h = HALLS[state.hall];
+    var weekend = isWeekend($("date").value);
+    var key = (weekend ? "weekend" : "weekday") + (state.band === "day" ? "Day" : "Evening");
+    var rate = h.rates[key];
+    var base = rate * state.hours;
+    var extraGuests = Math.max(0, state.guests - h.included);
+    var extraCost = extraGuests * h.extraPerHour * state.hours;
+    var lines = [];
+    lines.push({ label: "Аренда: " + h.name.toLowerCase() + ", " + fmt(rate) + "/час x " + state.hours + " " + plural(state.hours, "час", "часа", "часов"), value: base });
+    if (extraGuests > 0){
+      lines.push({ label: "Доплата за гостей: " + extraGuests + " " + plural(extraGuests, "гость", "гостя", "гостей") + " x " + fmt(h.extraPerHour) + "/час x " + state.hours + " ч", value: extraCost });
+    }
+    var extras = 0;
+    if ($("exCork").checked){ lines.push({ label: "Пробковый сбор", value: 500 }); extras += 500; }
+    if ($("exTable").checked){ lines.push({ label: "Сервировка стола", value: 500 }); extras += 500; }
+    if ($("exBroomClean").checked){ lines.push({ label: "Уборка принесенных веников", value: 500 }); extras += 500; }
+    if (state.brooms > 0){ var bc = state.brooms * 500; lines.push({ label: "Веники: " + state.brooms + " x 500 ₽", value: bc }); extras += bc; }
+    var perGuest = [
+      ["exTowel", "Полотенца", 150],
+      ["exSheet", "Простыни", 150],
+      ["exSlippers", "Тапочки", 150],
+      ["exRobe", "Халаты", 400]
+    ];
+    perGuest.forEach(function(item){
+      if ($(item[0]).checked){
+        var c = state.guests * item[2];
+        lines.push({ label: item[1] + ": " + state.guests + " x " + fmt(item[2]), value: c });
+        extras += c;
+      }
+    });
+    return { lines: lines, total: base + extraCost + extras, rate: rate, weekend: weekend };
+  }
+
+  function render(){
+    var h = HALLS[state.hall];
+    $("hallBig").setAttribute("aria-pressed", state.hall === "big" ? "true" : "false");
+    $("hallSmall").setAttribute("aria-pressed", state.hall === "small" ? "true" : "false");
+    $("bandDay").setAttribute("aria-pressed", state.band === "day" ? "true" : "false");
+    $("bandEvening").setAttribute("aria-pressed", state.band === "evening" ? "true" : "false");
+    $("hoursVal").textContent = state.hours;
+    $("guestsVal").textContent = state.guests;
+    $("broomVal").textContent = state.brooms;
+    var dstr = $("date").value;
+    var r = calc();
+    $("dayTag").innerHTML = "Это <b>" + dayName(dstr) + "</b> - " + (r.weekend ? "тариф выходного дня (Пт-Вс)" : "тариф буднего дня (Пн-Чт)") + ", " + fmt(r.rate) + " за час.";
+    $("guestsHint").textContent = "В стоимость включено до " + h.included + " " + plural(h.included, "гостя", "гостей", "гостей") + ", свыше - доплата " + fmt(h.extraPerHour) + "/час за гостя. Максимум " + h.maxGuests + ".";
+    var html = "";
+    r.lines.forEach(function(l){
+      html += '<div class="line"><span>' + l.label + '</span><b>' + fmt(l.value) + '</b></div>';
+    });
+    $("breakdown").innerHTML = html;
+    $("totalSum").textContent = fmt(r.total);
+  }
+
+  function setHall(hall){
+    state.hall = hall;
+    var h = HALLS[hall];
+    if (state.guests > h.maxGuests) state.guests = h.maxGuests;
+    if (state.guests < 1) state.guests = 1;
+    if (state.brooms > state.guests) state.brooms = state.guests;
+    render();
+  }
+  function setBand(band){
+    state.band = band;
+    if (state.hours < minHours()) state.hours = minHours();
+    render();
+  }
+
+  $("date").value = toISO(nextSaturday());
+  $("hallBig").addEventListener("click", function(){ setHall("big"); });
+  $("hallSmall").addEventListener("click", function(){ setHall("small"); });
+  $("bandDay").addEventListener("click", function(){ setBand("day"); });
+  $("bandEvening").addEventListener("click", function(){ setBand("evening"); });
+  $("date").addEventListener("change", render);
+  $("hoursMinus").addEventListener("click", function(){ if (state.hours > minHours()){ state.hours--; render(); } });
+  $("hoursPlus").addEventListener("click", function(){ if (state.hours < 12){ state.hours++; render(); } });
+  $("guestsMinus").addEventListener("click", function(){ if (state.guests > 1){ state.guests--; if (state.brooms > state.guests) state.brooms = state.guests; render(); } });
+  $("guestsPlus").addEventListener("click", function(){ if (state.guests < HALLS[state.hall].maxGuests){ state.guests++; render(); } });
+  $("broomMinus").addEventListener("click", function(){ if (state.brooms > 0){ state.brooms--; render(); } });
+  $("broomPlus").addEventListener("click", function(){ if (state.brooms < state.guests){ state.brooms++; render(); } });
+  ["exCork", "exTable", "exBroomClean", "exTowel", "exSheet", "exSlippers", "exRobe"].forEach(function(id){
+    $(id).addEventListener("change", render);
+  });
+  render();
+})();
+</script>
+</body>
+</html>
