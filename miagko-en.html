@@ -18,24 +18,24 @@
 /* waive: 24b spacing uses a deliberate 2px scale (87x); 58 word count is a working booking app (1594 words); 70 is a false positive, line ~1954 is a dashboard validation hint, not a success state; sloplint final: 0 FAIL, 87 REFLEX, 2 WARN (both waived) */
 :root{
   --font:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --accent:#0C5F57; --accent-ink:#FDFBF4; --accent-soft:color-mix(in srgb, var(--accent) 12%, #FFFDF8); --link:var(--accent);
-  --bg:#FFFFFF; --surface:#FFFDF8; --surface2:#E7DFCE; --ink:#24231D; --muted:#6B6353;
-  --line:#DCD2BE; --danger:#A93226; --danger-bg:#F9E8E2; --warn:#7C5310; --warn-bg:#F6ECD2;
-  --ok:#0C5F57; --ok-bg:#DFECE8; --shadow:0 8px 24px rgba(74,60,38,.10);
+  --accent:#0C5F57; --accent-ink:#FFFFFF; --accent-soft:color-mix(in srgb, var(--accent) 12%, #FFFFFF); --link:var(--accent);
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface2:#F5F5F5; --ink:#232323; --muted:#6E6E6A;
+  --line:#E3E3E0; --danger:#A93226; --danger-bg:#F9E8E2; --warn:#7C5310; --warn-bg:#F0F0EC;
+  --ok:#0C5F57; --ok-bg:#DFECE8; --shadow:0 8px 24px rgba(36,35,29,.10);
   --radius:24px; --blue:var(--accent);
-  --glass:rgba(255,252,246,.55); --glass-strong:rgba(255,252,246,.74);
+  --glass:rgba(255,255,255,.55); --glass-strong:rgba(255,255,255,.74);
   --glass-border:rgba(255,255,255,.85); --glass-hi:rgba(255,255,255,.95);
-  --glass-shadow:0 24px 48px rgba(74,60,38,.14);
-  --track:rgba(74,60,38,.07); --input-bg:rgba(255,252,246,.68);
-  --item-bg:rgba(255,252,246,.62);
-  --shadow-sm:0 2px 7px rgba(74,60,38,.13);
-  --shadow-md:0 8px 20px rgba(74,60,38,.12);
-  --shadow-lg:0 14px 30px rgba(74,60,38,.12);
-  --shadow-btn:0 10px 22px rgba(74,60,38,.16);
-  --shadow-press:0 3px 10px rgba(74,60,38,.14);
-  --shadow-sticky:0 -10px 28px rgba(74,60,38,.14);
+  --glass-shadow:0 24px 48px rgba(36,35,29,.14);
+  --track:rgba(36,35,29,.07); --input-bg:rgba(255,255,255,.68);
+  --item-bg:rgba(255,255,255,.62);
+  --shadow-sm:0 2px 7px rgba(36,35,29,.13);
+  --shadow-md:0 8px 20px rgba(36,35,29,.12);
+  --shadow-lg:0 14px 30px rgba(36,35,29,.12);
+  --shadow-btn:0 10px 22px rgba(36,35,29,.16);
+  --shadow-press:0 3px 10px rgba(36,35,29,.14);
+  --shadow-sticky:0 -10px 28px rgba(36,35,29,.14);
   --scrim:rgba(36,35,29,.62);
-  --track-off:rgba(107,99,83,.4);
+  --track-off:rgba(120,120,118,.4);
   --toggle-on:#2FA84F;
   --knob-shadow:0 2px 7px rgba(36,35,29,.28);
   --weave-base:#A8A29A;
@@ -284,7 +284,7 @@ header.site{
 .intro h1{font-size:clamp(36px,6vw,58px);font-weight:800;letter-spacing:-.022em;line-height:1.04;max-width:12em;margin-top:16px}
 .intro p.lead{font-size:19px;margin-top:14px}
 /* hero stage: scene background follows the theme - the canvas is transparent, the glass card shows through */
-:root{--stage-hi:rgba(255,252,246,.6)}
+:root{--stage-hi:rgba(255,255,255,.6)}
 @media (prefers-color-scheme: dark){
   html[data-theme="auto"]{--stage-hi:rgba(140,180,235,.13)}
 }
@@ -460,7 +460,7 @@ input[type="date"],input[type="time"],input[type="datetime-local"],select{
 </style>
 <style>
 /* ===== v4: design update (tokens now live in the first :root block) ===== */
-/* warm shadows instead of cold blue-gray */
+/* neutral shadows */
 .order-btn{box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-md)}
 .hero-fallback-icon{box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-lg)}
 .seg button[aria-pressed="true"]{box-shadow:var(--shadow-press)}
@@ -468,7 +468,7 @@ input[type="date"],input[type="time"],input[type="datetime-local"],select{
 .sticky-bar{box-shadow:inset 0 1px 0 var(--glass-hi)}
 /* 2. Hero is bigger, glow behind the model removed completely - flat background */
 .hero-stage{padding:40px 8px 20px;
-  background:color-mix(in srgb, var(--line) 30%, var(--bg));}
+  background:transparent;}
 .hero-canvas{height:440px}
 .hero-fallback{min-height:440px}
 @media (max-width:860px){
