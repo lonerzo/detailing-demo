@@ -1,0 +1,1493 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Grandest Line Driving School and Tutoring, Pensacola, FL. Pick a lesson, see the price, and book in a minute. 1 free hour with a 2-hour lesson." />
+<meta name="theme-color" content="#1D4ED8" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231D4ED8'/%3E%3Cpath d='M14 46 C24 22, 40 46, 50 22' stroke='white' stroke-width='5' fill='none' stroke-dasharray='7 6' stroke-linecap='round'/%3E%3Ccircle cx='14' cy='46' r='5' fill='white'/%3E%3Ccircle cx='50' cy='22' r='5' fill='white'/%3E%3C/svg%3E" />
+<link rel="manifest" href="data:application/octet-stream;base64,eyJiYWNrZ3JvdW5kX2NvbG9yIjogIiNGRkZGRkYiLCAiZGVzY3JpcHRpb24iOiAiUHJpY2UgY2FsY3VsYXRpb24gYW5kIGJvb2tpbmcgZm9yIGRyaXZpbmcgbGVzc29ucyIsICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLCAiaWNvbnMiOiBbeyJwdXJwb3NlIjogImFueSIsICJzaXplcyI6ICIxOTJ4MTkyIiwgInNyYyI6ICJpY29uLTE5Mi5wbmciLCAidHlwZSI6ICJpbWFnZS9wbmcifSwgeyJwdXJwb3NlIjogImFueSIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInNyYyI6ICJpY29uLTUxMi5wbmciLCAidHlwZSI6ICJpbWFnZS9wbmcifSwgeyJwdXJwb3NlIjogIm1hc2thYmxlIiwgInNpemVzIjogIjUxMng1MTIiLCAic3JjIjogImljb24tNTEyLnBuZyIsICJ0eXBlIjogImltYWdlL3BuZyJ9XSwgImxhbmciOiAiZW4iLCAibmFtZSI6ICJHcmFuZGVzdCBMaW5lIC0gRHJpdmluZyBTY2hvb2wgYW5kIFR1dG9yaW5nIiwgIm9yaWVudGF0aW9uIjogInBvcnRyYWl0LXByaW1hcnkiLCAic2NvcGUiOiAiLiIsICJzaG9ydF9uYW1lIjogIkdyYW5kZXN0IExpbmUiLCAic3RhcnRfdXJsIjogIi4iLCAidGhlbWVfY29sb3IiOiAiIzFENEVEOCJ9" />
+<title>Grandest Line - Driving School and Tutoring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+/* Hallmark v2.0.0 | Grandest Line - driving lesson booking, adapted from the cleaning-booking template, 3D removed, route visual, real Acuity prices | direction: learn to drive, book in a minute - calm, plain-spoken, reliable */
+/* waive: 24b spacing uses a deliberate 2px scale (87x); 58 word count is a working booking app (1091 words); 70 is a false positive, the line is a dashboard validation hint, not a success state; 40 promo-card is the gold-vs-page edge, its text is dark ink on gold at 6.5:1; 41 accent-ink is a blue-tinted white used only on accent surfaces, never on the page background; sloplint final: 0 FAIL, 87 REFLEX, 4 WARN (all waived) */
+:root{
+  --font:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --accent:#1D4ED8; --gold:#C9A227; --accent-ink:#F0F5FF; --accent-soft:color-mix(in srgb, var(--accent) 12%, #FFFFFF); --link:var(--accent);
+  --bg:#FFFFFF; --surface:#FFFFFF; --surface2:#F5F5F5; --ink:#232323; --muted:#6E6E6A;
+  --line:#E3E3E0; --danger:#A93226; --danger-bg:#F9E8E2; --warn:#7C5310; --warn-bg:#F0F0EC;
+  --ok:#0F6B32; --ok-bg:#DFECE8; --shadow:0 8px 24px rgba(36,35,29,.10);
+  --radius:24px; --blue:var(--accent);
+  --glass:rgba(255,255,255,.55); --glass-strong:rgba(255,255,255,.74);
+  --glass-border:rgba(255,255,255,.85); --glass-hi:rgba(255,255,255,.95);
+  --glass-shadow:0 24px 48px rgba(36,35,29,.14);
+  --track:rgba(36,35,29,.07); --input-bg:rgba(255,255,255,.68);
+  --item-bg:rgba(255,255,255,.62);
+  --shadow-sm:0 2px 7px rgba(36,35,29,.13);
+  --shadow-md:0 8px 20px rgba(36,35,29,.12);
+  --shadow-lg:0 14px 30px rgba(36,35,29,.12);
+  --shadow-btn:0 10px 22px rgba(36,35,29,.16);
+  --shadow-press:0 3px 10px rgba(36,35,29,.14);
+  --shadow-sticky:0 -10px 28px rgba(36,35,29,.14);
+  --scrim:rgba(36,35,29,.62);
+  --track-off:rgba(120,120,118,.4);
+  --toggle-on:#2FA84F;
+  --knob-shadow:0 2px 7px rgba(36,35,29,.28);
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--bg);overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.5;overflow-x:clip}
+h1,h2,h3{line-height:1.15;margin:0;text-wrap:balance}
+button,[role="button"],select,summary,input:not([type="checkbox"]){min-height:44px}
+input[type="checkbox"]{width:22px;height:22px;accent-color:var(--accent);flex:none}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:14px;padding:12px 20px;
+  font:inherit;font-weight:700;cursor:pointer;text-decoration:none;min-height:48px;transition:transform .12s ease, background .15s ease}
+.btn:active{transform:scale(.98)}
+.btn-accent{background:var(--accent);color:var(--accent-ink);box-shadow:var(--shadow-btn)}
+.btn-ghost{background:var(--surface);color:var(--ink);border:1.5px solid var(--line)}
+.btn-soft{background:var(--accent-soft);color:var(--ink)}
+.btn-danger{background:var(--danger-bg);color:var(--danger)}
+.btn-sm{min-height:44px;padding:8px 14px;font-size:14px;border-radius:11px}
+.btn[disabled]{opacity:.5;cursor:not-allowed}
+.chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface2);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600;color:var(--muted)}
+/* header */
+header.site{position:sticky;top:0;z-index:40;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-in{display:flex;align-items:center;gap:14px;padding-top:12px;padding-bottom:12px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none}
+.logo-mark{width:38px;height:38px;border-radius:11px;background:var(--accent);display:grid;place-items:center;color:var(--accent-ink);font-size:19px}
+nav.main{display:flex;gap:4px;margin-left:auto}
+nav.main a{color:var(--ink);text-decoration:none;font-weight:600;font-size:15px;padding:10px 12px;border-radius:10px}
+nav.main a:hover{background:var(--surface2)}
+.icon-btn{width:44px;height:44px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;font-size:18px;display:grid;place-items:center;flex:none}
+/* intro: calculator is the main screen, no hero */
+.intro{padding-top:30px}
+.intro h1{font-size:clamp(24px,3.4vw,34px);font-weight:800;letter-spacing:-.01em;max-width:22em;margin-top:14px}
+.intro p.lead{font-size:17px;color:var(--muted);margin:12px 0 0;max-width:40em}
+/* sections */
+section.block{padding-top:44px;padding-bottom:8px}
+.sec-head{margin-bottom:20px}
+.sec-head h2{font-size:clamp(23px,3.4vw,32px);font-weight:800}
+.sec-head p{color:var(--muted);margin:8px 0 0;max-width:44em}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;color:var(--ink)}
+.grid-2{display:grid;grid-template-columns:1.15fr .85fr;gap:20px;align-items:start}
+/* category picker */
+.cats{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:18px}
+.cat{position:relative;border:2px solid var(--line);background:var(--surface);border-radius:14px;padding:14px 8px 12px;cursor:pointer;text-align:center;font:inherit;color:var(--ink);min-height:104px}
+.cat svg{width:44px;height:44px;margin:0 auto 6px;display:block}
+.cat span{display:block;font-weight:700;font-size:15px}
+.cat small{display:block;color:var(--muted);font-size:12px;margin-top:2px}
+.cat[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-soft)}
+.field-label{font-weight:700;font-size:14px;margin:18px 0 8px;display:block}
+.seg{display:flex;flex-wrap:wrap;gap:8px}
+.seg button{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;min-height:46px}
+.seg button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+.seg button[aria-pressed="true"]::before{content:"✓ "}
+.tabs button[aria-pressed="true"]::before{content:"✓ "}
+.switch-row{display:flex;align-items:center;gap:12px;background:var(--surface2);border-radius:14px;padding:13px 16px;margin-top:12px;cursor:pointer}
+.switch-row .txt{flex:1}
+.switch-row .txt b{display:block;font-size:15px}
+.switch-row .txt small{color:var(--muted)}
+textarea,input[type="text"],input[type="tel"],input[type="number"]{
+  width:100%;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);
+  font:inherit;padding:11px 14px;min-height:48px}
+input[type="date"],input[type="time"],input[type="datetime-local"],select{
+  width:100%;border:1.5px solid var(--line);border-radius:14px;background:var(--surface2);color:var(--ink);
+  font:inherit;padding:11px 14px;min-height:48px}
+textarea{min-height:84px;resize:vertical}
+textarea:focus,input:focus,select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.qty-row{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+.stepper{display:inline-flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface)}
+.stepper button{width:48px;height:48px;border:0;background:var(--surface2);color:var(--ink);font-size:22px;cursor:pointer}
+.stepper output{min-width:44px;text-align:center;font-weight:800;font-size:17px}
+.item-price{margin-left:auto;text-align:right}
+.item-price small{display:block;color:var(--muted)}
+.item-price b{font-size:28px}
+.add-row{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap}
+.add-row .btn{flex:1}
+/* cart */
+.cart-item{border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px;background:var(--surface)}
+.cart-item .top{display:flex;gap:10px;align-items:flex-start}
+.cart-item h4{margin:0;font-size:16px;flex:1}
+.cart-item .meta{color:var(--muted);font-size:14px;margin-top:2px}
+.cart-item .row2{display:flex;align-items:center;gap:10px;margin-top:10px;flex-wrap:wrap}
+.cart-item .sum{margin-left:auto;font-weight:800;font-size:17px}
+.stepper.sm button{width:44px;height:44px;font-size:19px}
+.stepper.sm output{min-width:34px;font-size:15px}
+.totals{border-top:1.5px dashed var(--line);margin-top:14px;padding-top:14px}
+.totals .line{display:flex;justify-content:space-between;gap:12px;padding:3px 0;font-size:15px}
+.totals .line span:first-child{color:var(--muted)}
+.totals .grand{font-size:19px;font-weight:800;padding-top:8px;align-items:baseline}
+.totals .grand span:last-child{font-size:27px}
+.totals .grand span:first-child{color:var(--ink)}
+.empty{border:1.5px dashed var(--line);border-radius:14px;padding:26px 18px;text-align:center;color:var(--muted)}
+.empty b{display:block;color:var(--ink);font-size:17px;margin-bottom:4px}
+/* form */
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-grid .full{grid-column:1/-1}
+.err{color:var(--danger);font-size:13.5px;font-weight:600;margin-top:5px;display:none}
+.err.show{display:block}
+.photos{display:flex;gap:10px;flex-wrap:wrap;margin-top:8px}
+.photo-thumb{position:relative;width:86px;height:86px;border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+.photo-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.photo-thumb button{position:absolute;top:4px;right:4px;width:32px;height:32px;min-height:32px;border-radius:9px;border:0;background:var(--scrim);color:var(--accent-ink);cursor:pointer;font-size:15px;line-height:1}
+.photo-thumb button::after{content:"";position:absolute;inset:-6px}
+.photo-add{width:86px;height:86px;border-radius:12px;border:1.5px dashed var(--line);background:var(--surface2);color:var(--muted);cursor:pointer;font:inherit;font-weight:700;font-size:13px;display:grid;place-items:center;text-align:center;padding:6px}
+.consent{display:flex;gap:12px;align-items:flex-start;background:var(--surface2);border-radius:14px;padding:14px 16px;cursor:pointer;font-size:14.5px}
+/* prices */
+.price-table{width:100%;border-collapse:collapse}
+.price-table td{padding:11px 6px;border-bottom:1px solid var(--line);font-size:15.5px}
+.price-table td:last-child{text-align:right;font-weight:800;white-space:nowrap}
+.price-table tr:last-child td{border-bottom:0}
+/* success / client view */
+.status-pill{display:inline-flex;border-radius:999px;padding:4px 12px;font-size:13px;font-weight:800}
+.st-new{background:var(--warn-bg);color:var(--warn)}
+.st-ok{background:var(--ok-bg);color:var(--ok)}
+.st-done{background:var(--surface2);color:var(--muted)}
+.st-cancel{background:var(--danger-bg);color:var(--danger)}
+.link-box{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.link-box code{flex:1;min-width:200px;background:var(--surface2);border-radius:10px;padding:12px 14px;font-size:14px;word-break:break-all;display:flex;align-items:center}
+/* cabinet */
+.cab-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:26px 0 16px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.tabs button{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 18px;font:inherit;font-weight:700;cursor:pointer;min-height:46px}
+.tabs button[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.filters input[type="text"]{flex:1;min-width:180px}
+.filters select{width:auto;min-width:170px}
+.req{border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:12px;background:var(--surface)}
+.req .r-head{display:flex;gap:10px;align-items:center;flex-wrap:wrap;cursor:pointer;background:none;border:0;font:inherit;color:inherit;width:100%;text-align:left;padding:0;min-height:44px}
+.req .r-head b{font-size:16px}
+.req .r-head .when{color:var(--muted);font-size:13.5px}
+.req .r-body{margin-top:14px;border-top:1px dashed var(--line);padding-top:14px}
+.req .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.req h5{margin:0 0 6px;font-size:13px;color:var(--muted)}
+.req ul{margin:0;padding-left:18px}
+.req .photos{margin-top:4px}
+.owner-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+.settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.swatch{width:46px;height:46px;border-radius:13px;border:3px solid transparent;cursor:pointer}
+.swatch[aria-pressed="true"]{border-color:var(--ink)}
+/* sticky bar (mobile) */
+.sticky-bar{display:none}
+@media (max-width:860px){
+  .sticky-bar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:60;align-items:center;gap:14px;
+    background:var(--surface);border-top:1px solid var(--line);
+    padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+  .sticky-bar .sb-total{flex:1;min-width:0}
+  .sticky-bar .sb-total small{display:block;color:var(--muted);font-size:12.5px;font-weight:600}
+  .sticky-bar .sb-total b{font-size:22px;line-height:1.15;white-space:nowrap}
+  .sticky-bar .btn{flex:none}
+  body{padding-bottom:84px}
+  .toast{bottom:96px}
+}
+/* toast */
+.toast{position:fixed;left:50%;transform:translateX(-50%) translateY(20px);bottom:22px;z-index:80;background:var(--ink);color:var(--bg);
+  border-radius:14px;padding:13px 18px;display:flex;gap:14px;align-items:center;box-shadow:var(--shadow);opacity:0;pointer-events:none;transition:.25s ease;max-width:calc(100vw - 32px)}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto}
+.toast button{background:none;border:0;color:inherit;font:inherit;font-weight:800;text-decoration:underline;cursor:pointer;min-height:36px;padding:4px 6px}
+/* offline */
+.offline{position:fixed;inset:0;z-index:100;background:var(--bg);display:none;place-items:center;padding:24px;text-align:center}
+.offline.show{display:grid}
+.offline .box{max-width:380px}
+.offline h2{font-size:24px;margin-bottom:10px}
+.offline p{color:var(--muted)}
+footer.site{margin-top:56px;border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:14px}
+footer.site .cols{display:flex;gap:24px;flex-wrap:wrap;justify-content:space-between}
+.hidden{display:none !important}
+.note{font-size:13.5px;color:var(--muted)}
+@media (max-width:860px){
+  nav.main{display:none}
+  .grid-2{grid-template-columns:1fr}
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .req .cols,.owner-grid,.settings-grid{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .cats{grid-template-columns:repeat(2,1fr)}
+  .form-grid{grid-template-columns:1fr}
+  .item-price{margin-left:0}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *{transition:none !important}
+}
+</style>
+<style>
+/* tokens live in the first :root block above */
+@media (prefers-color-scheme: dark){
+  html[data-theme="auto"]{
+    --bg:#05080F; --surface:#101A29; --surface2:#1A2639; --ink:#F2F7FC; --muted:#9DB0C2;
+    --line:#24334B; --accent-soft:color-mix(in srgb, var(--accent) 30%, #101a29);
+    --glass:rgba(22,36,56,.52); --glass-strong:rgba(26,42,64,.7);
+    --glass-border:rgba(255,255,255,.16); --glass-hi:rgba(255,255,255,.16);
+    --glass-shadow:0 24px 48px rgba(0,0,0,.45);
+    --track:rgba(255,255,255,.09); --input-bg:rgba(255,255,255,.06);
+    --item-bg:rgba(255,255,255,.05);
+    color-scheme:dark;
+  }
+}
+html[data-theme="dark"]{
+  --bg:#05080F; --surface:#101A29; --surface2:#1A2639; --ink:#F2F7FC; --muted:#9DB0C2;
+  --line:#24334B; --accent-soft:color-mix(in srgb, var(--accent) 30%, #101a29);
+  --glass:rgba(22,36,56,.52); --glass-strong:rgba(26,42,64,.7);
+  --glass-border:rgba(255,255,255,.16); --glass-hi:rgba(255,255,255,.16);
+  --glass-shadow:0 24px 48px rgba(0,0,0,.45);
+  --track:rgba(255,255,255,.09); --input-bg:rgba(255,255,255,.06);
+  --item-bg:rgba(255,255,255,.05);
+  color-scheme:dark;
+}
+
+body{
+  background-color:var(--bg);
+}
+.glass{
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(22px) saturate(165%);
+  backdrop-filter:blur(22px) saturate(165%);
+  border:1px solid var(--line);
+  box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-md);
+  border-radius:28px;
+}
+/* header */
+header.site{
+  background:var(--glass);
+  -webkit-backdrop-filter:blur(22px) saturate(165%);
+  backdrop-filter:blur(22px) saturate(165%);
+  border-bottom:1px solid var(--line);
+  box-shadow:inset 0 1px 0 var(--glass-hi);
+}
+.logo-mark{border-radius:12px;background:var(--blue)}
+.icon-btn{border-radius:50%;background:var(--glass-strong);border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 var(--glass-hi)}
+.btn{border-radius:999px}
+.btn-soft{background:var(--glass-strong);border:1px solid var(--glass-border);box-shadow:inset 0 1px 0 var(--glass-hi)}
+.order-btn{
+  display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:8px 16px;border-radius:999px;
+  border:1px solid var(--glass-border);background:var(--glass-strong);
+  box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-md);
+  color:var(--ink);font:inherit;font-weight:700;cursor:pointer;flex:none;
+}
+.order-badge{background:var(--blue);color:var(--accent-ink);border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:12.5px;font-weight:800;padding:0 6px}
+.cabinet-icon{display:none;line-height:0}
+.cabinet-icon svg{display:block}
+/* intro */
+.intro{padding-top:36px}
+.intro h1{font-size:clamp(36px,6vw,58px);font-weight:800;letter-spacing:-.022em;line-height:1.04;max-width:12em;margin-top:16px}
+.intro p.lead{font-size:19px;margin-top:14px}
+.hero-card{padding:14px}
+.logo-mark svg{width:22px;height:22px;display:block}
+.logo-mark{border:2px solid var(--gold)}
+#submitBtn{background:var(--ink);color:var(--bg)}
+#sbSubmit{background:var(--ink);color:var(--bg)}
+.route-visual{padding:28px 20px 20px}
+.route-visual svg{width:100%;height:auto;display:block}
+.route-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:13.5px;font-weight:600;margin-top:8px}
+.promo-card{margin-top:16px;background:var(--gold);color:var(--ink);border-radius:18px;padding:16px 18px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.promo-card b{font-size:19px}
+.promo-card span{font-size:14.5px}
+.slot-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.slot-grid button{border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:12px;padding:10px 6px;font:inherit;font-weight:600;cursor:pointer;min-height:46px}
+.slot-grid button[aria-pressed="true"]{border-color:var(--accent);background:var(--accent);color:var(--accent-ink)}
+/* pill tabs inside hero card */
+.cats{
+  display:flex;gap:2px;margin:12px 0 2px;padding:5px;border-radius:999px;
+  background:var(--track);border:1px solid var(--line);
+}
+.cat{
+  flex:1;border:0;background:transparent;border-radius:999px;min-height:58px;
+  padding:7px 2px 6px;color:var(--muted);box-shadow:none;
+}
+.cat svg{width:25px;height:25px;margin:0 auto 2px;stroke:currentColor}
+.cat span{font-size:12.5px;font-weight:700}
+.cat small{display:none}
+.cat[aria-pressed="true"]{background:var(--blue);color:var(--accent-ink);border-color:transparent;box-shadow:0 8px 18px color-mix(in srgb, var(--accent) 35%, transparent)}
+.cat[aria-pressed="true"]::after{display:none}
+/* control panel */
+.side-col{display:grid;gap:20px;align-content:start}
+.panel-card h3{font-size:23px;margin-bottom:6px}
+.panel-card .field-label{margin-top:16px}
+.seg{display:flex;flex-wrap:nowrap;background:var(--track);border-radius:16px;padding:4px;gap:4px}
+.seg button{
+  flex:1;border:0;background:transparent;color:var(--muted);border-radius:12px;
+  padding:9px 6px;min-height:46px;font-size:14.5px;white-space:normal;
+}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:var(--shadow-press)}
+.seg button[aria-pressed="true"]::before{content:""}
+.switch-row{background:transparent;border-radius:0;padding:13px 2px}
+.switch-row input[type="checkbox"]{
+  appearance:none;-webkit-appearance:none;width:52px;height:32px;min-height:32px;border-radius:999px;
+  background:var(--track-off);position:relative;cursor:pointer;flex:none;margin:0;
+  transition:background .2s ease;border:0;padding:0;
+}
+.switch-row input[type="checkbox"]::after{
+  content:"";position:absolute;top:2px;left:2px;width:28px;height:28px;border-radius:50%;
+  background:var(--accent-ink);box-shadow:var(--knob-shadow);transition:transform .2s ease;
+}
+.switch-row input[type="checkbox"]:checked{background:var(--toggle-on)}
+.switch-row input[type="checkbox"]:checked::after{transform:translateX(20px)}
+.stepper{border:0;background:var(--track);border-radius:999px;padding:4px;gap:2px}
+.stepper button{border-radius:50%;background:var(--surface);box-shadow:var(--shadow-sm);width:44px;height:44px}
+.stepper.sm button{width:40px;height:40px}
+.item-price b{font-size:34px;letter-spacing:-.01em;font-variant-numeric:tabular-nums}
+.item-price b,.totals .grand span:last-child,.sticky-bar .sb-total b{font-variant-numeric:tabular-nums}
+#addBtn{background:var(--ink);color:var(--bg)}
+/* cart inside glass panel */
+.cart-item{background:var(--item-bg);border:1px solid var(--line);border-radius:18px;box-shadow:inset 0 1px 0 var(--glass-hi)}
+.empty{background:var(--track);border:1.5px dashed var(--glass-border);border-radius:18px}
+/* cards & forms */
+.card{border-radius:26px}
+textarea,input[type="text"],input[type="tel"],input[type="number"]{
+  border-radius:16px;background:var(--input-bg);border:1px solid var(--line);
+}
+input[type="date"],input[type="time"],input[type="datetime-local"],select{
+  border-radius:14px;background:var(--surface2);border:1px solid var(--line);
+}
+.form-shell{background:transparent;border:0;box-shadow:none;padding:0;border-radius:0}
+.form-card{
+  background:var(--glass);border:1px solid var(--line);border-radius:26px;padding:20px;
+  box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-md);
+}
+.address-row{display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:14px}
+.form-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-card + .form-card{margin-top:0}
+.form-stack{display:grid;gap:14px}
+.form-card-title{font-size:19px;margin-bottom:14px}
+.tabs button{border-radius:999px}
+.tabs button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue)}
+.req{border-radius:22px}
+.photo-add,.photo-thumb{border-radius:16px}
+.sticky-bar{
+  background:var(--glass-strong);border-top:1px solid var(--glass-border);
+  -webkit-backdrop-filter:blur(22px) saturate(165%);backdrop-filter:blur(22px) saturate(165%);
+  box-shadow:inset 0 1px 0 var(--glass-hi);
+}
+.toast{border-radius:18px}
+@media (max-width:860px){
+  .grid-2{grid-template-columns:1fr}
+  .form-cards{grid-template-columns:1fr}
+}
+@media (max-width:720px){
+  .header-in{flex-wrap:nowrap;gap:8px;padding-top:7px;padding-bottom:7px}
+  header.site .wrap{padding-left:12px;padding-right:12px}
+  .logo{gap:7px;font-size:17px}
+  .logo-mark{width:30px;height:30px;border-radius:9px;font-size:15px}
+  .icon-btn{width:36px;height:36px;min-height:36px;font-size:15px}
+  .order-btn{min-height:36px;padding:6px 12px;font-size:14px;gap:6px}
+  .order-btn svg{width:17px;height:17px}
+  .order-badge{min-width:20px;height:20px;font-size:11.5px}
+  .cabinet-btn{
+    width:36px;height:36px;min-height:36px;padding:0;border-radius:50%;
+    display:grid;place-items:center;flex:none;gap:0;
+  }
+  .cabinet-label{display:none}
+  .cabinet-icon{display:block}
+  .cabinet-icon svg{width:18px;height:18px}
+  .nav-spacer{margin-left:auto}
+  .intro{padding-top:20px}
+  .intro h1{font-size:clamp(32px,9.4vw,40px)}
+}
+@media (max-width:380px){
+  .header-in{gap:6px}
+  .logo{font-size:16px}
+  .order-btn{padding:6px 10px}
+}
+/* ===== trust, steps, FAQ, policy ===== */
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.trust-item{background:var(--glass);border:1px solid var(--line);border-radius:22px;padding:20px;
+  box-shadow:inset 0 1px 0 var(--glass-hi)}
+.trust-item .t-ico{width:46px;height:46px;border-radius:14px;background:var(--accent-soft);color:var(--blue);
+  display:grid;place-items:center;margin-bottom:12px}
+.trust-item .t-ico svg{width:26px;height:26px}
+.trust-item h3{font-size:17px;margin-bottom:6px}
+.trust-item p{margin:0;color:var(--muted);font-size:14.5px}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step-item{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:20px}
+.step-num{width:38px;height:38px;border-radius:50%;background:var(--blue);color:var(--accent-ink);font-weight:800;font-size:17px;
+  display:grid;place-items:center;margin-bottom:12px}
+.step-item h3{font-size:17px;margin-bottom:6px}
+.step-item p{margin:0;color:var(--muted);font-size:14.5px}
+.faq-list{display:grid;gap:10px}
+.faq-item{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:4px 20px}
+.faq-item summary{cursor:pointer;font-weight:700;font-size:16px;padding:14px 0;list-style:none;display:flex;gap:10px;align-items:center}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:"+";margin-left:auto;font-size:22px;font-weight:600;color:var(--blue);flex:none}
+.faq-item[open ] summary::after{content:"−"}
+.faq-item p{margin:0 0 16px;color:var(--muted);font-size:15px;max-width:52em}
+.policy-body h3{font-size:18px;margin:22px 0 8px}
+.policy-body h3:first-child{margin-top:0}
+.policy-body p,.policy-body li{color:var(--muted);font-size:15.5px}
+.policy-body p{margin:0 0 8px}
+.policy-body ul{margin:0 0 8px;padding-left:20px}
+@media (max-width:860px){
+  .trust-grid{grid-template-columns:repeat(2,1fr)}
+  .steps-grid{grid-template-columns:1fr}
+}
+@media (max-width:520px){
+  .trust-grid{grid-template-columns:1fr}
+}
+</style>
+<style>
+/* ===== v4: design update (tokens now live in the first :root block) ===== */
+/* neutral shadows */
+.order-btn{box-shadow:inset 0 1px 0 var(--glass-hi), var(--shadow-md)}
+.seg button[aria-pressed="true"]{box-shadow:var(--shadow-press)}
+.stepper button{box-shadow:var(--shadow-sm)}
+.sticky-bar{box-shadow:inset 0 1px 0 var(--glass-hi)}
+
+/* 3. Total is bigger */
+.totals .grand{font-size:21px}
+.totals .grand span:last-child{font-size:33px}
+.item-price b{font-size:36px}
+.sticky-bar .sb-total b{font-size:26px}
+
+/* 5. Buttons: keep the pill shape and weight 800, only hover lift and press */
+.btn{font-weight:800}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-btn)}
+.btn:active{transform:translateY(0) scale(.98)}
+.cat,.seg button,.tabs button,.stepper button,.icon-btn,.order-btn{transition:transform .12s ease, box-shadow .15s ease}
+.cat:hover,.seg button:hover,.tabs button:hover,.stepper button:hover,.icon-btn:hover,.order-btn:hover{transform:translateY(-2px)}
+/* 6. Typography: H1 bigger and tighter, section headings slightly higher contrast */
+.intro h1{font-size:clamp(40px,6.6vw,64px);line-height:1.0;letter-spacing:-.025em}
+.sec-head h2{font-size:clamp(24px,3.6vw,34px);letter-spacing:-.015em}
+.panel-card h3{font-size:24px}
+@media (max-width:720px){
+  .intro h1{font-size:clamp(36px,9.4vw,44px)}
+}
+/* 7. Trust block: thin divider on top, icons and captions on one line */
+.trust-grid{border-top:1px solid var(--line);padding-top:22px}
+.trust-item{display:flex;flex-direction:column}
+.trust-item .t-ico{flex:none}
+.trust-item h3{min-height:2.5em}
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=114261162', 'ym');
+
+    ym(114261162, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/114261162" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+</head>
+<body>
+
+<div class="offline" id="offlineScreen" role="alert">
+  <div class="box">
+    <div style="width:64px;height:64px;color:var(--ink);margin:0 auto" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 22V14a5 5 0 0 1 5-5h22a5 5 0 0 1 5 5v8"/><path d="M5 27a4 4 0 0 1 8 0v3h22v-3a4 4 0 0 1 8 0v6a5 5 0 0 1-5 5H10a5 5 0 0 1-5-5v-6Z"/><path d="M13 30v-8M35 30v-8"/><path d="M10 38v3M38 38v3" opacity=".55"/></svg></div>
+    <h2>No connection</h2>
+    <p>The Grandest Line page cannot load without internet. Check your connection - the lesson you already picked and your request on this screen will not be lost.</p>
+    <button class="btn btn-accent" id="offlineRetry" type="button">Try again</button>
+  </div>
+</div>
+
+<header class="site">
+  <div class="wrap header-in">
+    <a class="logo" href="#top" id="logoHome"><span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M10 36 C18 16, 30 36, 38 16" stroke-dasharray="6 5"/><circle cx="10" cy="36" r="3.4" fill="currentColor" stroke="none"/><circle cx="38" cy="16" r="3.4" fill="currentColor" stroke="none"/></svg></span><span id="logoName">Grandest Line</span></a>
+    <nav class="main" aria-label="Main navigation">
+      <a href="#calc">Calculator</a><a href="#process">How booking works</a><a href="#prices">Prices</a><a href="#faq">FAQ</a><a href="#contacts">Contact</a>
+    </nav>
+    <span style="margin-left:auto" class="nav-spacer"></span>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Switch theme">◐</button>
+    <button class="order-btn" id="orderBtn" type="button" aria-label="Go to your order">
+      <svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.6"/><circle cx="17" cy="20" r="1.6"/><path d="M2 3h3l2.6 12.5a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20.5 7H6"/></svg>
+      <span>Order</span>
+      <span class="order-badge hidden" id="orderCount">0</span>
+    </button>
+    <button class="btn btn-soft btn-sm cabinet-btn" id="cabinetBtn" type="button" aria-label="Owner dashboard" title="Owner dashboard"><span class="cabinet-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c.8-3.2 3.6-5 7-5s6.2 1.8 7 5"/></svg></span><span class="cabinet-label">Owner dashboard</span></button>
+  </div>
+</header>
+
+<main id="clientView">
+  <!-- INTRO: straight to the calculator -->
+  <div class="wrap intro" id="top">
+    <h1>Learn to drive.<br/>Book in a minute.</h1>
+    <p class="lead">Pick a lesson, see the price, and choose a time that works.</p>
+    <div class="promo-card"><b>1 free hour</b><span>with a 2-hour lesson</span></div>
+  </div>
+
+  <!-- CALCULATOR + CART -->
+  <section class="block wrap" id="calc">
+    <div class="sec-head">
+      <h2>What do you want to book?</h2>
+      <p>Pick a lesson or a package. The price updates instantly, and the school confirms the final price and time.</p>
+    </div>
+    <div class="grid-2">
+      <div class="card glass hero-card" aria-label="Lesson picker">
+        <div class="route-visual">
+          <svg viewBox="0 0 560 110" role="img" aria-label="Your route: from your first lesson to the road test">
+            <path d="M28 82 C 140 26, 250 104, 350 56 S 480 34, 532 66" fill="none" stroke="var(--line)" stroke-width="16" stroke-linecap="round"/>
+            <path d="M28 82 C 140 26, 250 104, 350 56 S 480 34, 532 66" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-dasharray="11 9"/>
+            <circle cx="28" cy="82" r="10" fill="var(--accent)"/>
+            <circle cx="28" cy="82" r="4" fill="var(--accent-ink)"/>
+            <circle cx="532" cy="66" r="10" fill="var(--accent)"/>
+            <path d="M532 66 v-26 M532 40 h20 l-6 6 6 6 h-20" fill="none" stroke="var(--accent)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M532 16 l2.4 4.9 5.4 0.8 -3.9 3.8 0.9 5.4 -4.8-2.5 -4.8 2.5 0.9-5.4 -3.9-3.8 5.4-0.8 Z" fill="var(--gold)"/>
+          </svg>
+          <div class="route-labels"><span>First lesson</span><span>Road test</span></div>
+        </div>
+        <div class="cats" id="cats" role="group" aria-label="Lesson category"></div>
+      </div>
+
+      <div class="side-col">
+      <div class="card glass panel-card" aria-label="Lesson options">
+        <h3 id="panelTitle">Lessons</h3>
+        <div id="variantBlock">
+          <span class="field-label" id="variantLabel">Option</span>
+          <div class="seg" id="variants" role="group" aria-label="Lesson option"></div>
+        </div>
+
+        <div id="practiceRow">
+          <label class="switch-row" for="practiceToggle">
+            <span class="txt"><b>Extra practice hour</b><small>One more hour with an instructor - <span id="practicePriceLabel">from $99</span></small></span>
+            <input type="checkbox" id="practiceToggle" aria-label="Extra practice hour" />
+          </label>
+        </div>
+
+        <div id="carRow" class="hidden">
+          <label class="switch-row" for="carToggle">
+            <span class="txt"><b>Car for road test day</b><small>Use our car for your road test - <span id="carPriceLabel">from $99</span></small></span>
+            <input type="checkbox" id="carToggle" aria-label="Car for road test day" />
+          </label>
+        </div>
+
+        <div class="qty-row">
+          <span style="font-weight:700">Quantity</span>
+          <span class="stepper">
+            <button type="button" id="qtyMinus" aria-label="Decrease quantity">−</button>
+            <output id="qtyOut" aria-live="polite">1</output>
+            <button type="button" id="qtyPlus" aria-label="Increase quantity">+</button>
+          </span>
+          <div class="item-price">
+            <small>Estimate per item</small>
+            <b id="itemPrice">$0</b>
+          </div>
+        </div>
+
+        <div class="add-row">
+          <button class="btn btn-accent" id="addBtn" type="button">Add to request</button>
+          <a class="btn btn-ghost" href="#order">To checkout</a>
+        </div>
+        <p class="note" style="margin-top:12px" id="priceNote">Starting price: Grandest Line confirms the final price before the lesson.</p>
+      </div>
+
+      <div class="card glass" id="cartCard" aria-label="Your order">
+        <h3 style="font-size:20px;margin-bottom:14px">Your order</h3>
+        <div id="cartList"></div>
+        <div class="totals" id="totalsBox"></div>
+        <p class="note" style="margin-top:10px">Prices are starting prices. The final price is confirmed by Grandest Line.</p>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="block wrap" id="trust">
+    <div class="sec-head">
+      <h2>Booking made simple</h2>
+    </div>
+    <div class="trust-grid">
+      <div class="trust-item">
+        <div class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></div>
+        <h3>Pick your time</h3>
+        <p>Choose a date and a time slot that works for you. The school confirms the booking after your request.</p>
+      </div>
+      <div class="trust-item">
+        <div class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-7-7V4h9.6l7 7a2 2 0 0 1 .4 2.4Z"/><circle cx="8.5" cy="8.5" r="1.4"/></svg></div>
+        <h3>Know the price first</h3>
+        <p>Every lesson shows its price before you book. The final price is confirmed by the school, with no surprises.</p>
+      </div>
+      <div class="trust-item">
+        <div class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6.5 9.5 17 4 11.5"/></svg></div>
+        <h3>Instant confirmation</h3>
+        <p>Your request gets a number right away, and the school calls you back to confirm the time.</p>
+      </div>
+      <div class="trust-item">
+        <div class="t-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 14.3 9l5.9.8-4.3 4.1 1 5.9-4.9-2.7-4.9 2.7 1-5.9L3.8 9.8 9.7 9 12 3.5Z"/></svg></div>
+        <h3>1 free hour</h3>
+        <p>Book a 2-hour lesson and get one extra hour free.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="block wrap" id="process">
+    <div class="sec-head">
+      <h2>How booking works</h2>
+      <p>From picking a lesson to getting confirmation - three steps.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num" aria-hidden="true">1</div>
+        <h3>Build your booking</h3>
+        <p>Pick a lesson or a package in the calculator, add extras, and see the price right away.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num" aria-hidden="true">2</div>
+        <h3>Send the request</h3>
+        <p>Leave your name, phone, and email, pick a date and a time slot, and send the request.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num" aria-hidden="true">3</div>
+        <h3>Get confirmation</h3>
+        <p>The school contacts you, confirms the lesson time and the final price, and answers your questions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORDER FORM -->
+  <section class="block wrap" id="order">
+    <div class="sec-head">
+      <h2>Book your lesson</h2>
+      <p>Pick a date and a time - the school will confirm the booking. There is no online payment on this site.</p>
+    </div>
+    <!-- Requests are saved locally in this browser and listed in the owner dashboard; the form posts nowhere. -->
+    <form class="form-shell" id="orderForm" novalidate data-endpoint="">
+      <div class="form-cards">
+      <div class="form-card">
+        <h3 class="form-card-title">How to reach you</h3>
+      <div class="form-grid" style="grid-template-columns:1fr">
+        <div>
+          <label class="field-label" for="fName" style="margin-top:0">Your name *</label>
+          <input type="text" id="fName" autocomplete="name" placeholder="What should we call you" />
+          <p class="err" id="eName">Please enter your name.</p>
+        </div>
+        <div>
+          <label class="field-label" for="fPhone" style="margin-top:0">Phone *</label>
+          <input type="tel" id="fPhone" autocomplete="tel" inputmode="tel" placeholder="(___) ___-____" />
+          <p class="err" id="ePhone">Enter your phone number: at least 10 digits so the school can call you back.</p>
+        </div>
+        <div>
+          <label class="field-label" for="fEmail" style="margin-top:0">Email *</label>
+          <input type="text" id="fEmail" autocomplete="email" inputmode="email" placeholder="you@example.com" />
+          <p class="err" id="eEmail">Enter a valid email address.</p>
+        </div>
+      </div>
+      </div>
+      <div class="form-card">
+        <h3 class="form-card-title">When</h3>
+      <div class="form-grid" style="grid-template-columns:1fr">
+        <div>
+          <label class="field-label" for="fDate" style="margin-top:0">Preferred date</label>
+          <input type="date" id="fDate" />
+          <p class="note" style="margin:6px 0 0">Bookings open for the next 7 days.</p>
+        </div>
+        <div>
+          <span class="field-label" style="margin-top:0">Preferred time</span>
+          <div class="slot-grid" id="timeSlots" role="group" aria-label="Preferred time"></div>
+          <input type="hidden" id="fTime" />
+          <p class="err" id="eTime">To pick a specific time, also pick a date.</p>
+        </div>
+      </div>
+      </div>
+      </div>
+      <div class="form-card" style="margin-top:14px">
+        <h3 class="form-card-title">Notes</h3>
+      <div class="form-grid">
+        <div class="full">
+          <label class="field-label" for="fComment" style="margin-top:0">Comment</label>
+          <textarea id="fComment" placeholder="Anything the instructor should know before the lesson…"></textarea>
+        </div>
+      </div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+        <button class="btn btn-accent" type="submit" id="submitBtn" style="flex:1;min-width:220px">Send request</button>
+      </div>
+      <label class="consent" for="fConsent" style="margin-top:14px">
+        <input type="checkbox" id="fConsent" />
+        <span>I agree to the <a href="#privacy" data-privacy-link>privacy policy</a> and to being contacted about my booking.</span>
+      </label>
+      <p class="err" id="eConsent">Please agree to the privacy policy to send the request.</p>
+      <p class="err" id="eCart">First add at least one item to the request above.</p>
+    </form>
+
+    <div class="card hidden" id="successCard" style="margin-top:20px" tabindex="-1">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <h3 style="font-size:22px">Request received</h3>
+        <span class="status-pill st-new" id="successStatus">New</span>
+      </div>
+      <p style="color:var(--muted);margin:10px 0 0">Request number: <b id="successNum" style="color:var(--ink)"></b>. The school will contact you to confirm the final price and time.</p>
+      <div id="successBody" style="margin-top:14px"></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+        <button class="btn btn-ghost btn-sm" id="newOrderBtn" type="button">Build another request</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICES -->
+  <section class="block wrap" id="prices">
+    <div class="sec-head">
+      <h2>Prices</h2>
+      <p>Starting prices. The final price is confirmed by Grandest Line.</p>
+    </div>
+    <div class="card"><table class="price-table" id="priceTable" aria-label="Price list"></table></div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block wrap" id="faq">
+    <div class="sec-head">
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item">
+        <summary>How do I book a lesson?</summary>
+        <p>Pick a lesson or a package above, add it to your request, choose a date and time, and send the request. The school will call you back to confirm.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How does the free hour work?</summary>
+        <p>Book a 2-hour lesson and you get one extra hour free. The extra hour is part of the 2-hour lesson in your booking.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I add a car for the road test?</summary>
+        <p>Yes. Add “Car for road test day” to your booking when you pick the road test prep, and the school will confirm the details.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How and when do I pay?</summary>
+        <p>There is no online payment on this site. The school confirms the final price and how to pay when they contact you.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Can I change or cancel my lesson?</summary>
+        <p>Yes. Call the school at 850-530-9237 and they will move or cancel your booking.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- CONTACTS -->
+  <section class="block wrap" id="contacts">
+    <div class="sec-head"><h2>Contact</h2></div>
+    <div class="card">
+      <p style="margin:0 0 6px;font-size:18px"><b data-company-name>Grandest Line</b> · <span data-company-city>Pensacola, FL</span></p>
+      <p style="margin:0;color:var(--muted)">Service area: <span data-company-area>Pensacola, FL</span></p>
+      <p style="margin:10px 0 0">Phone: <a href="#" data-company-phone-link><span data-company-phone>850-530-9237</span></a></p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+        <a class="btn btn-accent btn-sm" href="#calc">Calculate a lesson</a>
+        <a class="btn btn-ghost btn-sm" href="#" data-company-phone-link>Call</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap cols">
+      <span>© <span data-company-name>Grandest Line</span> - driving school and tutoring, <span data-company-city>Pensacola, FL</span></span>
+      <span>Prices on this page are starting prices. The final price is confirmed by Grandest Line.</span>
+      <span><a href="#privacy" data-privacy-link>Privacy policy</a></span>
+    </div>
+  </footer>
+
+  <div class="sticky-bar" id="stickyBar">
+    <div class="sb-total"><small>Estimate</small><b id="sbTotal">Empty so far</b></div>
+    <button class="btn btn-accent" id="sbSubmit" type="button" disabled>Send request</button>
+  </div>
+</main>
+
+<!-- CABINET -->
+<main id="cabinetView" class="hidden">
+  <div class="wrap">
+    <div class="cab-head">
+      <h2 style="font-size:26px">Owner dashboard</h2>
+      <span style="margin-left:auto"></span>
+      <button class="btn btn-ghost btn-sm" id="backToSite" type="button">← Back to site</button>
+    </div>
+
+    <div class="card" id="loginCard" style="max-width:440px">
+      <h3 style="font-size:19px;margin-bottom:8px">Dashboard sign-in</h3>
+      <p class="note" style="margin:0 0 14px">The dashboard holds requests from the site, prices and extra fees, and company details.</p>
+      <button class="btn btn-accent" id="loginBtn" type="button" style="width:100%">Open dashboard</button>
+    </div>
+
+    <div id="cabinetBody" class="hidden">
+      <div class="tabs" role="group" aria-label="Dashboard sections">
+        <button type="button" data-tab="requests" aria-pressed="true">Requests</button>
+        <button type="button" data-tab="tariffs" aria-pressed="false">Prices</button>
+        <button type="button" data-tab="company" aria-pressed="false">Company</button>
+        <span style="margin-left:auto"></span>
+        <button type="button" id="logoutBtn" class="btn btn-ghost btn-sm">Sign out</button>
+      </div>
+
+      <div id="tab-requests">
+        <div class="filters">
+          <input type="text" id="reqSearch" placeholder="Search: name, phone, address, request number…" aria-label="Search requests" />
+          <select id="reqFilter" aria-label="Filter by status">
+            <option value="all">All statuses</option>
+            <option value="new">New</option>
+            <option value="agreed">Confirmed</option>
+            <option value="done">Completed</option>
+            <option value="cancelled">Cancelled</option>
+          </select>
+          <button class="btn btn-soft btn-sm" id="refreshReq" type="button">Refresh list</button>
+        </div>
+        <div id="reqList"></div>
+      </div>
+
+      <div id="tab-tariffs" class="hidden">
+        <div class="card">
+          <h3 style="font-size:19px;margin-bottom:4px">Prices and extra fees</h3>
+          <p class="note" style="margin:0 0 16px">Prices in dollars per lesson or package. Changes apply to the calculator and the price list on the site right away; requests already sent keep the calculation from the time they were sent.</p>
+          <div class="settings-grid" id="tariffFields"></div>
+          <button class="btn btn-accent" id="saveTariffs" type="button" style="margin-top:18px">Save prices</button>
+        </div>
+      </div>
+
+      <div id="tab-company" class="hidden">
+        <div class="card">
+          <h3 style="font-size:19px;margin-bottom:16px">Company</h3>
+          <div class="settings-grid">
+            <div><label class="field-label" for="cName" style="margin-top:0">Name</label><input type="text" id="cName" /></div>
+            <div><label class="field-label" for="cPhone" style="margin-top:0">Phone</label><input type="tel" id="cPhone" /></div>
+            <div><label class="field-label" for="cCity" style="margin-top:0">City</label><input type="text" id="cCity" /></div>
+            <div><label class="field-label" for="cArea" style="margin-top:0">Service area</label><input type="text" id="cArea" /></div>
+          </div>
+          <span class="field-label">Accent color</span>
+          <div class="swatches" id="accentSwatches"></div>
+          <span class="field-label">Background color</span>
+          <div style="display:flex;align-items:center;gap:12px">
+            <input type="color" id="bgColor" value="#FFFFFF" aria-label="Background color" style="width:52px;height:44px;padding:2px;border:1.5px solid var(--line);border-radius:12px;background:var(--surface);cursor:pointer" />
+            <b id="bgColorHex">#FFFFFF</b>
+            <button class="btn btn-ghost btn-sm" id="bgReset" type="button">White</button>
+          </div>
+          <button class="btn btn-accent" id="saveCompany" type="button" style="margin-top:18px">Save company</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div style="height:40px"></div>
+</main>
+
+<!-- PRIVACY POLICY -->
+<main id="privacyView" class="hidden">
+  <div class="wrap">
+    <div class="cab-head">
+      <h2 style="font-size:26px">Privacy policy</h2>
+      <span style="margin-left:auto"></span>
+      <button class="btn btn-ghost btn-sm" id="privacyBack" type="button">← Back to site</button>
+    </div>
+    <div class="card policy-body" style="max-width:820px">
+      <p class="note" style="margin-bottom:18px">Updated November 22, 2026. Driving school and tutoring service <span data-company-name>Grandest Line</span> (<span data-company-city>Pensacola, FL</span>).</p>
+
+      <h3>1. General provisions</h3>
+      <p>This policy describes what data we receive when you leave a request on the site, why we need it, and how you can manage it. By leaving a request, you agree to the terms of this policy.</p>
+
+      <h3>2. What data we collect</h3>
+      <ul>
+        <li>name, phone number, and email - from the request form;</li>
+        <li>preferred date and time, and your comment on the booking;</li>
+        <li>booking contents: the lessons picked, extras, and the estimate.</li>
+      </ul>
+      <p>We do not ask for passport details, bank card details, or any other information that is not needed to complete the booking. There is no online payment on the site.</p>
+
+      <h3>3. Why we need this data</h3>
+      <ul>
+        <li>to contact you and confirm the final price and lesson time;</li>
+        <li>to prepare for the lesson and take your wishes from the comment into account;</li>
+        <li>to meet our obligations for the booking.</li>
+      </ul>
+      <p>We do not use your data for marketing mailings without your separate consent.</p>
+
+      <h3>4. Sharing with third parties</h3>
+      <p>We do not sell or share your data with third parties for marketing. Only the school can see a request - only as much as is needed to complete your booking. Data may be given to government authorities only in cases directly required by law.</p>
+
+      <h3>5. Storage and protection</h3>
+      <p>Data is stored no longer than needed to complete the booking, then deleted. We take reasonable organizational and technical measures to keep the data from reaching outsiders.</p>
+
+      <h3>6. Your rights</h3>
+      <p>You can find out at any time what data of yours we hold, ask to correct or delete it, or withdraw your consent to processing. To do so, just call the school phone number: <a href="#" data-company-phone-link><span data-company-phone>850-530-9237</span></a>. We carry out a deletion request after the booking ends, unless a longer storage period is required by law.</p>
+
+      <h3>7. Policy changes</h3>
+      <p>If we change this policy, the current version will be published on this page with a new date. By continuing to use the site after a change, you agree to the updated terms.</p>
+    </div>
+  </div>
+  <div style="height:40px"></div>
+</main>
+
+<div class="toast" id="toast" role="status"><span id="toastText"></span><button type="button" id="toastAction" class="hidden">Undo</button></div>
+
+<script>
+"use strict";
+document.documentElement.classList.add("js");
+var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* ============ TEMPLATE DATA ============ */
+var CATEGORIES = {
+  consultation:{ name:"Consultation", hint:"free, 30 min", variants:[
+    { id:"consult", label:"30 min" } ] },
+  lessons:   { name:"Lessons",   hint:"basic or advanced", variants:[
+    { id:"basic", label:"Basic - 1 hour" }, { id:"advanced", label:"Advanced - 1 hour" }, { id:"lesson2", label:"2 hours - 1 free hour" } ] },
+  packages:  { name:"Packages",  hint:"save on bundles", variants:[
+    { id:"pack4", label:"4 lessons" }, { id:"pack6", label:"6 lessons" } ] },
+  testprep:  { name:"Road test", hint:"test day ready", variants:[
+    { id:"testprep", label:"Road test prep" } ] },
+  tutoring:  { name:"Tutoring",  hint:"by the hour", variants:[
+    { id:"tutoring", label:"1 hour" } ] }
+};
+var VARIANT_NAMES = {
+  consult:"Free consultation - 30 min",
+  basic:"Basic lesson - 1 hour", advanced:"Advanced lesson - 1 hour", lesson2:"2-hour lesson - 1 free hour",
+  pack4:"4-lesson package", pack6:"6-lesson package",
+  testprep:"Road test prep", tutoring:"Tutoring - 1 hour"
+};
+var ICONS = {
+  consultation:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 8h28a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H24l-8 7v-7h-2a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4Z"/><path d="M17 18h14M17 24h9"/></svg>',
+  lessons:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 30l2.5-8A3 3 0 0 1 11.4 20h25.2a3 3 0 0 1 2.9 2L42 30"/><path d="M5 30h38v6.5a2 2 0 0 1-2 2h-2.4a3.6 3.6 0 0 1-7.2 0H16.6a3.6 3.6 0 0 1-7.2 0H7a2 2 0 0 1-2-2V30Z"/><circle cx="14" cy="38.5" r="3.2"/><circle cx="34" cy="38.5" r="3.2"/></svg>',
+  packages:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 6l16 8-16 8-16-8 16-8Z"/><path d="M8 22l16 8 16-8"/><path d="M8 30l16 8 16-8"/></svg>',
+  testprep:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="24" cy="24" r="17"/><path d="M16 24.5l5.5 5.5L33 18"/></svg>',
+  tutoring:'<svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M24 12c-3-2.5-7-4-12-4v26c5 0 9 1.5 12 4 3-2.5 7-4 12-4V8c-5 0-9 1.5-12 4Z"/><path d="M24 12v26"/></svg>'
+};
+var STATUS = {
+  new:{ label:"New", cls:"st-new" }, agreed:{ label:"Confirmed", cls:"st-ok" },
+  done:{ label:"Completed", cls:"st-done" }, cancelled:{ label:"Cancelled", cls:"st-cancel" }
+};
+var ACCENTS = ["#1D4ED8","#0C5F57","#1D5C73","#40513B","#7A4A21","#6E3B4E","#3E4A5A","#22A447","#06B6D4","#F58220"];
+
+/* Company settings and prices: the owner changes them in the dashboard. */
+var settings = {
+  prices:{ consult:0, basic:99, advanced:199, lesson2:198, pack4:396, pack6:594, testprep:99, tutoring:40 },
+  practiceHour:99, carForTest:99,
+  company:{ name:"Grandest Line", phone:"850-530-9237", city:"Pensacola, FL",
+            area:"Pensacola, FL", accent:"#1D4ED8", bg:"#FFFFFF" },
+};
+
+/* ============ STATE ============ */
+var picker = { cat:"lessons", variant:"basic", qty:1, practice:false, car:false };
+var cart = [];           /* {key, variantId, name, qty, practice, car, unit} */
+var requests = [];
+var reqSeq = 1001;
+var loggedIn = false;
+var lastRemoved = null, toastTimer = null;
+
+function $(id){ return document.getElementById(id); }
+function fmt(n){ return "$" + n.toLocaleString("en-US"); }
+function fmtTime(t){ var p = t.split(":"); var h = +p[0]; var ap = h >= 12 ? "PM" : "AM"; h = h % 12 || 12; return h + ":" + p[1] + " " + ap; }
+/* Smooth total recalculation (count-up). */
+var v4PrevItem = null, v4PrevGrand = null, v4PrevSb = null;
+function v4SetMoney(el, to, suffix, emptyText, prev){
+  if (!el) return;
+  if (el._raf) cancelAnimationFrame(el._raf);
+  if (to == null){ el.textContent = emptyText; return; }
+  var from = (typeof prev === "number") ? prev : to;
+  if (reduceMotion || from === to){ el.textContent = fmt(to) + (suffix || ""); return; }
+  var start = null, dur = 380;
+  function step(ts){
+    if (start == null) start = ts;
+    var k = Math.min(1, (ts - start) / dur);
+    var e = 1 - Math.pow(1 - k, 3);
+    el.textContent = fmt(Math.round(from + (to - from) * e)) + (suffix || "");
+    if (k < 1) el._raf = requestAnimationFrame(step);
+  }
+  el._raf = requestAnimationFrame(step);
+}
+function esc(s){ return String(s==null?"":s).replace(/[&<>"']/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]; }); }
+
+/* ============ CALCULATION ============ */
+var FROM_PRICES = { testprep:true, tutoring:true };
+function priceLabel(id){
+  var p = settings.prices[id];
+  if (p == null) return "From photo";
+  if (p === 0) return "Free";
+  return (FROM_PRICES[id] ? "from " : "") + fmt(p);
+}
+function unitPrice(variantId, practice, car){
+  var base = settings.prices[variantId];
+  if (base == null) return null;
+  var p = base;
+  if (practice) p += settings.practiceHour;
+  if (car) p += settings.carForTest;
+  return p;
+}
+function calcTotals(){
+  var known = 0;
+  cart.forEach(function(it){ known += it.unit * it.qty; });
+  return { known:known, total:known, hasKnown:cart.length>0 };
+}
+
+/* ============ LESSON PICKER ============ */
+function renderCats(){
+  $("cats").innerHTML = Object.keys(CATEGORIES).map(function(k){
+    var c = CATEGORIES[k];
+    return '<button type="button" class="cat" data-cat="'+k+'" aria-pressed="'+(picker.cat===k)+'">'+ICONS[k]+'<span>'+c.name+'</span><small>'+c.hint+'</small></button>';
+  }).join("");
+  Array.prototype.forEach.call($("cats").children, function(btn){
+    btn.addEventListener("click", function(){
+      picker.cat = btn.getAttribute("data-cat");
+      var vs = CATEGORIES[picker.cat].variants;
+      picker.variant = vs.length ? vs[0].id : null;
+      renderPicker();
+    });
+  });
+}
+function renderPicker(){
+  renderCats();
+  var c = CATEGORIES[picker.cat];
+  $("variantBlock").classList.toggle("hidden", !c.variants.length);
+  $("variants").innerHTML = c.variants.map(function(v){
+    return '<button type="button" data-v="'+v.id+'" aria-pressed="'+(picker.variant===v.id)+'">'+v.label+' - '+priceLabel(v.id)+'</button>';
+  }).join("");
+  Array.prototype.forEach.call($("variants").children, function(btn){
+    btn.addEventListener("click", function(){ picker.variant = btn.getAttribute("data-v"); renderPicker(); });
+  });
+  $("practiceRow").classList.toggle("hidden", picker.cat === "tutoring" || picker.cat === "consultation");
+  $("carRow").classList.toggle("hidden", picker.cat !== "testprep");
+  $("practicePriceLabel").textContent = "from " + fmt(settings.practiceHour);
+  $("carPriceLabel").textContent = "from " + fmt(settings.carForTest);
+  $("qtyOut").textContent = picker.qty;
+  var practice = (picker.cat !== "tutoring" && picker.cat !== "consultation") ? picker.practice : false;
+  var car = picker.cat === "testprep" ? picker.car : false;
+  var p = unitPrice(picker.variant, practice, car);
+  v4SetMoney($("itemPrice"), p == null ? null : p * picker.qty, "", "Pick a lesson", v4PrevItem);
+  v4PrevItem = p == null ? null : p * picker.qty;
+  $("panelTitle").textContent = c.name;
+}
+
+/* ============ CART ============ */
+function itemName(it){ return VARIANT_NAMES[it.variantId]; }
+function itemMeta(it){
+  var parts = [];
+  if (it.practice) parts.push("extra practice hour");
+  if (it.car) parts.push("car for road test day");
+  return parts.join(", ");
+}
+function renderCart(){
+  var box = $("cartList");
+  if (!cart.length){
+    box.innerHTML = '<div class="empty"><b>Empty so far</b>Pick a lesson and press "Add to request". You can add several items.</div>';
+  } else {
+    box.innerHTML = cart.map(function(it, i){
+      var sum = fmt(it.unit * it.qty);
+      return '<div class="cart-item"><div class="top"><h4>'+esc(itemName(it))+'</h4>'+
+        '<button type="button" class="btn btn-danger btn-sm" data-del="'+i+'">Remove</button></div>'+
+        (itemMeta(it) ? '<div class="meta">'+esc(itemMeta(it))+'</div>' : '')+
+        '<div class="row2"><span class="stepper sm"><button type="button" data-dec="'+i+'" aria-label="Decrease">−</button><output>'+it.qty+'</output><button type="button" data-inc="'+i+'" aria-label="Increase">+</button></span>'+
+        '<span class="sum">'+sum+'</span></div></div>';
+    }).join("");
+    box.querySelectorAll("[data-del]").forEach(function(b){ b.addEventListener("click", function(){ removeItem(+b.getAttribute("data-del")); }); });
+    box.querySelectorAll("[data-inc]").forEach(function(b){ b.addEventListener("click", function(){ cart[+b.getAttribute("data-inc")].qty++; renderCart(); }); });
+    box.querySelectorAll("[data-dec]").forEach(function(b){ b.addEventListener("click", function(){ var it = cart[+b.getAttribute("data-dec")]; if (it.qty > 1) it.qty--; renderCart(); }); });
+  }
+  var t = calcTotals();
+  var rows = "";
+  if (cart.length){
+    if (t.hasKnown) rows += '<div class="line"><span>Lessons at list price</span><span>'+fmt(t.known)+'</span></div>';
+    rows += '<div class="line grand"><span>Estimate</span><span>'+(t.hasKnown ? fmt(t.total) : "From photo")+'</span></div>';
+  }
+  $("totalsBox").innerHTML = rows;
+  var v4gEl = $("totalsBox").querySelector(".grand span:last-child");
+  if (v4gEl){
+    if (t.hasKnown){ v4SetMoney(v4gEl, t.total, "", "From photo", v4PrevGrand); v4PrevGrand = t.total; }
+    else { v4gEl.textContent = "From photo"; v4PrevGrand = null; }
+  }
+  if (!cart.length) v4PrevGrand = null;
+  var orderQty = cart.reduce(function(s, it){ return s + it.qty; }, 0);
+  $("orderCount").textContent = orderQty;
+  $("orderCount").classList.toggle("hidden", !orderQty);
+  if (!cart.length){ v4SetMoney($("sbTotal"), null, "", "Empty so far", v4PrevSb); v4PrevSb = null; $("sbSubmit").disabled = true; }
+  else {
+    v4SetMoney($("sbTotal"), t.hasKnown ? t.total : null, "", "From photo", v4PrevSb);
+    v4PrevSb = t.hasKnown ? t.total : null;
+    $("sbSubmit").disabled = false;
+  }
+}
+function removeItem(i){
+  lastRemoved = { item:cart[i], index:i };
+  cart.splice(i,1);
+  renderCart();
+  showToast("Item removed", true);
+}
+function showToast(text, withUndo){
+  $("toastText").textContent = text;
+  $("toastAction").classList.toggle("hidden", !withUndo);
+  $("toast").classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function(){ $("toast").classList.remove("show"); }, 6000);
+}
+$("toastAction").addEventListener("click", function(){
+  if (lastRemoved){ cart.splice(Math.min(lastRemoved.index, cart.length), 0, lastRemoved.item); lastRemoved = null; renderCart(); }
+  $("toast").classList.remove("show");
+});
+
+/* ============ DATE AND TIME SLOTS ============ */
+var SLOT_TIMES = ["08:00","10:00","12:00","14:00","16:00","18:00"];
+function renderSlots(){
+  $("timeSlots").innerHTML = SLOT_TIMES.map(function(t){
+    return '<button type="button" data-slot="'+t+'" aria-pressed="'+($("fTime").value===t)+'">'+fmtTime(t)+'</button>';
+  }).join("");
+  Array.prototype.forEach.call($("timeSlots").children, function(btn){
+    btn.addEventListener("click", function(){
+      $("fTime").value = btn.getAttribute("data-slot");
+      renderSlots();
+    });
+  });
+}
+function clearSlots(){ $("fTime").value = ""; renderSlots(); }
+(function(){
+  var d = $("fDate");
+  var today = new Date();
+  function iso(dt){ return dt.getFullYear() + "-" + String(dt.getMonth()+1).padStart(2,"0") + "-" + String(dt.getDate()).padStart(2,"0"); }
+  var max = new Date(today); max.setDate(max.getDate() + 7);
+  d.min = iso(today); d.max = iso(max);
+})();
+
+/* ============ SUBMITTING A REQUEST ============ */
+function digits(s){ return (s||"").replace(/\D/g,""); }
+/* Phone mask (___) ___-____ */
+$("fPhone").addEventListener("input", function(){
+  var d = digits(this.value).slice(0, 10);
+  var out = "";
+  if (d.length > 0) out = "(" + d.slice(0, 3);
+  if (d.length >= 3) out += ") " + d.slice(3, 6);
+  if (d.length >= 6) out += "-" + d.slice(6, 10);
+  this.value = out;
+});
+/* Glass "Order" button in the header */
+$("orderBtn").addEventListener("click", function(){
+  var el = cart.length ? $("cartCard") : $("calc");
+  el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block:"start" });
+});
+$("sbSubmit").addEventListener("click", function(){
+  var form = $("orderForm");
+  if (form.requestSubmit) form.requestSubmit();
+  else form.dispatchEvent(new Event("submit", { cancelable:true }));
+});
+$("orderForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  var valid = true, firstBad = null;
+  function check(id, errId, bad){ $(errId).classList.toggle("show", bad); if (bad){ valid = false; if (!firstBad) firstBad = $(id); } }
+  check("fName","eName", !$("fName").value.trim());
+  check("fPhone","ePhone", digits($("fPhone").value).length < 10);
+  var emailVal = $("fEmail").value.trim();
+  check("fEmail","eEmail", !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal));
+  var hasTimeNoDate = $("fTime").value && !$("fDate").value;
+  $("eTime").classList.toggle("show", hasTimeNoDate); if (hasTimeNoDate){ valid = false; if (!firstBad) firstBad = $("fDate"); }
+  var consentBad = !$("fConsent").checked;
+  $("eConsent").classList.toggle("show", consentBad); if (consentBad){ valid = false; if (!firstBad) firstBad = $("fConsent"); }
+  $("eCart").classList.toggle("show", !cart.length);
+  if (!cart.length){ valid = false; if (!firstBad) firstBad = $("addBtn"); }
+  if (!valid){
+    var target = firstBad || document.querySelector(".err.show");
+    if (target){ target.scrollIntoView({behavior:"smooth", block:"center"}); if (target.focus) target.focus({preventScroll:true}); }
+    return;
+  }
+
+  var t = calcTotals();
+  var token = "m" + Math.random().toString(36).slice(2,10) + Date.now().toString(36);
+  var req = {
+    id:"GL-" + (reqSeq++), token:token, status:"new",
+    created:new Date().toLocaleString("en-US",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"}),
+    name:$("fName").value.trim(), phone:$("fPhone").value.trim(), email:emailVal,
+    wishDate:$("fDate").value, wishTime:$("fTime").value,
+    comment:$("fComment").value.trim(),
+    items:cart.map(function(it){ return { name:itemName(it), meta:itemMeta(it), qty:it.qty, unit:it.unit }; }),
+    totals:t,
+    tariffSnapshot:JSON.parse(JSON.stringify({ prices:settings.prices, practiceHour:settings.practiceHour, carForTest:settings.carForTest })),
+    finalPrice:"", agreedWhen:"", note:""
+  };
+  requests.unshift(req);
+  showSuccess(req);
+  /* The request is saved locally in this browser and shown in the dashboard.
+     Nothing is sent anywhere: no server, no messenger. */
+  cart = []; renderCart();
+  $("orderForm").reset(); clearSlots();
+  showToast("Request saved and shown in the dashboard", false);
+});
+function wishText(r){
+  if (!r.wishDate && !r.wishTime) return "Date and time not given - the school will confirm on the call";
+  var s = r.wishDate ? new Date(r.wishDate + "T00:00:00").toLocaleDateString("en-US",{day:"numeric",month:"long",weekday:"short"}) : "";
+  return (s + (r.wishTime ? ", " + fmtTime(r.wishTime) : "")).trim() + " (preference, the school will confirm)";
+}
+function itemsHtml(r){
+  return "<ul>" + r.items.map(function(it){
+    return "<li>" + esc(it.name) + " × " + it.qty +
+      (it.meta ? ' <span style="color:var(--muted)">('+esc(it.meta)+")</span>" : "") +
+      " - <b>" + fmt(it.unit * it.qty) + "</b></li>";
+  }).join("") + "</ul>";
+}
+function showSuccess(r){
+  var card = $("successCard");
+  card.classList.remove("hidden");
+  $("successNum").textContent = r.id;
+  var st = STATUS[r.status];
+  var sp = $("successStatus"); sp.textContent = st.label; sp.className = "status-pill " + st.cls;
+  $("successBody").innerHTML =
+    itemsHtml(r) +
+    '<p style="margin:10px 0 0">Estimate: <b>' + (r.totals.hasKnown ? fmt(r.totals.total) : "From photo") + '</b>' +
+    (r.finalPrice ? '<br/>Final price from the school: <b>' + fmt(+r.finalPrice) + '</b>' : '') +
+    (r.agreedWhen ? '<br/>Agreed time: <b>' + esc(r.agreedWhen) + '</b>' : '<br/>Preferred time: ' + esc(wishText(r))) + '</p>';
+  card.setAttribute("data-req", r.id);
+  card.scrollIntoView({behavior:"smooth", block:"start"});
+  card.focus({preventScroll:true});
+}
+$("newOrderBtn").addEventListener("click", function(){
+  $("successCard").classList.add("hidden");
+  document.getElementById("calc").scrollIntoView({behavior:"smooth"});
+});
+
+/* ============ DASHBOARD ============ */
+function openCabinet(){
+  $("clientView").classList.add("hidden");
+  $("privacyView").classList.add("hidden");
+  $("cabinetView").classList.remove("hidden");
+  window.scrollTo(0,0);
+  if (loggedIn){ $("loginCard").classList.add("hidden"); $("cabinetBody").classList.remove("hidden"); renderRequests(); }
+}
+function closeCabinet(){
+  $("cabinetView").classList.add("hidden");
+  $("clientView").classList.remove("hidden");
+  window.scrollTo(0,0);
+}
+$("cabinetBtn").addEventListener("click", openCabinet);
+$("backToSite").addEventListener("click", closeCabinet);
+$("logoHome").addEventListener("click", function(){
+  if (!$("cabinetView").classList.contains("hidden")) closeCabinet();
+  if (!$("privacyView").classList.contains("hidden")) closePrivacy();
+});
+/* ============ PRIVACY POLICY ============ */
+function openPrivacy(){
+  $("clientView").classList.add("hidden");
+  $("cabinetView").classList.add("hidden");
+  $("privacyView").classList.remove("hidden");
+  window.scrollTo(0,0);
+}
+function closePrivacy(){
+  $("privacyView").classList.add("hidden");
+  $("clientView").classList.remove("hidden");
+  window.scrollTo(0,0);
+}
+document.querySelectorAll("[data-privacy-link]").forEach(function(a){
+  a.addEventListener("click", function(e){ e.preventDefault(); openPrivacy(); });
+});
+$("privacyBack").addEventListener("click", closePrivacy);
+$("loginBtn").addEventListener("click", function(){
+  loggedIn = true;
+  $("loginCard").classList.add("hidden");
+  $("cabinetBody").classList.remove("hidden");
+  renderRequests(); fillTariffFields(); fillCompanyFields();
+});
+$("logoutBtn").addEventListener("click", function(){
+  loggedIn = false;
+  $("cabinetBody").classList.add("hidden");
+  $("loginCard").classList.remove("hidden");
+});
+document.querySelectorAll("[data-tab]").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    document.querySelectorAll("[data-tab]").forEach(function(b){ b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+    ["requests","tariffs","company"].forEach(function(t){ $("tab-" + t).classList.toggle("hidden", t !== btn.getAttribute("data-tab")); });
+  });
+});
+$("reqSearch").addEventListener("input", renderRequests);
+$("reqFilter").addEventListener("change", renderRequests);
+$("refreshReq").addEventListener("click", function(){ renderRequests(); showToast("Request list updated", false); });
+
+function renderRequests(){
+  var q = ($("reqSearch").value || "").toLowerCase().trim();
+  var f = $("reqFilter").value;
+  var list = requests.filter(function(r){
+    if (f !== "all" && r.status !== f) return false;
+    if (!q) return true;
+    return (r.name + " " + r.phone + " " + r.email + " " + r.id).toLowerCase().indexOf(q) !== -1;
+  });
+  var box = $("reqList");
+  if (!list.length){
+    box.innerHTML = requests.length
+      ? '<div class="empty"><b>Nothing found</b>There are no requests matching these filters. Change your search query or status filter.</div>'
+      : '<div class="empty"><b>No requests yet</b>New requests from the site will appear here right after they are sent.</div>';
+    return;
+  }
+  box.innerHTML = list.map(function(r){
+    var st = STATUS[r.status];
+    return '<article class="req"><button type="button" class="r-head" data-toggle="'+r.id+'">'+
+      '<b>'+r.id+'</b> '+
+      '<span class="status-pill '+st.cls+'">'+st.label+'</span>'+
+      '<span>'+esc(r.name)+' · '+esc(r.phone)+'</span>'+
+      '<span class="when">'+esc(r.created)+'</span><span style="margin-left:auto">▾</span></button>'+
+      '<div class="r-body hidden" id="body-'+r.id+'">'+
+        '<div class="cols"><div><h5>Items and estimate</h5>'+itemsHtml(r)+
+          '<p style="margin:8px 0 0">Estimate: <b>'+(r.totals.hasKnown ? fmt(r.totals.total) : "from photo")+'</b></p>'+
+          '<p class="note" style="margin:6px 0 0">Add-ons at the time of the request: practice hour '+fmt(r.tariffSnapshot.practiceHour)+', car for road test '+fmt(r.tariffSnapshot.carForTest)+'.</p></div>'+
+        '<div><h5>Client and preferences</h5>'+
+          '<p style="margin:0 0 4px"><a href="tel:'+esc(digits(r.phone))+'">'+esc(r.phone)+'</a> · '+esc(r.name)+'</p>'+
+          '<p style="margin:0 0 4px"><a href="mailto:'+esc(r.email)+'">'+esc(r.email)+'</a></p>'+
+          '<p style="margin:0 0 4px">'+esc(wishText(r))+'</p>'+
+          (r.comment ? '<p style="margin:0 0 4px">«'+esc(r.comment)+'»</p>' : '')+
+        '</div></div>'+
+        '<div class="owner-grid">'+
+          '<div><label class="field-label" for="fp-'+r.id+'" style="margin-top:0">Final price, $</label><input type="number" min="0" step="50" id="fp-'+r.id+'" value="'+esc(r.finalPrice)+'" placeholder="For example, 120"/></div>'+
+          '<div><label class="field-label" for="aw-'+r.id+'" style="margin-top:0">Agreed time</label><input type="datetime-local" id="aw-'+r.id+'" value="'+esc(r.agreedWhenRaw||"")+'"/></div>'+
+          '<div><label class="field-label" for="st-'+r.id+'" style="margin-top:0">Status</label><select id="st-'+r.id+'">'+
+            Object.keys(STATUS).map(function(k){ return '<option value="'+k+'"'+(r.status===k?" selected":"")+'>'+STATUS[k].label+'</option>'; }).join("")+
+          '</select></div>'+
+        '</div>'+
+        '<div style="margin-top:12px"><label class="field-label" for="nt-'+r.id+'" style="margin-top:0">Owner private note <span style="font-weight:500;color:var(--muted)">(the client cannot see it)</span></label>'+
+        '<textarea id="nt-'+r.id+'" style="min-height:56px" placeholder="What to keep in mind at the lesson…">'+esc(r.note)+'</textarea></div>'+
+        '<p class="err" id="eAgree-'+r.id+'">For the "Confirmed" status, enter the final price and the agreed time.</p>'+
+        '<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">'+
+          '<button type="button" class="btn btn-accent btn-sm" data-save="'+r.id+'">Save changes</button>'+
+          '<button type="button" class="btn btn-ghost btn-sm" data-client="'+r.id+'">How the client sees it</button>'+
+        '</div>'+
+      '</div></article>';
+  }).join("");
+  box.querySelectorAll("[data-toggle]").forEach(function(b){
+    b.addEventListener("click", function(){ $("body-" + b.getAttribute("data-toggle")).classList.toggle("hidden"); });
+  });
+  box.querySelectorAll("[data-save]").forEach(function(b){
+    b.addEventListener("click", function(){ saveRequest(b.getAttribute("data-save")); });
+  });
+  box.querySelectorAll("[data-client]").forEach(function(b){
+    b.addEventListener("click", function(){
+      var r = requests.find(function(x){ return x.id === b.getAttribute("data-client"); });
+      closeCabinet(); showSuccess(r);
+    });
+  });
+}
+function saveRequest(id){
+  var r = requests.find(function(x){ return x.id === id; });
+  if (!r) return;
+  var newStatus = $("st-" + id).value;
+  var price = $("fp-" + id).value;
+  var whenRaw = $("aw-" + id).value;
+  var bad = newStatus === "agreed" && (!price || !whenRaw);
+  $("eAgree-" + id).classList.toggle("show", bad);
+  if (bad) return;
+  r.status = newStatus;
+  r.finalPrice = price;
+  r.agreedWhenRaw = whenRaw;
+  r.agreedWhen = whenRaw ? new Date(whenRaw).toLocaleString("en-US",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit"}) : "";
+  r.note = $("nt-" + id).value;
+  renderRequests();
+  var body = $("body-" + id); if (body) body.classList.remove("hidden");
+  showToast("Request " + id + " saved", false);
+  var sc = $("successCard");
+  if (!sc.classList.contains("hidden") && sc.getAttribute("data-req") === id) showSuccess(r);
+}
+
+/* --- Prices --- */
+var TARIFF_FIELDS = [
+  ["consult","Free consultation - 30 min, $"], ["basic","Basic lesson - 1 hour, $"], ["advanced","Advanced lesson - 1 hour, $"],
+  ["lesson2","2-hour lesson, $"], ["pack4","4-lesson package, $"], ["pack6","6-lesson package, $"],
+  ["testprep","Road test prep, $"], ["tutoring","Tutoring - 1 hour, $"]
+];
+function fillTariffFields(){
+  $("tariffFields").innerHTML = TARIFF_FIELDS.map(function(f){
+    return '<div><label class="field-label" for="tf-'+f[0]+'" style="margin-top:0">'+f[1]+'</label><input type="number" min="0" step="5" id="tf-'+f[0]+'" value="'+settings.prices[f[0]]+'"/></div>';
+  }).join("") +
+  '<div><label class="field-label" for="tf-practiceHour" style="margin-top:0">Extra practice hour, $</label><input type="number" min="0" step="5" id="tf-practiceHour" value="'+settings.practiceHour+'"/></div>' +
+  '<div><label class="field-label" for="tf-carForTest" style="margin-top:0">Car for road test day, $</label><input type="number" min="0" step="5" id="tf-carForTest" value="'+settings.carForTest+'"/></div>';
+}
+$("saveTariffs").addEventListener("click", function(){
+  TARIFF_FIELDS.forEach(function(f){ settings.prices[f[0]] = Math.max(0, +$("tf-" + f[0]).value || 0); });
+  settings.practiceHour = Math.max(0, +$("tf-practiceHour").value || 0);
+  settings.carForTest = Math.max(0, +$("tf-carForTest").value || 0);
+  cart.forEach(function(it){ if (it.variantId) it.unit = unitPrice(it.variantId, it.practice, it.car); });
+  renderPicker(); renderCart(); renderPrices(); applyCompany();
+  showToast("Prices saved - calculator updated", false);
+});
+
+/* --- Company --- */
+function fillCompanyFields(){
+  $("cName").value = settings.company.name;
+  $("cPhone").value = settings.company.phone;
+  $("cCity").value = settings.company.city;
+  $("cArea").value = settings.company.area;
+  $("accentSwatches").innerHTML = ACCENTS.map(function(a){
+    return '<button type="button" class="swatch" data-accent="'+a+'" style="background:'+a+'" aria-label="Accent '+a+'" aria-pressed="'+(settings.company.accent===a)+'"></button>';
+  }).join("");
+  $("accentSwatches").querySelectorAll("[data-accent]").forEach(function(b){
+    b.addEventListener("click", function(){
+      settings.company.accent = b.getAttribute("data-accent");
+      applyCompany(); fillCompanyFields();
+    });
+  });
+  var bgInput = $("bgColor");
+  if (bgInput){
+    bgInput.value = settings.company.bg || "#FFFFFF";
+    var bgHex = $("bgColorHex");
+    if (bgHex) bgHex.textContent = (settings.company.bg || "#FFFFFF").toUpperCase();
+    bgInput.oninput = function(){
+      settings.company.bg = bgInput.value;
+      applyCompany();
+      if (bgHex) bgHex.textContent = bgInput.value.toUpperCase();
+    };
+  }
+  var bgReset = $("bgReset");
+  if (bgReset){
+    bgReset.onclick = function(){
+      settings.company.bg = "#FFFFFF";
+      applyCompany(); fillCompanyFields();
+    };
+  }
+}
+$("saveCompany").addEventListener("click", function(){
+  settings.company.name = $("cName").value.trim() || settings.company.name;
+  settings.company.phone = $("cPhone").value.trim();
+  settings.company.city = $("cCity").value.trim();
+  settings.company.area = $("cArea").value.trim();
+  var bgv = $("bgColor"); if (bgv && bgv.value) settings.company.bg = bgv.value;
+  applyCompany();
+  showToast("Company details saved", false);
+});
+
+function applyCompany(){
+  var c = settings.company;
+  document.documentElement.style.setProperty("--accent", c.accent);
+  document.documentElement.style.setProperty("--bg", c.bg || "#FFFFFF");
+  document.querySelectorAll("[data-company-name]").forEach(function(el){ el.textContent = c.name; });
+  document.querySelectorAll("[data-company-city]").forEach(function(el){ el.textContent = c.city; });
+  document.querySelectorAll("[data-company-area]").forEach(function(el){ el.textContent = c.area; });
+  document.querySelectorAll("[data-company-phone]").forEach(function(el){ el.textContent = c.phone; });
+  document.querySelectorAll("[data-company-phone-link]").forEach(function(el){ el.setAttribute("href", "tel:" + digits(c.phone)); });
+  $("logoName").textContent = c.name;
+  document.title = c.name + " - Driving School and Tutoring";
+}
+function renderPrices(){
+  $("priceTable").innerHTML = Object.keys(VARIANT_NAMES).map(function(id){
+    return "<tr><td>" + VARIANT_NAMES[id] + "</td><td>" + priceLabel(id) + "</td></tr>";
+  }).join("") + "<tr><td>Extra practice hour</td><td>from " + fmt(settings.practiceHour) + "</td></tr>" +
+  "<tr><td>Car for road test day</td><td>from " + fmt(settings.carForTest) + "</td></tr>";
+}
+
+/* ============ PICKER EVENTS ============ */
+$("qtyMinus").addEventListener("click", function(){ if (picker.qty > 1) picker.qty--; renderPicker(); });
+$("qtyPlus").addEventListener("click", function(){ if (picker.qty < 20) picker.qty++; renderPicker(); });
+$("practiceToggle").addEventListener("change", function(){ picker.practice = $("practiceToggle").checked; renderPicker(); });
+$("carToggle").addEventListener("change", function(){ picker.car = $("carToggle").checked; renderPicker(); });
+$("addBtn").addEventListener("click", function(){
+  var practice = (picker.cat !== "tutoring" && picker.cat !== "consultation") ? picker.practice : false;
+  var car = picker.cat === "testprep" ? picker.car : false;
+  var key = picker.variant + "|" + practice + "|" + car;
+  var ex = cart.find(function(it){ return it.key === key; });
+  if (ex) ex.qty += picker.qty;
+  else cart.push({ key:key, variantId:picker.variant, qty:picker.qty, practice:practice, car:car, unit:unitPrice(picker.variant, practice, car) });
+  renderCart();
+  showToast("Added to order", false);
+  document.getElementById("cartCard").scrollIntoView({behavior:"smooth", block:"nearest"});
+});
+
+/* ============ THEME AND OFFLINE ============ */
+$("themeBtn").addEventListener("click", function(){
+  var cur = document.documentElement.getAttribute("data-theme");
+  var dark = cur === "dark" || (cur === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
+  document.documentElement.setAttribute("data-theme", dark ? "light" : "dark");
+});
+function updateOnline(){ $("offlineScreen").classList.toggle("show", !navigator.onLine); }
+window.addEventListener("online", updateOnline);
+window.addEventListener("offline", updateOnline);
+$("offlineRetry").addEventListener("click", updateOnline);
+
+/* ============ START ============ */
+renderPicker();
+renderCart();
+renderSlots();
+renderPrices();
+applyCompany();
+updateOnline();
+</script>
+</body>
+</html>
